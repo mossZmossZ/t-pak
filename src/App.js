@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import Home from './pages/Home';
 import {Route,Routes} from "react-router-dom"
+import Signupmoss from './pages/Signupmoss';
 
 function App() {
   return(
@@ -15,7 +16,7 @@ function App() {
           <Route path='/'element={<Home/>}/>
           <Route path='/contact'element={<Contact/>}/>
           <Route path='/login'element={<Login/>}/>
-          <Route path='/signup'element={<Signup/>}/>
+          <Route path='/signup'element={<Signupmoss/>}/>
         </Routes>
       
       </div>
