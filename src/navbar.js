@@ -1,17 +1,25 @@
 import { Link, useLinkClickHandler } from "react-router-dom"  
+import { HiX } from "react-icons/hi";
+import { HiMenu } from "react-icons/hi";
+import React,{useState} from 'react';
+
 export default function Navbar(){
+    const handleClick = () => setClick(!click);
+    const [click, setClick] = useState(false);
+  
     return(
         <div class = 'navcontainer'>
             <div>
                 <h2>logo</h2>
-                <div className="nav-toggle" id="navToggle">
+                
+                <div className='nav-toggle'onClick={handleClick}>
+                    {click ? (<HiX/>):(<HiMenu/>)}
+                </div> 
               
-                    <img className="navIcon" src="https://www.richardmiddleton.me/wp-content/themes/richardcodes/assets/img/hamburger.svg" alt="hamburger menu" />
-                    
-                </div>
+                
             </div>
             <nav >  
-                <ul>
+                <ul className={click ? "nav":"close"}>
                     <li>
                         <Link to ="/" className="home">HOME</Link>
                     </li>
@@ -29,9 +37,7 @@ export default function Navbar(){
             </nav>
          </div>
    
-    )
+   
+   )
 }
-const navToggle = document.querySelector("#navToggle");
-const nav = document.querySelector("nav");
 
-navToggle.addEventListener("click", () => { nav.classList.toggle("open")})
