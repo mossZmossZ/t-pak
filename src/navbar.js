@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"  
+import { Link, useLinkClickHandler } from "react-router-dom"  
 export default function Navbar(){
     return(
         <div class = 'navcontainer'>
@@ -6,11 +6,11 @@ export default function Navbar(){
                 <h2>logo</h2>
                 <div className="nav-toggle" id="navToggle">
               
-                    <img src="https://www.richardmiddleton.me/wp-content/themes/richardcodes/assets/img/hamburger.svg" alt="hamburger menu" />
+                    <img className="navIcon" src="https://www.richardmiddleton.me/wp-content/themes/richardcodes/assets/img/hamburger.svg" alt="hamburger menu" />
                     
                 </div>
             </div>
-            <nav className ="nav">  
+            <nav >  
                 <ul>
                     <li>
                         <Link to ="/" className="home">HOME</Link>
@@ -31,10 +31,7 @@ export default function Navbar(){
    
     )
 }
+const navToggle = document.querySelector("#navToggle");
+const nav = document.querySelector("nav");
 
-const navToggle = document.querySelector('#navToggle');
-
-navToggle.addEventListener("click",() =>
-alert("clicked")
-
-)
+navToggle.addEventListener("click", () => { nav.classList.toggle("open")})
