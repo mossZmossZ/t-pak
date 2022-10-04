@@ -1,0 +1,32 @@
+.sign-upfied
+{
+    position: absolute;
+    width: 1407px;
+    height: 1070px;
+    left: calc(50% - 1407px/2 + 11.5px);
+    top: calc(50% - 1070px/2 + 57.5px);
+    
+    background: #DDDFFF;
+    border-radius: 30px;
+}
+.registerbox
+{
+width:524.1080932617188px;
+height:89.75350952148438px;
+}
+.rectangle4
+{
+border-radius:27px;
+width:524.1080932617188px;
+height:89.75350952148438px;
+background-color:#afb4ff;
+}
+.register2
+{
+text-align:center;
+vertical-align:text-top;
+font-size:64px;
+font-family:Baloo Bhai 2;
+line-height:auto;
+color:#ffffff;
+}
