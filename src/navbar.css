@@ -19,22 +19,15 @@ body{
 
     
 }
-@media all and (max-width : 720px){
-    .navcontainer{
-        flex-direction:column;
-        align-items: flex-start;
-        }
-    
-}
 
 .nav ul{
-    padding: 0 1vw;
+    padding: 1.4vw 3vw;
     margin: 0;
     list-style: None;
     display: flex;
     gap: 10vw;
-    font-size: max(1.5vw,20px);
-    padding-top: 1.4vw;
+    font-size: max(1.2vw,26px);
+    
 }
 .nav a{
     color: black;
@@ -42,4 +35,41 @@ body{
     height: 100%;
     padding:.25vw;
     align-items: center;
+}
+
+.nav-toggle{
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+
+}
+
+.nav open{
+    height: 100vh;
+}
+
+@media all and (max-width : 720px){
+    .navcontainer{
+        flex-direction:column;
+        align-items: flex-start;
+        }
+    .nav{
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+    }    
+    .nav ul{
+        display: block;
+        text-align: center;
+        padding: 1rem 0;
+
+    }
+    .nav li{
+        padding: 1rem 0;
+        font-size: 1.4rem;
+    }
+    .nav-toggle{
+        display: block;
+    }
 }
