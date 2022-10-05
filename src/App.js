@@ -2,10 +2,9 @@ import './navbar.css';
 import Navbar from './navbar.js';
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
-import Signup from "./pages/Signup"
 import Home from './pages/Home';
 import {Route,Routes} from "react-router-dom"
-import Signupmoss from './pages/Signupmoss';
+import Signupmoss from './pages/Signupmoss.jsx';
 
 function App() {
   return(
