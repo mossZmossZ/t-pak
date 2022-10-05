@@ -1,5 +1,4 @@
-import './navbar.css';
-import Navbar from './navbar.js';
+import Navbar from './components/navbar.js';
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
 import Home from './pages/Home';
