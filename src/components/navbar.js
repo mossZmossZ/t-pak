@@ -3,6 +3,7 @@ import { Link, useLinkClickHandler } from "react-router-dom"
 import { HiX } from "react-icons/hi";
 import { HiMenu } from "react-icons/hi";
 import React,{useState} from 'react';
+import logo from "../pictures/logo.png"
 
 export default function Navbar(){
     const handleClick = () => setClick(!click);
@@ -12,7 +13,7 @@ export default function Navbar(){
     return(
         <div className = 'navcontainer'>
             <div>
-                <h2>logo</h2>
+                <img src={logo}></img>
                 
                 <div className='nav-toggle'onClick={handleClick}>
                     {click ? (<HiX/>):(<HiMenu/>)}
