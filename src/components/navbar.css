@@ -9,6 +9,9 @@ body{
     margin: 1rem;
     text-align: center;
 }
+.navcontainer img{
+    padding: 0 0 0 3vw;
+}
 .navcontainer{
     display: flex;
     justify-content: space-between;
