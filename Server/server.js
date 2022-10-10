@@ -3,7 +3,7 @@ const morgan = require("morgan")
 const cors = require("cors")
 const mongoose = require("mongoose")
 require("dotenv").config()
-
+const blogRoute = require('./route/blog')
 
 const app = express()
 
@@ -21,11 +21,7 @@ app.use(cors())
 app.use(morgan("dev"))
 
 //route
-app.get("*",(req,res)=>{
-    res.json({
-        data:"massage from server"
-    })
-})
+app.use('/api',blogRoute)
 
 const port = process.env.PORT || 8080
 //app.listen(port,()=>console.log("Start server in port"))
