@@ -4,7 +4,7 @@ const Blogs = require("../models/blogs")
 //บัณทึกข้อมูล
 exports.create=(req,res)=>{
     const {title,content,author}=req.body
-    const slug = slugify(tile)
+    const slug = slugify(title)
 
     //validate / ตรวจสอบความถูกต้องของช้อมูล
     switch(true){
@@ -23,4 +23,6 @@ exports.create=(req,res)=>{
         res.json(blog)
     })
 }
+
+
 
