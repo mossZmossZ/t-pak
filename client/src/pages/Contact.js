@@ -1,5 +1,6 @@
 import"./contact.css"
 import Line from "../pictures/LINE_icon.png"
+import facebook from"../pictures/facebook.png"
 export default function Contact(){
     return (
         
@@ -14,7 +15,8 @@ export default function Contact(){
                 
             </div>
             <div className="line">
-                <img src={Line}></img> Line : T-pak
+                
+                 Line : T-pak
             </div>
             <div className="call">
                 Call : 088-753-0291
