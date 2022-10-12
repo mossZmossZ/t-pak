@@ -1,10 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
 .btn-kmutnb{
-    display: block;
-    justify-content: center;
+    display:inline-block;
+    background-color: rgba(241, 228, 113, 0.67);
+    border-radius: 3vw;
+    width: 25vw;
+    margin:1vw 5vw;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    
+    
 }
-ul{
-    font-size: 3vw;
+
+.btn-kmutnb p{
+    vertical-align: middle;
 }
-.container img{
-    width: 50vw;
+.main{
+    background-color: #DDDFFF;
+    display: inline-block;
+    border-radius: 6vw ;
+    padding: 3vw 3vw;
+    justify-content: space-between;
+   
+
 }
+.btn-container1{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 5rem;
+   
+}
+.btn-container2{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 5rem;
+}
+.main img{
+    width: 7vw;
+    padding-left: 2vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    float: left;
+   
+}
+

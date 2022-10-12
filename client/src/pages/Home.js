@@ -1,25 +1,51 @@
-import kmutnb from "../pictures/kmutnb.jpg"
+import kmutnb from "../pictures/LOGO-KMUTNB.png"
 import './home.css'
-import { Link, useLinkClickHandler } from "react-router-dom"  
+import {Link} from "react-router-dom"  
 export default function Home(){
     return (
-         <div className="container">
-            <h1>ซื้อขายสัญญาหอพัก หารูมเมท</h1>
-            <botton className="btn-kmutnb">
-                <ul>พระจอมเกล้าพระนครเหนือ</ul>
-                <img src={kmutnb} className="kmutnb"></img> 
-                <Link to ></Link>   
-            </botton>
+         <div className="Home_container">
+            <p>T-pakเป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
+            <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
+            <div className="main">
+                <div className="btn-container1">
+                
+                    <div className="btn-kmutnb">
+                        <Link to ="/kmutnb">
+                            <img src={kmutnb} className="kmutnb"></img>
+                            <p>KMUTNB</p>
+                            <p>พระจอมเกล้าพระนครเหนือ</p>
+                        </Link>
+                    </div>
+                    <div className="btn-kmutnb">
+                        <Link to ="/kmutnb">
+                            <img src={kmutnb} className="kmutnb"></img>
+                            <ul>KMUTNB</ul>
+                            <p>พระจอมเกล้าพระนครเหนือ</p>
+                        </Link>
+                    </div>
+                </div>
+            
+                <div className="btn-container2">
+                    <div className="btn-kmutnb">
+                        <Link to ="/kmutnb">
+                            <img src={kmutnb} className="kmutnb"></img>
+                            <p>KMUTNB</p>
+                            <p>พระจอมเกล้าพระนครเหนือ</p>
+                        </Link>
+                    </div>
+                    <div className="btn-kmutnb">
+                        <Link to ="/kmutnb">
+                            <img src={kmutnb} className="kmutnb"></img>
+                            <p>KMUTNB</p>
+                            <p>พระจอมเกล้าพระนครเหนือ</p>
+                        </Link>
+                    </div>
+
+                </div>
+            </div>
+            
+            
            
-            <botton className="btn-kmitl">
-                <ul>พระจอมเกล้าลาดกระบัง</ul>
-                <img src={kmutnb} className="kmuitl"></img>    
-            </botton>
-           
-            <botton className="btn-kmutt">
-                <ul>พระจอมเกล้าธนบุรี</ul>
-                <img src={kmutnb} className="kmutt"></img>    
-            </botton>
             
          </div>
     )
