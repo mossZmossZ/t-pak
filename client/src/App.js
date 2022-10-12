@@ -4,11 +4,8 @@ import Login from "./pages/Login"
 import Home from './pages/Home';
 import {Route,Routes} from "react-router-dom"
 import Signup from './pages/Signup.jsx';
-<<<<<<< Updated upstream
 import Kmutnb from './pages/kmutnb_page';
-=======
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
->>>>>>> Stashed changes
 
 function App() {
   return(
@@ -20,11 +17,8 @@ function App() {
           <Route path='/contact'element={<Contact/>}/>
           <Route path='/login'element={<Login/>}/>
           <Route path='/signup'element={<Signup/>}/>
-<<<<<<< Updated upstream
           <Route path='/kmutnb'element={<Kmutnb/>}/>
-=======
           <Route path='/Form'element={<Formcomponents/>}/>
->>>>>>> Stashed changes
         </Routes>
       
       </div>
