@@ -8,8 +8,10 @@ import {ImLocation2} from "react-icons/im";
 export default function Home(){
     return (
          <div className="Home_container">
-            <p>T-pak เป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
-            <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
+            <div className="slogan">
+                <p>T-pak เป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
+                <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
+            </div>
             <div className="home-head">
                 <ImLocation2/> ค้นหาจากสถานที่
 
@@ -20,6 +22,7 @@ export default function Home(){
                     <div className="btn-kmutnb">
                         <Link to ="/kmutnb">
                             <img src={kmutnb} className="kmutnb" alt=""></img>
+                            
                             <p>KMUTNB</p>
                             <p>พระจอมเกล้าพระนครเหนือ</p>
                         </Link>
