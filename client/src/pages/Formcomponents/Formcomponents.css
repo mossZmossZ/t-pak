@@ -2,8 +2,11 @@
 .form_container{
     padding: 5px;
 }
-.form_container{
-    
-    font-style: italic;
+
+.form_container mossZ{
+    font-style:bold;
 }
 
+*{
+    font-family: 'Baloo Bhai 2', cursive;
+}
