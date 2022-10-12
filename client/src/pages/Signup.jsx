@@ -1,4 +1,4 @@
-import "./Signupmoss.css"
+import "./Signup.css"
 import { useState } from "react";
 import FormInput from "./Signupcomponents/FormInput";
 const Signupmoss = () =>{
