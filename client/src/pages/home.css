@@ -5,16 +5,24 @@ body{
     margin: 0;
 }
 .slogan{
+    
+    padding-bottom: 4vw;
     font-size: 2vw;
+    text-align: center;
+    
 }
-a{
+
+.main a{
     text-decoration: None;
+    font-size: 1.5vw;
 }
 .home-head{
+    position:absolute;
     color:  #FFFFFF;;
     font-weight: 400;
-    margin: 2vw 28vw 0vw  ;
+    margin: -5vw 28vw 0vw  ;
     padding: 2.5vw 5vw;
+    padding-bottom: 2vw;
     background-color: #AFB4ff;
     height: 8vw;
     width: 40vw;
@@ -22,6 +30,7 @@ a{
     font-size: 2.5vw;
     text-align: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 1;
 }
 .main{
     background-color: #DDDFFF;
@@ -29,6 +38,7 @@ a{
     border-radius: 6vw ;
     padding: 3vw 3vw;
     justify-content: space-between;
+    margin-bottom: 10vw;
    
 
 }
@@ -47,7 +57,7 @@ a{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 25vw;
+    width: 30vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -58,7 +68,7 @@ a{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 25vw;
+    width: 30vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -69,7 +79,7 @@ a{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 25vw;
+    width: 30vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -80,7 +90,7 @@ a{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 25vw;
+    width: 30vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -90,11 +100,38 @@ a{
 
 
 .main img{
-    width: 7vw;
+    width: 8vw;
     padding-left: 2vw;
     padding-bottom: 1vw;
     padding-top: 1vw;
     float: left;
    
 }
-
+@media all and (max-width : 720px){
+    .btn-container1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .a{}
+    .btn-container2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .btn-kmitl,.btn-kmutnb,.btn-kmutt,.btn-tu{
+        width: 35vw;
+        padding: 0.2rem 1rem;
+        margin: 1rem 1rem;
+        
+    }
+    .main{
+        padding: 1rem 0 0rem ;
+        margin: 0 0rem 0;
+    }
+    .main a,.main img{
+        
+        font-size: 3vw;
+        width: 10vw;
+    }
+}
