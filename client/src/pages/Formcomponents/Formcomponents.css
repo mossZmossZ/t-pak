@@ -1,8 +1,12 @@
 .form_container{
-    padding: 5px;
+    padding: 0px;
 }
 
 .form_container {
-    font-style:bold;
+    display: block;
+    font-style:normal;
 }
-
+*{
+    font-family: 'opunregular';
+    /*font-family: 'Baloo Bhai 2', cursive;*/
+}

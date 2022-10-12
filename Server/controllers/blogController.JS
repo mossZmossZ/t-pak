@@ -18,9 +18,15 @@ exports.create=(req,res)=>{
     //บันทึกข้อมูล
     Blogs.create({title,content,author,slug},(err,blog)=>{
         if(err){
-            res.status(400).json({error:err})
+            res.status(400).json({error:"มีชื่อบทความซ้ำกัน"})
         }
         res.json(blog)
+    })
+}
+//ดึงข้อมูลบทความออกมาทั้งหมด
+exports.getAllblogs=(req,res)=>{
+    Blogs.find({}).exec((err,blogs)=>{
+        res.json(blogs)
     })
 }
 
