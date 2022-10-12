@@ -3,12 +3,17 @@ import kmitl from "../pictures/kmitl-logo.png"
 import kmutt from "../pictures/Kmutt-logo.png"
 import Tu from "../pictures/TU_logo.png"
 import './home.css'
-import {Link} from "react-router-dom"  
+import {Link} from "react-router-dom" 
+import {ImLocation2} from "react-icons/im"; 
 export default function Home(){
     return (
          <div className="Home_container">
             <p>T-pakเป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
             <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
+            <div className="home-head">
+                <ImLocation2/> ค้นหาจากสถานที่
+
+            </div>
             <div className="main">
                 <div className="btn-container1">
                 
@@ -40,7 +45,7 @@ export default function Home(){
                         <Link to ="/tu">
                             <img src={Tu} className="tu" alt=""></img>
                             <p>TU</p>
-                            <p>ธรรมศาสตร์</p>
+                            <p>ธรรมศาสตร์(ศูนย์รังสิต)</p>
                         </Link>
                     </div>
 
