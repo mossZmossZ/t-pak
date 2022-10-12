@@ -11,6 +11,7 @@ body{
 }
 .navcontainer img{
     padding: 0 0 0 4vw;
+    width:20vw
 }
 .navcontainer{
     display: flex;
@@ -38,8 +39,11 @@ nav a{
     height: 100%;
     padding:.25vw;
     align-items: center;
+    
 }
-
+nav a:active{
+    color: #AFB4ff;
+}
 .nav-toggle{
     display: none;
     position: absolute;

@@ -4,6 +4,9 @@
 body{
     margin: 0;
 }
+.slogan{
+    font-size: 2vw;
+}
 a{
     text-decoration: None;
 }
