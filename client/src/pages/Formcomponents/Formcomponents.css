@@ -1,21 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Itim&display=swap');
-@font-face {
-    font-family: 'opunregular';
-    src: url('../fonts/opun-webfont.woff2') format('woff2'),
-         url('../fonts/opun-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    unicode-range: U+0E00–U+0E7F;
-}
 .form_container{
     padding: 5px;
 }
 
 .form_container mossZ{
     font-style:bold;
-}
-
-*{
-    font-family: 'Baloo Bhai 2', cursive;
-    font-family: 'opunregular';
 }

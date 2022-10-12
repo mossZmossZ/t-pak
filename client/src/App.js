@@ -1,3 +1,4 @@
+import "./App.css"
 import Navbar from './components/navbar.js';
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
