@@ -4,23 +4,6 @@
 body{
     margin: 0;
 }
-.btn-kmutnb{
-    display:inline-block;
-    background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 3vw;
-    width: 25vw;
-    margin:1vw 5vw;
-    text-align: center;
-    justify-content: space-between;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    
-    
-    
-}
-
-.btn-kmutnb p{
-    vertical-align: middle;
-}
 .main{
     background-color: #DDDFFF;
     display: inline-block;
@@ -41,6 +24,52 @@ body{
     justify-content: space-between;
     padding: 0rem 5rem;
 }
+.btn-kmutnb{
+    display:inline-block;
+    background-color: rgba(241, 228, 113, 0.67);
+    border-radius: 3vw;
+    width: 25vw;
+    margin:1vw 5vw;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+}
+.btn-kmitl{
+    display:inline-block;
+    background-color: rgba(241, 228, 113, 0.67);
+    border-radius: 3vw;
+    width: 25vw;
+    margin:1vw 5vw;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+}
+.btn-kmutt{
+    display:inline-block;
+    background-color: rgba(241, 228, 113, 0.67);
+    border-radius: 3vw;
+    width: 25vw;
+    margin:1vw 5vw;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+}
+.btn-tu{
+    display:inline-block;
+    background-color: rgba(241, 228, 113, 0.67);
+    border-radius: 3vw;
+    width: 25vw;
+    margin:1vw 5vw;
+    text-align: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+     
+}
+
+
 .main img{
     width: 7vw;
     padding-left: 2vw;
