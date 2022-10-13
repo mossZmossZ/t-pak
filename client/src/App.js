@@ -7,6 +7,7 @@ import {Route,Routes} from "react-router-dom"
 import Signup from './pages/Signup.jsx';
 import Kmutnb from './pages/kmutnb_page';
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
+import Formshow from './pages/Formcomponents/Formshow';
 
 function App() {
   return(
@@ -19,7 +20,8 @@ function App() {
           <Route path='/login'element={<Login/>}/>
           <Route path='/signup'element={<Signup/>}/>
           <Route path='/kmutnb'element={<Kmutnb/>}/>
-          <Route path='/Form'element={<Formcomponents/>}/>
+          <Route path='/Formcreate'element={<Formcomponents/>}/>
+          <Route path='/Formshow'element={<Formshow/>}/>
         </Routes>
       
       </div>
