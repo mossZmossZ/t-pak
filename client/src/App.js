@@ -3,7 +3,7 @@ import Navbar from './components/navbar.js';
 import Contact from "./pages/Contact"
 import Login from "./pages/Login"
 import Home from './pages/Home';
-import {Route,Routes} from "react-router-dom"
+import {Route, Switch} from "react-router-dom"
 import Signup from './pages/Signup.jsx';
 import Kmutnb from './pages/kmutnb_page';
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
@@ -15,16 +15,16 @@ function App() {
     <>
       <Navbar/>
       <div className='container'>
-        <Routes>
-          <Route path='/'element={<Home/>}/>
-          <Route path='/contact'element={<Contact/>}/>
-          <Route path='/login'element={<Login/>}/>
-          <Route path='/signup'element={<Signup/>}/>
-          <Route path='/kmutnb'element={<Kmutnb/>}/>
-          <Route path='/Formcreate'element={<Formcomponents/>}/>
-          <Route path='/Formshow'element={<Formshow/>}/>
-          <Route path='/blog/:slug'element={<SingleComponent/>}/>
-        </Routes>
+        <Switch>
+          <Route path='/'exact component={Home}/>
+          <Route path='/contact'exact componentt={Contact}/>
+          <Route path='/login'exact component={Login}/>
+          <Route path='/signup'exact component={Signup}/>
+          <Route path='/kmutnb'exact component={Kmutnb}/>
+          <Route path='/Formcreate'exact component={Formcomponents}/>
+          <Route path='/Formshow'exact component={Formshow}/>
+          <Route path='/blog/:slug'exact component={SingleComponent}/>
+        </Switch>
       
       </div>
     </> 
