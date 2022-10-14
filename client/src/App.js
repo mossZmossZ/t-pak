@@ -8,6 +8,7 @@ import Signup from './pages/Signup.jsx';
 import Kmutnb from './pages/kmutnb_page';
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
 import Formshow from './pages/Formcomponents/Formshow';
+import SingleComponent from "./pages/Formcomponents/SingleComponents";
 
 function App() {
   return(
@@ -22,6 +23,7 @@ function App() {
           <Route path='/kmutnb'element={<Kmutnb/>}/>
           <Route path='/Formcreate'element={<Formcomponents/>}/>
           <Route path='/Formshow'element={<Formshow/>}/>
+          <Route path='/blog/:slug'element={<SingleComponent/>}/>
         </Routes>
       
       </div>

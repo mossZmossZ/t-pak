@@ -2,6 +2,7 @@
 const slugify = require("slugify")
 const Blogs = require("../models/blogs")
 const {v4:uuidv4} = require('uuid');
+
 //บันทึกข้อมูล
 exports.create=(req,res)=>{
     const {title,content,author}=req.body
