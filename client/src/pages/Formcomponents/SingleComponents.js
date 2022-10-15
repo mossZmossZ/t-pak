@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
 
 const SingleComponent=(props)=>{
     /*let { slug } = useParams(); 
@@ -15,18 +14,20 @@ const SingleComponent=(props)=>{
         //props.match.params.slug}`)
         .get(`${process.env.REACT_APP_API}/blog/${props.match.params.slug}`)
         .then(response=>{
-            setBlog(response)
+            setBlog(response.data)
         })
         .catch(err=>alert(err))
+        
     }
     useEffect(()=>{
         fetchData()
+        //eslint-disable-next-line
     },[])
     return(
-        <div>
-            <h1>SingleComponents show</h1>
-            <hr></hr>
-            {JSON.stringify(blog)}
+        <div className="container p-5">
+            <h1>{blog.title}</h1>
+            <p>เนื้อหา : {blog.content}</p>
+            <p className="text-muted">ผู้เขียน : {blog.author} , เผยแพร่ : {new Date(blog.createdAt).toLocaleString()}</p>
         </div>
     )
 }

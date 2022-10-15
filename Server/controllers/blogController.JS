@@ -41,5 +41,15 @@ exports.singleBlog=(req,res)=>{
         res.json(blog)
     })
 }
+//ลบข้อมูลจากserver
+exports.remove=(req,res)=>{
+    const {slug} = req.params
+    Blogs.findOneAndRemove({slug}).exec((err,blog)=>{
+        if(err) console.log(err)
+        res.json({
+            massage:"ลบบทความเรียบร้อย"
+        })
+    })
+}
 
 

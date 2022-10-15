@@ -9,6 +9,7 @@ import Kmutnb from './pages/kmutnb_page';
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
 import Formshow from './pages/Formcomponents/Formshow';
 import SingleComponent from "./pages/Formcomponents/SingleComponents";
+import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 
 function App() {
   return(
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Formcreate'exact component={Formcomponents}/>
           <Route path='/Formshow'exact component={Formshow}/>
           <Route path='/blog/:slug'exact component={SingleComponent}/>
+          <Route path='/Formshowadmin'exact component={Formshowadmin}/>
         </Switch>
       
       </div>

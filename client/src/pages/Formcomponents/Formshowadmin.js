@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
 
-const Formshow=()=>{
+const Formshowadmin=()=>{
     const [blogs,setBlogs] = useState([])
 
     const fetchData=()=>{
@@ -18,7 +18,7 @@ const Formshow=()=>{
     },[])
     return(
         <div>
-            <h1>Form show</h1>
+            <h1>Form show Admin</h1>
             <hr></hr>
             {blogs.map((blog,index)=>(
                 <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>
@@ -34,4 +34,4 @@ const Formshow=()=>{
         </div>
     )
 }
-export default Formshow;
+export default Formshowadmin;
