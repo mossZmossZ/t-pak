@@ -51,5 +51,15 @@ exports.remove=(req,res)=>{
         })
     })
 }
+//update ข้อมูลจาก server
+exports.update=(req,res)=>{
+    const {slug} = req.params
+    //ส่งข้อมูล ได้แต่ title , content . author
+    const {title,content,author}=req.body
+    Blogs.findOneAndUpdate({slug},{title,content,author},{new:true}).exec((err,blog)=>{
+        if(err) alert(err)
+        res.json(blog)
+    })
 
+}
 

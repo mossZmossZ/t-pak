@@ -10,6 +10,7 @@ import Formcomponents from './pages/Formcomponents/Formcomponents.js';
 import Formshow from './pages/Formcomponents/Formshow';
 import SingleComponent from "./pages/Formcomponents/SingleComponents";
 import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
+import EditComponent from "./pages/Formcomponents/EditComponent";
 
 function App() {
   return(
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Formshow'exact component={Formshow}/>
           <Route path='/blog/:slug'exact component={SingleComponent}/>
           <Route path='/Formshowadmin'exact component={Formshowadmin}/>
+          <Route path='/blog/edit/:slug'exact component={EditComponent}/>
         </Switch>
       
       </div>
