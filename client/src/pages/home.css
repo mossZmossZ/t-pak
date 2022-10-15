@@ -7,14 +7,17 @@ body{
 .slogan{
     
     padding-bottom: 4vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: center;
     
 }
 
 .main a{
     text-decoration: None;
-    font-size: 1.5vw;
+    font-size: 1vw;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.46);
+
 }
 .home-head{
     position:absolute;
@@ -35,7 +38,7 @@ body{
 .main{
     background-color: #DDDFFF;
     display: inline-block;
-    border-radius: 6vw ;
+    border-radius: 3vw ;
     padding: 3vw 3vw;
     justify-content: space-between;
     margin-bottom: 10vw;
@@ -57,7 +60,7 @@ body{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 30vw;
+    width: 25vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -68,7 +71,7 @@ body{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 30vw;
+    width: 25vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -79,7 +82,7 @@ body{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 30vw;
+    width: 25vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;
@@ -90,7 +93,7 @@ body{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 3vw;
-    width: 30vw;
+    width: 25vw;
     margin:1vw 5vw;
     text-align: center;
     justify-content: space-between;

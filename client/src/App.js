@@ -17,7 +17,7 @@ function App() {
       <div className='container'>
         <Switch>
           <Route path='/'exact component={Home}/>
-          <Route path='/contact'exact componentt={Contact}/>
+          <Route path='/contact'exact component={Contact}/>
           <Route path='/login'exact component={Login}/>
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnb'exact component={Kmutnb}/>

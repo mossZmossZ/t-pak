@@ -22,7 +22,6 @@ export default function Home(){
                     <div className="btn-kmutnb">
                         <Link to ="/kmutnb">
                             <img src={kmutnb} className="kmutnb" alt=""></img>
-                            
                             <p>KMUTNB</p>
                             <p>พระจอมเกล้าพระนครเหนือ</p>
                         </Link>
