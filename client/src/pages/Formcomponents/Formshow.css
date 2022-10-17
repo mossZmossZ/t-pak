@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+#formcontainer{
+    background-color:#DDDFFF;
+}
+#formcontainer a{
+    text-decoration: None;
+    color: black;
+}
+.headcontent{
+    width: 10vw;
+    background-color: rgba(241, 228, 113, 0.67);
+    
+}

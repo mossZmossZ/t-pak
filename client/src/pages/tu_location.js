@@ -1,3 +1,3 @@
 export default function Kmutnb(){
-    return <h1>Kmutnb</h1>
+    return <h1>Tu location</h1>
 }

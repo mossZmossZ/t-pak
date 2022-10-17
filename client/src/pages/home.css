@@ -7,12 +7,12 @@ body{
 }
 .slogan{
     
-    padding-bottom: 4vw;
+    padding-bottom: 6vw;
     font-size: 1.5vw;
     text-align: center;
     visibility: hidden;
     animation:movedown 0.5s linear 1;
-    animation-delay: 1ms;
+    animation-delay: 0ms;
     animation-fill-mode: forwards;
     
 }
@@ -30,24 +30,30 @@ body{
 
 }
 .home-head{
+    justify-content:space-between;
+    align-items: center;
+    display: flex;
     position:absolute;
     color:  #FFFFFF;;
     font-weight: 400;
-    margin: -5vw 28vw 0vw  ;
-    padding: 2.5vw 5vw;
-    padding-bottom: 2vw;
+    margin: -7vw 25vw 0vw  ;
+    padding: 2vw 7vw;
     background-color: #AFB4ff;
     height: 8vw;
-    width: 40vw;
+    width: 45vw;
     border-radius: 3vw;
     font-size: 2.5vw;
     text-align: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     z-index: 1;
     visibility: hidden;
-    animation:movedown 0.5s linear 1;
-    animation-delay: 1ms;
+    animation:movedown 0.7s linear 1;
+    animation-delay: 0ms;
     animation-fill-mode: forwards;
+}
+.dropdown{
+    
+    font-size: 2vw;
 }
 .main{
     background-color: #DDDFFF;
@@ -57,8 +63,8 @@ body{
     justify-content: space-between;
     margin-bottom: 10vw;
     visibility: hidden;
-    animation:movedown 0.5s linear 1;
-    animation-delay: 1ms;
+    animation:movedown 0.7s linear 1;
+    animation-delay: 0ms;
     animation-fill-mode: forwards;
    
 
@@ -67,12 +73,20 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 0rem 5rem;
+    visibility: hidden;
+    animation:movedown 1s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
    
 }
 .btn-container2{
     display: flex;
     justify-content: space-between;
     padding: 0rem 5rem;
+    visibility: hidden;
+    animation:movedown 1s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
 }
 .btn-kmutnb{
     display:inline-block;
