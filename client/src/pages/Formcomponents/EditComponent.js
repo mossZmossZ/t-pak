@@ -5,14 +5,19 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
 
+
 const EditComponent=(props)=>{
     const [state,setState] = useState({
         title:"",
-        content:"",
+        content:"",   
         author:"",
         slug:""
     })
-    const {title,content,author,slug} = state
+    const {title,author,content,slug} = state
+
+
+
+
     //ดึงข้อมูลบทความที่ต้องการแก้ไขโดยใช้ useEffect
     const fetchData=()=>{
         axios
@@ -38,7 +43,7 @@ const EditComponent=(props)=>{
                     </div>
                     <div className="form-group">
                         <label>รายละเอียด </label>
-                        <textarea classname="form-control" value={content} onChange={inputValue("content")}></textarea>
+                        <input type="text" classname="form-control" value={content} onChange={inputValue("content")}/>
                     </div>
                     <div className="form-group">
                         <label>ผู้แต่ง </label>
@@ -63,7 +68,7 @@ const EditComponent=(props)=>{
             Swal.fire(
                 'แจ้งเตือน','อัพเดทบทความเรียบร้อย','success')
                 const {title,content,author,slug} = response.data
-                setState({...state,title,author,content,slug})
+                setState({...state,title,content,author,slug})
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text:"ERROR",footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)

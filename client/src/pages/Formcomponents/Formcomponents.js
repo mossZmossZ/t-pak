@@ -13,11 +13,14 @@ const FormComponents=()=>{
     })
     const {title,content,author} = state
 
+
+
     //กำหนดค่าให้กับ state
     const inputValue =name=>event=>{
         //console.log(name,"=",event.target.value)
         setState({...state,[name]:event.target.value});
     }
+
     const submitForm=(e)=>{
         e.preventDefault();
         //console.table({title,content,author})
@@ -27,7 +30,7 @@ const FormComponents=()=>{
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','บันทึกสำเร็จ!','success')
-                setState({...state,title:"",content:"",author:""})
+                setState({...state,title:"",author:""})
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)
@@ -45,7 +48,7 @@ const FormComponents=()=>{
                     </div>
                     <div className="form-group">
                         <label>รายละเอียด </label>
-                        <textarea classname="form-control" value={content} onChange={inputValue("content")}></textarea>
+                        <input type="text" classname="form-control" value={content} onChange={inputValue("content")}/>
                     </div>
                     <div className="form-group">
                         <label>ผู้แต่ง </label>

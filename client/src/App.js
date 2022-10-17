@@ -18,6 +18,8 @@ import Formshow from './pages/Formcomponents/Formshow.js';
 import SingleComponent from "./pages/Formcomponents/SingleComponents";
 import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 import EditComponent from "./pages/Formcomponents/EditComponent";
+import LoginComponent from "./pages/Formcomponents/LoginComponent";
+
 
 function App() {
   return(
@@ -42,6 +44,7 @@ function App() {
           <Route path='/blog/:slug'exact component={SingleComponent}/>
           <Route path='/Formshowadmin'exact component={Formshowadmin}/>
           <Route path='/blog/edit/:slug'exact component={EditComponent}/>
+          <Route path='/loginblog' exact component={LoginComponent}/>
         </Switch>
       
       </div>
