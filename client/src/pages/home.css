@@ -3,12 +3,17 @@
 }
 body{
     margin: 0;
+
 }
 .slogan{
     
     padding-bottom: 4vw;
     font-size: 1.5vw;
     text-align: center;
+    visibility: hidden;
+    animation:movedown 0.5s linear 1;
+    animation-delay: 1ms;
+    animation-fill-mode: forwards;
     
 }
 
@@ -17,7 +22,7 @@ body{
     font-size: 1vw;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.46);
-    transition: all 0.5s ease-out;
+    transition: 0.5s ease-out;
 
 }
 .main a:hover,a:focus{
@@ -39,6 +44,10 @@ body{
     text-align: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     z-index: 1;
+    visibility: hidden;
+    animation:movedown 0.5s linear 1;
+    animation-delay: 1ms;
+    animation-fill-mode: forwards;
 }
 .main{
     background-color: #DDDFFF;
@@ -47,6 +56,10 @@ body{
     padding: 3vw 3vw;
     justify-content: space-between;
     margin-bottom: 10vw;
+    visibility: hidden;
+    animation:movedown 0.5s linear 1;
+    animation-delay: 1ms;
+    animation-fill-mode: forwards;
    
 
 }
@@ -114,6 +127,17 @@ body{
     padding-top: 1vw;
     float: left;
    
+}
+@keyframes movedown {
+    0%{
+        transform:translateY(-10px);
+        visibility: visible;
+    }
+    100%{
+        transform: translateY(0);
+        visibility: visible;
+    }
+    
 }
 @media all and (max-width : 720px){
     .btn-container1{
