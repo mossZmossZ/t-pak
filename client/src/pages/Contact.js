@@ -1,6 +1,7 @@
 import"./contact.css"
 import Line from "../pictures/LINE_icon.png"
 import facebook from"../pictures/facebook.png"
+import { HiPhone } from "react-icons/hi";
 export default function Contact(){
     return (
     <div>
@@ -10,15 +11,15 @@ export default function Contact(){
         <div className="background">
             <div className="facebook">
                 
-                Facebook : T-pak
+                <img src={facebook}/>Facebook : T-pak
                 
             </div>
             <div className="line">
                 
-                 Line : T-pak
+                 <img src={Line}></img>Line : T-pak
             </div>
             <div className="call">
-                Call : 088-753-0291
+               <HiPhone className="phone"/>Call : 088-753-0291
             </div>
             
         </div>
