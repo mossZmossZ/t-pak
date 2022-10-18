@@ -4,7 +4,7 @@ import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useEffect } from "react";
-
+import { getToken } from "../../services/authorize";
 
 const EditComponent=(props)=>{
     const [state,setState] = useState({
@@ -63,7 +63,12 @@ const EditComponent=(props)=>{
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
         axios
-        .put(`${process.env.REACT_APP_API}/blog/${slug}`,{title,content,author})
+        .put(`${process.env.REACT_APP_API}/blog/${slug}`,{title,content,author},
+        {
+            headers:{
+                authorization:`Bearer ${getToken()}`
+            }
+        })
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','อัพเดทบทความเรียบร้อย','success')

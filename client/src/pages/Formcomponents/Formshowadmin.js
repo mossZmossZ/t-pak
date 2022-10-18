@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
 import Swal from "sweetalert2";
-
+import { getToken } from "../../services/authorize";
 
 const Formshowadmin=()=>{
     const [blogs,setBlogs] = useState([])
@@ -37,7 +37,12 @@ const Formshowadmin=()=>{
 
     const deleteBlog=(slug)=>{
         //ส่งrequest ไปที่ api เพื่อลบข้อมูล
-        axios.delete(`${process.env.REACT_APP_API}/blog/${slug}`)
+        axios.delete(`${process.env.REACT_APP_API}/blog/${slug}`,
+        {
+            headers:{
+                authorization:`Bearer ${getToken()}`
+            }
+        })
         .then(respone=>{
             Swal.fire('Deleted!',respone.data.message,'success')
             fetchData()

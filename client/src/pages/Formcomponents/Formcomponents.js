@@ -3,6 +3,7 @@ import"./Formcomponents.css";
 import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { getToken, getUser } from "../../services/authorize";
 
 
 const FormComponents=()=>{
@@ -26,7 +27,13 @@ const FormComponents=()=>{
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
         axios
-        .post(`${process.env.REACT_APP_API}/create`,{title,content,author})
+        .post(`${process.env.REACT_APP_API}/create`,
+        {title,content,author},
+        {
+            headers:{
+                authorization:`Bearer ${getToken()}`
+            }
+        })
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','บันทึกสำเร็จ!','success')
