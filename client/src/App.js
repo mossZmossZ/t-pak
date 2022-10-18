@@ -18,7 +18,7 @@ import SingleComponent from "./pages/Formcomponents/SingleComponents";
 import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 import EditComponent from "./pages/Formcomponents/EditComponent";
 import LoginComponent from "./pages/Formcomponents/LoginComponent";
-
+import AdminRoute from "./AdminRoute";
 
 function App() {
   return(
@@ -38,11 +38,11 @@ function App() {
           <Route path='/kmuttRoomate'exact component={KmuttRoomate}/>
           <Route path='/tuLocation'exact component={tuLocation}/>
           <Route path='/tuRoomate'exact component={tuRoomate}/>
-          <Route path='/Formcreate'exact component={Formcomponents}/>
+          <AdminRoute path='/Formcreate'exact component={Formcomponents}/>
           <Route path='/Formshow'exact component={Formshow}/>
           <Route path='/blog/:slug'exact component={SingleComponent}/>
-          <Route path='/Formshowadmin'exact component={Formshowadmin}/>
-          <Route path='/blog/edit/:slug'exact component={EditComponent}/>
+          <AdminRoute path='/Formshowadmin'exact component={Formshowadmin}/>
+          <AdminRoute path='/blog/edit/:slug'exact component={EditComponent}/>
         </Switch>
       </div>
     </> 
