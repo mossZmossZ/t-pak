@@ -1,7 +1,6 @@
 import "./App.css";
 import Navbar from './components/navbar.js';
 import Contact from "./pages/Contact"
-import Login from "./pages/Login"
 import Home from './pages/Home';
 import {Route, Switch} from "react-router-dom"
 import Signup from './pages/Signup.jsx';
@@ -29,7 +28,7 @@ function App() {
         <Switch>
           <Route path='/'exact component={Home}/>
           <Route path='/contact'exact component={Contact}/>
-          <Route path='/login'exact component={Login}/>
+          <Route path='/login'exact component={LoginComponent}/>
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
           <Route path='/kmutnbroomate'exact component={KmutnbRoomate}/>
@@ -44,9 +43,7 @@ function App() {
           <Route path='/blog/:slug'exact component={SingleComponent}/>
           <Route path='/Formshowadmin'exact component={Formshowadmin}/>
           <Route path='/blog/edit/:slug'exact component={EditComponent}/>
-          <Route path='/loginblog' exact component={LoginComponent}/>
         </Switch>
-      
       </div>
     </> 
   )

@@ -40,7 +40,6 @@ const FormComponents=()=>{
         <div className="form_container">
             <div>
                 <h1>เขียนข้อความ</h1>
-                
                 <form onSubmit={submitForm}>
                     <div className="form-group">
                         <label>ชื่อบทความ </label>
