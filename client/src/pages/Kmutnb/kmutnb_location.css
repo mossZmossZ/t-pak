@@ -11,13 +11,18 @@
     list-style: None;
     display: flex;
     
+    
 }
 .row{
     margin-top: 1vw;
 }
-hr{
-    margin-bottom: 1vw;
-}
 .column img{
-    width: 50%;
+    border-radius: 3vw;
+    width: 30vw;
+    height: auto;
+}
+.column{
+    border-radius: 3vw;
+    margin: 0;
+    display: flex;
 }
