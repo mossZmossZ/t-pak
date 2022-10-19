@@ -1,11 +1,11 @@
-import {useState} from "react";
+import {useState,} from "react";
 import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { getToken, getUser } from "../../services/authorize";
+import { getUser,authenticate,getToken} from "../../services/authorize"
 
 
-const KmutnbLocationCreate=()=>{
+const KmutnbLocationCreate=(props)=>{
     const [state,setState] = useState({
         name:"",
         detail:"",
@@ -34,6 +34,7 @@ const KmutnbLocationCreate=()=>{
             Swal.fire(
                 'แจ้งเตือน','บันทึกสำเร็จ!','success')
                 setState({...state,title:"",author:""})
+                authenticate(response,()=>window.location.reload(false),props.history.push("/kmutnblocation"))
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)
