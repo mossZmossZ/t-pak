@@ -48,7 +48,7 @@ const Navbar=({history})=>{
                     )}
                     {getUser() &&(
                             <li>
-                               <button onClick={()=>{logoutbutton();}}>logout</button>
+                               <button className="logout" onClick={()=>{logoutbutton();}}>logout</button>
                             </li>
                     )}
                             
