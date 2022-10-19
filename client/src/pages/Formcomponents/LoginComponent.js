@@ -37,26 +37,31 @@ const LoginComponent=(props)=>{
         getUser() && props.history.push("/")
     },[])
     return(
-        <div className="form_container">
-            <h1>เข้าสู่ระบบ</h1>
-    
-            <form onSubmit={submitForm}>
-                <div className="form-group">
-                    <label>Username </label>
-                    <input type="text" classname="form-control" 
-                        value={ID} 
-                        onChange={inputValue("ID")}/>
+        <div >
+            <div className="head">
+                <h1>Login</h1>
+            </div>
+            <div className="form_container">
+                <form onSubmit={submitForm}>
+                    <div className="form-group">
+                        <label>Username </label>
+                        <div className="input">
+                            <input type="text" placeholder="Username" classname="form-control" value={ID} onChange={inputValue("ID")}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label>Password </label>
+                        <div className="input">
+                            <input type="password"  placeholder="Password" classname="form-control" value={password} onChange={inputValue("password")}/>
+                        </div>
+                    </div>
+                    <div className="submit">
+                        <input type="submit" value="          login         " className="btn-login"></input>
+                    </div>
+                </form>
+                <div className="sign">
+                    <Link to ="/signup" className="login">ยังไม่มีบัญชีผู้ใช้ สมัครเลย !</Link>
                 </div>
-                <div className="form-group">
-                    <label>Password </label>
-                    <input type="password" classname="form-control" 
-                        value={password} 
-                        onChange={inputValue("password")}/>
-                </div>
-                <input type="submit" value="เข้าสู่ระบบ" className="btn btn-primary"></input>
-            </form>
-            <div>
-                <Link to ="/signup" className="login">ยังไม่มีผู้ใช้งาน สมัครเลย!</Link>
             </div>
     </div>
 );

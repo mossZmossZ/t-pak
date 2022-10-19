@@ -42,7 +42,7 @@ nav a{
     height: 100%;
     padding:.25vw;
     align-items: center;
-    transition:  0.5s ease-out;
+    transition:  0.3s ease-out;
     
 }
 .logout{

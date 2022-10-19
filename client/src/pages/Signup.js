@@ -5,14 +5,14 @@ import {withRouter} from "react-router-dom"
 import { getUser,authenticate  } from "../services/authorize"
 
 
+
 const RegisterComponent=(props)=>{
     const [state,setState] = useState({
         ID:"",
-        username:"",
         password:"",
         confirmpassword:""
     })
-    const {ID,  username,password,confirmpassword} = state
+    const {ID,password,confirmpassword} = state
 
     //กำหนดค่าให้กับ state
     const inputValue =name=>event=>{
@@ -24,12 +24,12 @@ const RegisterComponent=(props)=>{
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
        // alert(JSON.stringify({username,password,confirmpassword}))
-       axios.post(`${process.env.REACT_APP_API}/register`,{ID,username,password,confirmpassword})
+       axios.post(`${process.env.REACT_APP_API}/register`,{ID,password,confirmpassword})
        .then(response=>{
         //login สำเร็จ
             authenticate(response,()=>window.location.reload(false),props.history.push("/"))
         //console.log(response.data)
-        setState({...state,ID:"",username:"",password:"",confirmpassword:""})
+        setState({...state,ID:"",password:"",confirmpassword:""})
        }).catch(err=>{
         console.log(err.response.data.error)
         Swal.fire({icon: 'error',title: 'Failed',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
@@ -40,37 +40,35 @@ const RegisterComponent=(props)=>{
     },[])
     return(
         <div className="form_container-signup">
-        <div>
-            <h1>Register</h1>
-    
-            <form onSubmit={submitForm}>
-                <div className="form-group-signup">
-                    <label>ID </label>
-                    <input type="text" classname="form-control" 
-                        value={ID} 
-                        onChange={inputValue("ID")}/>
-                </div>
-                <div className="form-group-signup">
-                    <label>Username </label>
-                    <input type="text" classname="form-control" 
-                        value={username} 
-                        onChange={inputValue("username")}/>
-                </div>
-                <div className="form-group-signup">
-                    <label>Password </label>
-                    <input type="password" classname="form-control" 
-                        value={password} 
-                        onChange={inputValue("password")}/>
-                </div>
-                <div className="form-group-signup">
-                    <label>confirmpassword </label>
-                    <input type="password" classname="form-control" 
-                        value={confirmpassword} 
-                        onChange={inputValue("confirmpassword")}/>
-                </div>
-                <input type="submit" value="สมัครเข้าใช้งาน" className="btn btn-primary-signup"></input>
-            </form>
-        </div>
+            <div className="head">
+                <h1>Register</h1>
+            </div>
+                <div className="form_container">
+                    <form onSubmit={submitForm}>
+                        <div className="form-group-signup">
+                            <label>Username </label>
+                            <div className="input">
+                                <input type="text" placeholder='Username'classname="form-control" value={ID} onChange={inputValue("ID")}/>
+                            </div>
+                        </div>
+                        <div className="form-group-signup">
+                            <label>Password </label>
+                            <div className="input">
+                                <input type="password" placeholder='password'classname="form-control" value={password} onChange={inputValue("password")}/>
+                            </div>
+                        </div>
+                        <div className="form-group-signup">
+                            <label>confirmpassword </label>
+                            <div className="input">
+                                <input type="password" placeholder='confirm password'classname="form-control"  value={confirmpassword} onChange={inputValue("confirmpassword")}/>
+                            </div>
+                        </div>
+                        <div className="submit">
+                         <input type="submit" value="         Register          " className="btn btn-primary-signup"></input>
+                        </div>
+                     </form>
+                </div> 
+        
     </div>
 );
 }

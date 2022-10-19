@@ -11,12 +11,12 @@ export default function Contact(){
         </div>
         <div className="background">
             
-            <div className="facebook">
-                <img src={facebook}/>Facebook : T-pak
+                <div className="facebook">
+                    <img src={facebook}/>Facebook : T-pak
                   
                   
-            </div>
-            <div className="line">
+                </div>
+                <div className="line">
                 
                  <img src={Line}></img>Line : T-pak
             </div>

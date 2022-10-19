@@ -6,14 +6,11 @@ body{
 }
 .header{
     position: absolute;
-    align-items: center;
     color:  #FFFFFF;;
     font-weight: 400;
-    margin: -6vw 28vw 0vw  ;
-    padding: 2.5vw 5vw;
+    margin: -6vw 34vw 0vw  ;
+    padding: 1.5vw 6vw;
     background-color: #AFB4ff;
-    height: 9vw;
-    width: 40vw;
     border-radius: 27vw;
     font-size: 2.5vw;
     text-align: center;
@@ -26,8 +23,8 @@ body{
 }
 .background{
     font-size: 2.5vw;
-    padding: 3rem 5vw;
-    margin-top: 5vw;
+    padding: 3vw 1vw;
+    margin:6vw 6vw;
     display: block;
     background-color: #DDDFFF;
     border-radius: 3vw;
@@ -45,17 +42,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 1vw 25vw;
-    padding: 2vw 5vw ;
+    margin: 2vw 23vw;
+    padding: 1.5vw 5vw ;
     font-size: 2vw;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 27vw;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     visibility: hidden;
     animation:movedown 0.8s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .facebook img{
     display: block;
@@ -69,16 +65,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 1vw 25vw;
-    padding: 2vw 5vw ;
+    margin: 2vw 23vw;
+    padding: 1.5vw 5vw ;
     font-size: 2.3vw;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 27vw;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     visibility: hidden;
     animation:movedown 1s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .line img{
@@ -92,16 +88,16 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 1vw 25vw;
-    padding: 2vw 5vw ;
+    margin: 2vw 23vw;
+    padding: 1.5vw 2vw ;
     font-size: 2.3vw;
     background-color: rgba(241, 228, 113, 0.67);
     border-radius: 27vw;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     visibility: hidden;
     animation:movedown 1.2s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         
 }
 @keyframes movedown {

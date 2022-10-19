@@ -1,4 +1,102 @@
-.form_container{
-    background-color:#BF95FF;
+.head{
+    align-items: center;
+    display:flex;
+    justify-content: space-around;
+    position:absolute;
+    color:  #FFFFFF;;
+    font-weight: 400;
+    margin: -7vw 25vw 0  ;
+    padding: 2vw;
+    background-color: #AFB4ff;
+    height: 8vw;
+    width: 45vw;
     border-radius: 3vw;
+    font-size: 2.5vw;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 1;
+    visibility: hidden;
+    animation:movedown 0.3s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+}
+h1{
+    text-align: center;
+}
+    
+.form_container{
+    text-align: start;
+    align-items: center;
+    justify-content: space-around;
+    margin:7vw 10vw 0;
+    padding: 2vw 2vw;
+    background-color:#DDDFFF;
+    border-radius: 3vw;
+    visibility: hidden;
+    animation:movedown 0.5s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+    
+    
+
+}
+label{
+    margin:1rem;
+    display: block;
+    padding-left:7vw ;
+    font-size: larger;
+    visibility: hidden;
+    animation:movedown 0.7s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
+   
+    
+}
+input[type="text"],input[type="password"] ,textarea {
+    padding: 1vw 4vw;
+    border-radius: 3vw;
+    border:0;
+    background-color : rgba(241, 228, 113, 0.67); 
+    width: 55vw;
+    font-size: large;
+    margin-left:10
+  
+  }
+input[type="submit"] {
+    font-size: x-large;
+    border:none;
+    padding: 0.5vw;
+    background-color : #BF95FF;; 
+    border-radius: 3vw;
+    cursor: pointer;
+   
+  
+  }
+.input{
+    padding-left:10vw ;
+
+}  
+.submit{
+    display: block;
+    align-items: center;
+    text-align: center;
+    padding: 2vw 0 2vw 0;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.sign{
+    display: block;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5vw;
+    
+    
+}
+a:hover{
+    transition: back pulse;
+}
+input,.sign{
+    visibility: hidden;
+    animation:movedown 0.9s linear 1;
+    animation-delay: 0ms;
+    animation-fill-mode: forwards;
 }
