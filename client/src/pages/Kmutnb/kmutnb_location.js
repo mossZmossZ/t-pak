@@ -35,8 +35,10 @@ const Kmutnblocation=()=>{
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>
                 <div className="column" key={index} id="formcontainer">
+                <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
                     <div className="headcontent">
                         <h2>{kmutnblocation.name}</h2>
+                        <h2>{kmutnblocation.Image}</h2>
                     </div>
                     <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                     <p className="text-muted">ราคา : {kmutnblocation.price} , เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>

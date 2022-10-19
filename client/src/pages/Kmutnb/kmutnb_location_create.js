@@ -5,36 +5,67 @@ import Swal from "sweetalert2";
 import { getUser,authenticate,getToken} from "../../services/authorize"
 
 
-const KmutnbLocationCreate=(props)=>{
+const KmutnbLocationCreate=()=>{
+    /*const [name,setName] = useState("");
+    const [detail,setDetail] = useState("");
+    const [telephone,setTelephone] = useState("");
+    const [price,setPrice] = useState("");
+    const [fileName,setFileName] = useState("");
+*/
     const [state,setState] = useState({
-        name:"",
-        detail:"",
-        telephone:"",
-        price:"",
+    name:"",
+    detail:"",
+    telephone:"",
+    price:"",
+    
     })
-    const [image,setImage] = useState("");
-    console.log(image,12)
-
+    const [fileName,setFileName] = useState("");
     const {name,detail,telephone,price} = state
-    //กำหนดค่าให้กับ state
+
+    const onChangeFile = e =>{
+        setFileName(e.target.files[0]);
+    };
+
     const inputValue =name=>event=>{
         //console.log(name,"=",event.target.value)
         setState({...state,[name]:event.target.value});
     }
+    const changeOnClick = (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData();
+
+        formData.append("name",name);
+        formData.append("detail",detail);
+        formData.append("telephone",telephone);
+        formData.append("price",price);
+        formData.append("Image",fileName);
+
+        
+        
+        axios
+            .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,formData)
+            .then((res)=> alert(res.data))
+            .catch((err)=>{
+                console.log(err)
+            });
+    };
 
 
-    const submitForm=(e)=>{
+    /*const submitForm=(e)=>{
         e.preventDefault();
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
 
-
-
+        const formData = new FormData();
+        formData.append('photo',file);
         axios
         .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,
+        {formData},
         {name,detail,telephone,price},
         {
             headers:{
+                'content-type':'multipart/form-data',
                 authorization:`Bearer ${getToken()}`
             }
         })
@@ -47,12 +78,12 @@ const KmutnbLocationCreate=(props)=>{
             Swal.fire({icon: 'error',title: 'Oops...',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)
         })
-    }
+    }*/
     return(
         <div className="form_container">
             <div>
                 <h1>ประกาศขายหอพัก ใกล้ พระนครเหนือ</h1>
-                <form onSubmit={submitForm} encType="multipart/form-data">
+                <form onSubmit={changeOnClick} encType="multipart/form-data">
                     <div className="form-group">
                         <label>ชื่อหอพัก</label>
                         <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
@@ -73,9 +104,9 @@ const KmutnbLocationCreate=(props)=>{
                         <label htmlFor="file">Choose Image</label>
                         <input 
                             type="file" 
-                            filename="Image" 
+                            filename="Image"
                             classname="form-control-file" 
-                            onChangeFile={(e)=>setImage(e.target.files[0])}
+                            onChange={onChangeFile}
                         />
                     </div>
                     <input type="submit" value="บันทึก" className="btn btn-primary"></input>

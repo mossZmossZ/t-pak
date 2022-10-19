@@ -1,6 +1,7 @@
 const slugify = require("slugify")
 const kmutnblocations = require("../models/kmutnblocation")
 const {v4:uuidv4} = require('uuid');
+/*
 const multer = require('multer')
 
 const multerConfig = multer.diskStorage({
@@ -35,6 +36,7 @@ exports.uploadImage = upload.single('photo');
         success:"Success",
     });
 }*/
+/*
 exports.create=(req,res)=>{
     const {name,detail,telephone,price}=req.body
     let slug = slugify(name)
@@ -61,13 +63,13 @@ exports.create=(req,res)=>{
             break;
     }
     //บันทึกข้อมูล
-    kmutnblocations.create({name,detail,telephone,price,slug,Image},(err,kmutnblocation)=>{
+    kmutnblocations.create({name,detail,telephone,price,slug},(err,kmutnblocation)=>{
         if(err){
             res.status(400).json({error:"มีชื่อหอพักซ้ำกัน"})
         }
         res.json(kmutnblocation)
     })
-}
+}*/
 //ดึงข้อมูลหอพักพระนครเหนือออกมาทั้งหมด
 exports.getAllkmutnblocation=(req,res)=>{
     kmutnblocations.find({}).exec((err,kmutnblocations)=>{

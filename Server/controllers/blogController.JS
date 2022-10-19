@@ -7,9 +7,9 @@ const {v4:uuidv4} = require('uuid');
 exports.create=(req,res)=>{
     const {title,content,author}=req.body
     let slug = slugify(title)
-
     if(!slug)slug = uuidv4();
-
+    
+    
 
     //validate / ตรวจสอบความถูกต้องของช้อมูล
     switch(true){
