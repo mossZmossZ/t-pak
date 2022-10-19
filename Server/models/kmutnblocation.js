@@ -1,6 +1,11 @@
 const mongoose = require("mongoose")
 
 const kmutnblocationSchema = mongoose.Schema({
+    ID:{
+        type:String,
+        require:true,
+        unique:false
+    },
     name:{
         type:String,
         required:true

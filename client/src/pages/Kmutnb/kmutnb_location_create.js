@@ -21,7 +21,7 @@ const KmutnbLocationCreate=()=>{
     })
     const [fileName,setFileName] = useState("");
     const {name,detail,telephone,price} = state
-
+    const ID = String(getUser())
     const onChangeFile = e =>{
         setFileName(e.target.files[0]);
     };
@@ -34,7 +34,7 @@ const KmutnbLocationCreate=()=>{
         e.preventDefault();
         
         const formData = new FormData();
-
+        formData.append("ID",ID);
         formData.append("name",name);
         formData.append("detail",detail);
         formData.append("telephone",telephone);

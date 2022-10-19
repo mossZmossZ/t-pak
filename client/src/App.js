@@ -19,7 +19,9 @@ import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 import EditComponent from "./pages/Formcomponents/EditComponent";
 import LoginComponent from "./pages/Formcomponents/LoginComponent";
 import KmutnbLocationCreate from "./pages/Kmutnb/kmutnb_location_create";
-import AdminRoute from "./AdminRoute";
+import UserRoute from "./UserRoute";
+import Adminlogin from "./pages/Admin/Adminlogin";
+
 
 function App() {
   return(
@@ -32,7 +34,7 @@ function App() {
           <Route path='/login'exact component={LoginComponent}/>
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
-          <AdminRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
+          <UserRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
           <Route path='/kmutnbroomate'exact component={KmutnbRoomate}/>
           <Route path='/kmitllocation'exact component={KmitlLocation}/>
           <Route path='/kmitlRoomate'exact component={KmitlRoomate}/>
@@ -40,11 +42,12 @@ function App() {
           <Route path='/kmuttRoomate'exact component={KmuttRoomate}/>
           <Route path='/tuLocation'exact component={tuLocation}/>
           <Route path='/tuRoomate'exact component={tuRoomate}/>
-          <AdminRoute path='/Formcreate'exact component={Formcomponents}/>
+          <UserRoute path='/Formcreate'exact component={Formcomponents}/>
           <Route path='/Formshow'exact component={Formshow}/>
           <Route path='/blog/:slug'exact component={SingleComponent}/>
-          <AdminRoute path='/Formshowadmin'exact component={Formshowadmin}/>
-          <AdminRoute path='/blog/edit/:slug'exact component={EditComponent}/>
+          <UserRoute path='/Formshowadmin'exact component={Formshowadmin}/>
+          <UserRoute path='/blog/edit/:slug'exact component={EditComponent}/>
+          <Route path='/adminlogin'exact component={Adminlogin}/>
         </Switch>
       </div>
     </> 

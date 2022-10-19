@@ -12,7 +12,7 @@ const {v4:uuidv4} = require('uuid');
 //router.get('/kmutnblocations',getAllkmutnblocation)
 const storage = multer.diskStorage({
     destination: (req,file,callback) =>{
-        callback(null,"public/");
+        callback(null,"../client/public/uploads");
     },
     filename: (req,file,callback)=>{
         callback(null,file.originalname);
@@ -46,6 +46,7 @@ router.post("/kmutnblocation/create",uploads.single("Image") ,(req,res) => {
     let slug = slugify(req.body.name)
     if(!slug)slug = uuidv4();
     const newkmutnblocations = new kmutnblocations({
+        ID:req.body.ID,
         name:req.body.name,
         detail:req.body.detail,
         telephone:req.body.telephone,
