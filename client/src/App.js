@@ -4,14 +4,14 @@ import Contact from "./pages/Contact"
 import Home from './pages/Home';
 import {Route, Switch} from "react-router-dom"
 import Signup from './pages/Signup.js';
-import KmutnbLocation from './pages/kmutnb_location.js';
-import KmutnbRoomate from './pages/kmutnb_roomate.js';
-import KmitlLocation from './pages/kmitl_location.js';
-import KmitlRoomate from './pages/kmitl_roomate.js';
-import KmuttLocation from './pages/kmutt_location.js';
-import KmuttRoomate from './pages/kmutt_roomate.js';
-import tuLocation from './pages/tu_location.js';
-import tuRoomate from './pages/tu_roomate.js';
+import KmutnbLocation from './pages/Kmutnb/kmutnb_location';
+import KmutnbRoomate from './pages/Kmutnb/kmutnb_roomate.js';
+import KmitlLocation from './pages/Kmitl/kmitl_location.js';
+import KmitlRoomate from './pages/Kmitl/kmitl_location.js';
+import KmuttLocation from './pages/Kmutt/kmutt_location.js';
+import KmuttRoomate from './pages/Kmutt/kmutt_roomate.js';
+import tuLocation from './pages/TU/tu_location.js';
+import tuRoomate from './pages/TU/tu_roomate.js';
 import Formcomponents from './pages/Formcomponents/Formcomponents.js';
 import Formshow from './pages/Formcomponents/Formshow.js';
 import SingleComponent from "./pages/Formcomponents/SingleComponents";
