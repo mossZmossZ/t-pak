@@ -6,6 +6,7 @@ body{
 }
 .header{
     position: absolute;
+    align-items: center;
     color:  #FFFFFF;;
     font-weight: 400;
     margin: -5vw 28vw 0vw  ;
@@ -37,6 +38,7 @@ body{
     
 
 }
+
 
 .facebook{
     text-align: center;
