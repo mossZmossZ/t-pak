@@ -67,7 +67,7 @@ body{
     animation:movedown 0.7s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-   
+    height: 24vw;
 
 }
 .btn-container1{
@@ -177,6 +177,7 @@ body{
     .main{
         padding: 1rem 0 0rem ;
         margin: 0 0rem 0;
+        height: auto;
     }
     .main a,.main img{
         
