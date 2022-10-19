@@ -1,9 +1,8 @@
 import { useState,useEffect } from "react"
 import axios from "axios"
 import Swal from "sweetalert2"
-//import { authenticate } from "../../services/authorize"
 import {withRouter} from "react-router-dom"
-//import { getUser } from "../../services/authorize"
+import { getUser,authenticate  } from "../services/authorize"
 
 
 const RegisterComponent=(props)=>{
@@ -28,17 +27,17 @@ const RegisterComponent=(props)=>{
        axios.post(`${process.env.REACT_APP_API}/register`,{ID,username,password,confirmpassword})
        .then(response=>{
         //login สำเร็จ
-            //authenticate(response,()=>window.location.reload(false),props.history.push("/formcreate"))
-        console.log(response.data)
+            authenticate(response,()=>window.location.reload(false),props.history.push("/"))
+        //console.log(response.data)
         setState({...state,ID:"",username:"",password:"",confirmpassword:""})
        }).catch(err=>{
         console.log(err.response.data.error)
         Swal.fire({icon: 'error',title: 'Failed',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
        })
     }
-    /*useEffect(()=>{
+    useEffect(()=>{
         getUser() && props.history.push("/")
-    },[])*/
+    },[])
     return(
         <div className="form_container-signup">
         <div>

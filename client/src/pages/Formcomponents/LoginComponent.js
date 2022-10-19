@@ -1,9 +1,8 @@
 import { useState,useEffect } from "react"
 import axios from "axios"
 import Swal from "sweetalert2"
-import { authenticate } from "../../services/authorize"
 import {withRouter} from "react-router-dom"
-import { getUser } from "../../services/authorize"
+import { getUser,authenticate} from "../../services/authorize"
 
 
 const LoginComponent=(props)=>{
@@ -26,7 +25,7 @@ const LoginComponent=(props)=>{
        axios.post(`${process.env.REACT_APP_API}/login`,{ID,password})
        .then(response=>{
         //login สำเร็จ
-            authenticate(response,()=>window.location.reload(false),props.history.push("/formcreate"))
+            authenticate(response,()=>window.location.reload(false),props.history.push("/"))
         //console.log(response)
        }).catch(err=>{
         //console.log(err.response.data.error)
