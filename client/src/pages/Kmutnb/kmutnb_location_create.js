@@ -10,18 +10,26 @@ const KmutnbLocationCreate=(props)=>{
         name:"",
         detail:"",
         telephone:"",
-        price:""
+        price:"",
     })
+    const [image,setImage] = useState("");
+    console.log(image,12)
+
     const {name,detail,telephone,price} = state
     //กำหนดค่าให้กับ state
     const inputValue =name=>event=>{
         //console.log(name,"=",event.target.value)
         setState({...state,[name]:event.target.value});
     }
+
+
     const submitForm=(e)=>{
         e.preventDefault();
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
+
+
+
         axios
         .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,
         {name,detail,telephone,price},
@@ -33,7 +41,7 @@ const KmutnbLocationCreate=(props)=>{
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','บันทึกสำเร็จ!','success')
-                setState({...state,title:"",author:""})
+                setState({...state,name:"",detail:"",telephone:"",price:""})
                 props.history.push("/kmutnblocation")
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
@@ -44,7 +52,7 @@ const KmutnbLocationCreate=(props)=>{
         <div className="form_container">
             <div>
                 <h1>ประกาศขายหอพัก ใกล้ พระนครเหนือ</h1>
-                <form onSubmit={submitForm}>
+                <form onSubmit={submitForm} encType="multipart/form-data">
                     <div className="form-group">
                         <label>ชื่อหอพัก</label>
                         <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
@@ -60,6 +68,15 @@ const KmutnbLocationCreate=(props)=>{
                     <div className="form-group">
                         <label>ติดต่อ</label>
                         <input type="text" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="file">Choose Image</label>
+                        <input 
+                            type="file" 
+                            filename="Image" 
+                            classname="form-control-file" 
+                            onChangeFile={(e)=>setImage(e.target.files[0])}
+                        />
                     </div>
                     <input type="submit" value="บันทึก" className="btn btn-primary"></input>
                 </form>

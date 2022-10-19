@@ -20,6 +20,16 @@ mongoose.connect(process.env.DATABASE,{
 app.use(express.json())
 app.use(cors())
 app.use(morgan("dev"))
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*');
+    res.setHeader(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requestes-With, Content-Type, Accept, Authorization'
+    );
+    res.setHeader('Access-Control-Allow-Methods','Get, POST , PATCH, DELETE');
+
+    next();
+})
 
 //route
 app.use('/api',blogRoute)

@@ -21,6 +21,10 @@ const kmutnblocationSchema = mongoose.Schema({
         type:String,
         lowercase:true,
         unique:true
+    },
+    Image:{
+        type: String,
+        required:true
     }
 },{timestamps:true})
 
