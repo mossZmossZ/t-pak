@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react"
 import axios from "axios"
 import Swal from "sweetalert2"
-import {withRouter} from "react-router-dom"
+import {Link,withRouter} from "react-router-dom"
 import { getUser,authenticate} from "../../services/authorize"
 
 
@@ -38,7 +38,7 @@ const LoginComponent=(props)=>{
     return(
         <div className="form_container">
         <div>
-            <h1>เข้าสู่ระบบ | Admin</h1>
+            <h1>เข้าสู่ระบบ</h1>
     
             <form onSubmit={submitForm}>
                 <div className="form-group">
@@ -55,6 +55,9 @@ const LoginComponent=(props)=>{
                 </div>
                 <input type="submit" value="เข้าสู่ระบบ" className="btn btn-primary"></input>
             </form>
+            <div>
+                <Link to ="/signup" className="login">ยังไม่มีผู้ใช้งาน สมัครเลย!</Link>
+            </div>
         </div>
     </div>
 );

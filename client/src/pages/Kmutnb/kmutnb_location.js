@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
+import { getUser } from "../../services/authorize";
 import './kmutnb_location.css'
 const Kmutnblocation=()=>{
     const [kmutnblocations,setKmutnblocations] = useState([])
@@ -18,6 +19,16 @@ const Kmutnblocation=()=>{
     return(
         <div>
             <h1>หอพักใกล้พระนครเหนือ</h1>
+            {!getUser() &&(
+                            <li>
+                                <Link to ="/login" className="login">สนใจลงประกาศได้ที่นี่!</Link>
+                            </li>) 
+                    }
+            {getUser() &&(
+                            <li>
+                                <Link to ="/kmutnblocation/create" className="login">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
+                            </li>) 
+                    }
             <hr></hr>
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>

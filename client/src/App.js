@@ -18,6 +18,7 @@ import SingleComponent from "./pages/Formcomponents/SingleComponents";
 import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 import EditComponent from "./pages/Formcomponents/EditComponent";
 import LoginComponent from "./pages/Formcomponents/LoginComponent";
+import KmutnbLocationCreate from "./pages/Kmutnb/kmutnb_location_create";
 import AdminRoute from "./AdminRoute";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path='/login'exact component={LoginComponent}/>
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
+          <AdminRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
           <Route path='/kmutnbroomate'exact component={KmutnbRoomate}/>
           <Route path='/kmitllocation'exact component={KmitlLocation}/>
           <Route path='/kmitlRoomate'exact component={KmitlRoomate}/>
