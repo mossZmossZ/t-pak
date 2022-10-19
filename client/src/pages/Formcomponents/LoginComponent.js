@@ -56,7 +56,7 @@ const LoginComponent=(props)=>{
                         </div>
                     </div>
                     <div className="submit">
-                        <input type="submit" value="          login         " className="btn-login"></input>
+                        <input type="submit" value="          Submit         " className="btn-login"></input>
                     </div>
                 </form>
                 <div className="sign">

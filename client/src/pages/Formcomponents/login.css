@@ -91,9 +91,6 @@ input[type="submit"] {
     
     
 }
-a:hover{
-    transition: back pulse;
-}
 input,.sign{
     visibility: hidden;
     animation:movedown 0.9s linear 1;
