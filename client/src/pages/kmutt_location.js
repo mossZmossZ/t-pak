@@ -1,3 +1,3 @@
-export default function Kmuttlocation(){
-    return <h1>Kmutt location</h1>
+export default function KmutttLocation(){
+    return <h1>Kmuttt location</h1>
 }

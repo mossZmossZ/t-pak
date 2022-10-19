@@ -3,7 +3,7 @@ import Navbar from './components/navbar.js';
 import Contact from "./pages/Contact"
 import Home from './pages/Home';
 import {Route, Switch} from "react-router-dom"
-import Signup from './pages/Signup.jsx';
+import Signup from './pages/Signup.js';
 import KmutnbLocation from './pages/kmutnb_location.js';
 import KmutnbRoomate from './pages/kmutnb_roomate.js';
 import KmitlLocation from './pages/kmitl_location.js';

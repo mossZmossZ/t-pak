@@ -1,16 +1,27 @@
 const jwt = require('jsonwebtoken')
 const expressJWT = require('express-jwt');
+const user = require("../models/User")
 
 exports.login=(req,res)=>{
-    //ข้อมูล usernaem , password
-    const {username,password} = req.body
-    if(password === process.env.ADMIN_PASSWORD){
-        //login เข้าสู่ระบบ
-        const token = jwt.sign({username},process.env.JWT_SECRET,{expiresIn:'1d'})
-        return res.json({token,username})
-    }else{
-            return res.status(400).json(password)
-        }
+    //ข้อมูล username , password
+    const {ID,password} = req.body;
+    const token = jwt.sign({ID},process.env.JWT_SECRET,{expiresIn:'1d'});
+
+    user.findOne({ID})
+    .then(userid => {
+        if (!userid) {return res.status(404).json({error:"Not Found ID"}).end();}
+
+        else if (userid){
+            if (!password){return res.status(404).json({error:"pls enter password"}).end();}
+            else if(password != userid["password"]){
+                return res.status(404).json({error:"Invalid Password"})
+            }
+            else{
+                return res.status(200).json({token,ID})
+            }   
+        }      
+    })
+    .catch(err => (next(err),res.json({error:"Error"})))
 }
 
 

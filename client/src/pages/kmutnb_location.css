@@ -1,0 +1,17 @@
+
+#formcontainer{
+    background-color:#DDDFFF;
+    padding: 0.5vw 0vw;
+    margin-bottom: 1vw;
+}
+#formcontainer a{
+    text-decoration: None;
+    color: black;
+}
+.headcontent{
+    border-radius: 3vw;
+    margin: 1vw 10vw;
+    padding: 1vw 0vw;
+    background-color: rgba(241, 228, 113, 0.67);
+    
+}

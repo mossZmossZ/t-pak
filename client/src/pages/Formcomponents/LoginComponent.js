@@ -8,10 +8,10 @@ import { getUser } from "../../services/authorize"
 
 const LoginComponent=(props)=>{
     const [state,setState] = useState({
-        username:"",
+        ID:"",
         password:""
     })
-    const {username,password} = state
+    const {ID,password} = state
 
     //กำหนดค่าให้กับ state
     const inputValue =name=>event=>{
@@ -22,8 +22,8 @@ const LoginComponent=(props)=>{
         e.preventDefault();
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
-        //alert(JSON.stringify({username,password}))
-       axios.post(`${process.env.REACT_APP_API}/login`,{username,password})
+        alert(JSON.stringify({ID,password}))
+       axios.post(`${process.env.REACT_APP_API}/login`,{ID,password})
        .then(response=>{
         //login สำเร็จ
             authenticate(response,()=>window.location.reload(false),props.history.push("/formcreate"))
@@ -45,8 +45,8 @@ const LoginComponent=(props)=>{
                 <div className="form-group">
                     <label>Username </label>
                     <input type="text" classname="form-control" 
-                        value={username} 
-                        onChange={inputValue("username")}/>
+                        value={ID} 
+                        onChange={inputValue("ID")}/>
                 </div>
                 <div className="form-group">
                     <label>Password </label>

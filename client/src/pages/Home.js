@@ -24,12 +24,7 @@ const Selects = () => {
           return { ...styles, color: data.color };
         },
     };
-<<<<<<< Updated upstream
-    return <Select className="dropdown" defaultValue={{label:'สถานที่',value:'Location'}} options={options} onChange={(Selects) => setState(Selects.value)} styles={colorStyles}/>
-=======
-    
     return<Select className="dropdown" isSearchable={false} defaultValue={{label:'สถานที่',value:'Location'}} options={options} onChange={(Selects) => setState(Selects.value)} styles={colorStyles}/>
->>>>>>> Stashed changes
     };
     return (
          <div className="Home_container">
