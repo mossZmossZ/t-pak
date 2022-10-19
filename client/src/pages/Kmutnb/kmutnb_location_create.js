@@ -34,7 +34,7 @@ const KmutnbLocationCreate=(props)=>{
             Swal.fire(
                 'แจ้งเตือน','บันทึกสำเร็จ!','success')
                 setState({...state,title:"",author:""})
-                authenticate(response,()=>window.location.reload(false),props.history.push("/kmutnblocation"))
+                props.history.push("/kmutnblocation")
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text: err.response.data.error,footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)

@@ -34,7 +34,7 @@ const Kmutnblocation=()=>{
             <hr/>
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>
-                <div className="col pt-3 pb-2" key={index} id="formcontainer">
+                <div className="column" key={index} id="formcontainer">
                     <div className="headcontent">
                         <h2>{kmutnblocation.name}</h2>
                     </div>
