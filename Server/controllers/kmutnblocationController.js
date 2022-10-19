@@ -1,6 +1,7 @@
 const slugify = require("slugify")
 const kmutnblocations = require("../models/kmutnblocation")
 const {v4:uuidv4} = require('uuid');
+const { json } = require("express");
 /*
 const multer = require('multer')
 
@@ -75,4 +76,12 @@ exports.getAllkmutnblocation=(req,res)=>{
     kmutnblocations.find({}).exec((err,kmutnblocations)=>{
         res.json(kmutnblocations)
     })
+}
+exports.getUserkmutnblocation=(req,res)=>{
+    const {userID}=req.body
+    console.log(ID)
+    kmutnblocations.findOne({ "ID":userID}).exec((err,kmutnblocations)=>{
+        res.json(kmutnblocations)
+    })
+    console.log(err)
 }

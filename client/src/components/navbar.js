@@ -21,7 +21,7 @@ const Navbar=({history})=>{
         logout(()=>history.push('/'));
         //closeMobileMenu();
     }
-    const userid = String(getUser())
+    const userid = String(getUser()).toUpperCase()
 
     return(
         <div className = 'navcontainer'>
@@ -53,7 +53,7 @@ const Navbar=({history})=>{
                         <div className="login-tab">
                             <div className="userprofile">
                                 <FaUserAlt id="user-icon"/>
-                                <Link to ="/" className="User" onClick={closeMobileMenu}> : {userid}</Link>
+                                <Link to ="/profile" className="User" onClick={closeMobileMenu}> : {userid}</Link>
                             </div>
                             <div className="userprofile">
                                 <IoLogOut />

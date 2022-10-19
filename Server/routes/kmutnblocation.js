@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getAllkmutnblocation} = require('../controllers/kmutnblocationController')
+const {getAllkmutnblocation,getUserkmutnblocation} = require('../controllers/kmutnblocationController')
 const kmutnblocations = require("../models/kmutnblocation")
 const multer = require("multer")
 const slugify = require("slugify")
@@ -66,7 +66,7 @@ router.post("/kmutnblocation/create",uploads.single("Image") ,(req,res) => {
 
 //การเรียกใช้งาน
 router.get('/kmutnblocations',getAllkmutnblocation)
-
+router.post('/kmutnblocations/user',getUserkmutnblocation)
 
 
 module.exports = router
