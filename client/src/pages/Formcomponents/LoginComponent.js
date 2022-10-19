@@ -3,6 +3,7 @@ import axios from "axios"
 import Swal from "sweetalert2"
 import {Link,withRouter} from "react-router-dom"
 import { getUser,authenticate} from "../../services/authorize"
+import "./login.css"
 
 
 const LoginComponent=(props)=>{
@@ -37,7 +38,6 @@ const LoginComponent=(props)=>{
     },[])
     return(
         <div className="form_container">
-        <div>
             <h1>เข้าสู่ระบบ</h1>
     
             <form onSubmit={submitForm}>
@@ -58,7 +58,6 @@ const LoginComponent=(props)=>{
             <div>
                 <Link to ="/signup" className="login">ยังไม่มีผู้ใช้งาน สมัครเลย!</Link>
             </div>
-        </div>
     </div>
 );
 }
