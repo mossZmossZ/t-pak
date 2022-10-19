@@ -11,6 +11,7 @@ import {IoLogOut} from "react-icons/io5";
 
 
 
+
 const Navbar=({history})=>{
     const handleClick = () => setClick(!click);
     const [click, setClick] = useState(false);
@@ -20,8 +21,7 @@ const Navbar=({history})=>{
         logout(()=>history.push('/'));
         //closeMobileMenu();
     }
-    //const userid = sessionStorage.getItem("user").replaceAll('"', '').toUpperCase();
-
+    const userid = String(getUser())
 
     return(
         <div className = 'navcontainer'>
@@ -53,7 +53,7 @@ const Navbar=({history})=>{
                         <div className="login-tab">
                             <div className="userprofile">
                                 <FaUserAlt id="user-icon"/>
-                                <Link to ="/" className="User" onClick={closeMobileMenu}> getUser()</Link>
+                                <Link to ="/" className="User" onClick={closeMobileMenu}> : {userid}</Link>
                             </div>
                             <div className="userprofile">
                                 <IoLogOut />
