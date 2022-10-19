@@ -78,10 +78,23 @@ exports.getAllkmutnblocation=(req,res)=>{
     })
 }
 exports.getUserkmutnblocation=(req,res)=>{
-    const {userID}=req.body
-    console.log(ID)
-    kmutnblocations.findOne({ "ID":userID}).exec((err,kmutnblocations)=>{
-        res.json(kmutnblocations)
-    })
-    console.log(err)
+    const userid=req.body.userid
+    console.log({userid})
+    kmutnblocations.find({"ID":userid})
+    .then(
+        resp =>{
+            return res.json(resp)
+        }
+    )
+    
 }
+//ดึงบทความที่สนใจอ้างอิงตาม get
+//ดึงบทความที่สนใจอ้างอิงตาม slug
+exports.singleKmutnblocaion=(req,res)=>{
+    const {slug} = req.params
+    kmutnblocations.findOne({slug}).exec((err,kmutnblocation)=>{
+        res.json(kmutnblocation)
+    })
+}
+//{headers:{"ID":"userID"}}
+

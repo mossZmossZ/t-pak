@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getAllkmutnblocation,getUserkmutnblocation} = require('../controllers/kmutnblocationController')
+const {getAllkmutnblocation,getUserkmutnblocation,getsinglekmutnblocation,singleKmutnblocaion} = require('../controllers/kmutnblocationController')
 const kmutnblocations = require("../models/kmutnblocation")
 const multer = require("multer")
 const slugify = require("slugify")
@@ -63,10 +63,32 @@ router.post("/kmutnblocation/create",uploads.single("Image") ,(req,res) => {
         res.status(400).json(err)
     })
 })
+router.put("/kmutnblocation/update/:slug",(req,res) => {
+    const {slug} = req.params
+    kmutnblocations.findOne({slug})
+    .then(article => {
+        article.id = req.body.userid
+        article.name = req.body.name
+        article.detail = req.body.detail
+        article.price = req.body.price
+        article.Image = req.file.Image
+
+        article
+            .save()
+            .then(() => res.json("UPDATED!!"))
+            .catch(err => res.status(400),json(err))
+    })
+    .catch(err => res.status(400),json(err))
+})
 
 //การเรียกใช้งาน
 router.get('/kmutnblocations',getAllkmutnblocation)
 router.post('/kmutnblocations/user',getUserkmutnblocation)
+
+router.get('/kmutnblocation/update/:slug',singleKmutnblocaion) 
+
+
+//router.put('/kmutnblocation/update/:slug',update)
 
 
 module.exports = router

@@ -20,8 +20,8 @@ import EditComponent from "./pages/Formcomponents/EditComponent";
 import LoginComponent from "./pages/Formcomponents/LoginComponent";
 import KmutnbLocationCreate from "./pages/Kmutnb/kmutnb_location_create";
 import UserRoute from "./UserRoute";
-import Adminlogin from "./pages/Admin/Adminlogin";
-import profile from "./pages/profile";
+import Userprofile from "./pages/Formcomponents/Userprofile";
+
 
 function App() {
   return(
@@ -47,8 +47,7 @@ function App() {
           <Route path='/blog/:slug'exact component={SingleComponent}/>
           <UserRoute path='/Formshowadmin'exact component={Formshowadmin}/>
           <UserRoute path='/blog/edit/:slug'exact component={EditComponent}/>
-          <UserRoute path='/profile'exact component={profile}/>
-          <Route path='/adminlogin'exact component={Adminlogin}/>
+          <UserRoute path='/Userprofile'exact component={Userprofile}/>
         </Switch>
       </div>
     </> 
