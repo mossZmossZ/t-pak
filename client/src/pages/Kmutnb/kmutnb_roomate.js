@@ -1,3 +1,3 @@
-export default function KmutnbRoomate(){
-    return <h1>Kmutnb Roomate</h1>
+export default function kmutnbroomate(){
+    return <h1>Kmutnb roomate</h1>
 }

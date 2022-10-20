@@ -37,3 +37,12 @@ export const logout=(next)=>{
         }
         next()
 }
+
+/*export const getType=()=>{
+    if(window !=="undefined")
+        if(sessionStorage.getItem("type")){
+            return JSON.parse(sessionStorage.getItem("type"))
+        }else{
+            return false
+        }
+}*/
