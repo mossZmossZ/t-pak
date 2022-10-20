@@ -52,8 +52,21 @@ nav a{
     justify-content: space-between;
     font-size: 1.5vw;
     align-items: center;
-    
 
+}
+.login-tab1{
+    display:flex;
+    border:2px solid #AFB4ff;
+    border-radius: 3vw;
+    justify-content: space-between;
+    font-size: 1.5vw;
+    align-items: center;
+    gap:0 1vw;
+    padding: 0 1vw;
+
+}
+#signup{
+    font-size: 1vw;
 }
 .userprofile  {
     display: inline;
@@ -129,10 +142,6 @@ nav a:hover,a:focus {
         text-align: center;
         padding: 0;
         margin-bottom: 5vw;
-        
-        
-        
-       
 
     }
     nav li{
@@ -145,4 +154,46 @@ nav a:hover,a:focus {
     .nav-toggle{
         display: block;
     }
+    .login-tab{
+        display:block;
+        background-color:None;
+        border: none;
+        border-radius: 3vw;
+        justify-content: space-between;
+        font-size: 1.5vw;
+        align-items: center;
+    }
+    .userprofile{
+        display: block;
+        padding: 1vw 5vw ;
+        margin:1vw 25vw;
+        border-radius: 6rem;
+        font-size: 3vw; 
+        background-color: #AFB4ff;
+        color: white;
+
+    }
+    .logout{
+        font-size: 3vw;
+        color: white;
+    }
+    .login-tab1{
+        display:block;
+        background-color:None;
+        border: none;
+        border-radius: 3vw;
+        justify-content: space-between;
+        font-size: 1.5vw;
+        align-items: center;
+    }
+    .login-tab1 p{
+        font-size:0 ;
+    }
+    #signup{
+        font-size: 3vw;
+    }
+
+}
+@media all and (min-width : 1420px){
+
 }

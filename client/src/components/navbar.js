@@ -40,14 +40,16 @@ const Navbar=({history})=>{
                          <Link to ="/contact" className="contact" onClick={closeMobileMenu}>CONTACT</Link>
                     </li>   
                     {!getUser() &&(
+                        <div className="login-tab1">
                             <li>
+                                <FaUserAlt id="user-icon"/>
                                 <Link to ="/login" className="login" onClick={closeMobileMenu}>LOGIN</Link>
-                            </li>) 
-                    }
-                    {!getUser() &&(
-                            <li>
-                            <Link to ="/signup" className="signup" onClick={closeMobileMenu}>SIGNUP</Link>
                             </li>
+                            <p>|</p>
+                            <li>
+                                <Link to ="/signup" id="signup" onClick={closeMobileMenu}>SIGNUP</Link>
+                            </li>
+                        </div>
                     )}
                     {getUser() &&(
                         <div className="login-tab">
