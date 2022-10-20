@@ -51,7 +51,7 @@ label{
    
     
 }
-input[type="text"],input[type="password"] ,textarea {
+input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],input[type="tel"]{
     padding: 1vw 4vw;
     border-radius: 3vw;
     border:0;
@@ -75,6 +75,9 @@ input[type="submit"] {
     padding-left:10vw ;
 
 }  
+.input img{
+    width: 50vw;
+}
 .submit{
     display: block;
     align-items: center;

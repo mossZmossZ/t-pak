@@ -51,6 +51,7 @@ const KmutnbLocationCreate=()=>{
                 console.log(err)
             });
     };
+   
 
 
     /*const submitForm=(e)=>{
@@ -87,33 +88,49 @@ const KmutnbLocationCreate=()=>{
                 <form onSubmit={changeOnClick} encType="multipart/form-data">
                     <div className="form-group">
                         <label>ชื่อหอพัก</label>
-                        <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label>รายละเอียด </label>
-                        <input type="text" classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label>ราคา</label>
-                        <input type="number"  value={price} onChange={inputValue("price")}/>
+                        <div className="input">
+                            <input type="numberic" classname="form-control" value={price} onChange={inputValue("price")}/>
+                       </div>
                     </div>
                     <div className="form-group">
                         <label>เบอร์โทร ติดต่อ</label>
-                        <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
+                        <div className="input">
+                            <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="file">Choose Image</label>
-                        <input 
-                            type="file" 
-                            filename="Image"
-                            classname="form-control-file" 
-                            onChange={onChangeFile}
-                        />
+                        <div className="input">
+                            <input 
+                                type="file" 
+                                filename="Image"
+                                id="imgInp"
+                                classname="form-control-file" 
+                                onChange={onChangeFile}
+                            />
+                            <img id="blah" src="#" alt="your image" />
+                            
+                        </div>
                     </div>
-                    <input type="submit" value="บันทึก" className="btn btn-primary"></input>
+                    <div className="submit">
+                        <input type="submit" value="          Submit         " className="btn btn-primary"></input>
+                    </div>
                 </form>
             </div>
         </div>
     );
 }
+
 export default KmutnbLocationCreate;
