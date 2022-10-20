@@ -1,9 +1,7 @@
-import {useState} from "react";
-import"./Formcomponents.css";
+import React,{useState,useEffect} from "react";
 import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
-import { useEffect } from "react";
 import { getToken } from "../../services/authorize";
 
 const EditComponent=(props)=>{

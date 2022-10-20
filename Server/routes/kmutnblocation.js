@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getAllkmutnblocation,getUserkmutnblocation,getsinglekmutnblocation,singleKmutnblocaion} = require('../controllers/kmutnblocationController')
+const {remove,getAllkmutnblocation,getUserkmutnblocation,getsinglekmutnblocation,singleKmutnblocaion} = require('../controllers/kmutnblocationController')
 const kmutnblocations = require("../models/kmutnblocation")
 const multer = require("multer")
 const slugify = require("slugify")
@@ -71,14 +71,14 @@ router.put("/kmutnblocation/update/:slug",(req,res) => {
         article.name = req.body.name
         article.detail = req.body.detail
         article.price = req.body.price
-        article.Image = req.file.Image
+        //article.Image = req.file.Image
 
         article
             .save()
             .then(() => res.json("UPDATED!!"))
-            .catch(err => res.status(400),json(err))
+            .catch(err => res.status(400).json(err))
     })
-    .catch(err => res.status(400),json(err))
+    .catch(err => res.status(400).json(err))
 })
 
 //การเรียกใช้งาน
@@ -89,6 +89,6 @@ router.get('/kmutnblocation/update/:slug',singleKmutnblocaion)
 
 
 //router.put('/kmutnblocation/update/:slug',update)
-
+router.delete('/kmutnblocation/delete/:slug',remove)
 
 module.exports = router

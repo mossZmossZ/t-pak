@@ -97,4 +97,14 @@ exports.singleKmutnblocaion=(req,res)=>{
     })
 }
 //{headers:{"ID":"userID"}}
+//ลบข้อมูลจาก Server
+exports.remove=(req,res)=>{
+    const {slug} = req.params
+    kmutnblocations.findOneAndRemove({slug}).exec((err,blog)=>{
+        if(err) console.log(err)
+        res.json({
+            massage:"ลบบทความเรียบร้อย"
+        })
+    })
+}
 
