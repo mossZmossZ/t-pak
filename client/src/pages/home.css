@@ -5,21 +5,20 @@ body{
     margin: 0;
 
 }
+
 .slogan{
-    
-    padding-bottom: 6vw;
-    font-size: 1.5vw;
+    padding-bottom: 0.5vw;
+    font-size: 1.2rem;
     text-align: center;
     visibility: hidden;
     animation:movedown 0.5s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    
 }
 
 .main a{
     text-decoration: None;
-    font-size: 1vw;
+    font-size: 1rem;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.46);
     transition: 0.4s ease-out;
@@ -30,44 +29,41 @@ body{
 
 }
 .home-head{
-    justify-content:space-between;
+    margin: 0 auto;
+    position: relative;
     align-items: center;
-    display: flex;
-    position:absolute;
-    color:  #FFFFFF;;
-    font-weight: 400;
-    margin: -7vw 25vw 0vw  ;
-    padding: 2vw 7vw;
-    background-color: #AFB4ff;
-    height: 8vw;
-    width: 45vw;
-    border-radius: 3vw;
-    font-size: 2.5vw;
     text-align: center;
+    justify-content: space-around;
+    width: 30rem;
+    display:flex;
+    border-radius: 2rem;
+    background-color: #AFB4ff;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    z-index: 1;
     visibility: hidden;
     animation:movedown 0.7s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
+    z-index: 1;
+}
+.home-head p{
+    font-size: 1.5rem;
 }
 .dropdown{
-    
-    font-size: 2vw;
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
     
 }
 .main{
     background-color: #DDDFFF;
     display: inline-block;
-    border-radius: 3vw ;
-    padding: 3vw 3vw;
+    border-radius: 2rem ;
+    margin-top:-1rem ;
+    padding: 2rem;
     justify-content: space-between;
-    margin-bottom: 10vw;
     visibility: hidden;
     animation:movedown 0.7s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    height: 24vw;
 
 }
 .btn-container1{
@@ -92,9 +88,9 @@ body{
 .btn-kmutnb{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 3vw;
-    width: 25vw;
-    margin:1vw 5vw;
+    border-radius: 2rem;
+    width: 25rem;
+    margin:1rem 5rem;
     text-align: center;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -103,9 +99,9 @@ body{
 .btn-kmitl{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 3vw;
-    width: 25vw;
-    margin:1vw 5vw;
+    border-radius: 2rem;
+    width: 25rem;
+    margin:1rem 5rem;
     text-align: center;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -114,9 +110,9 @@ body{
 .btn-kmutt{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 3vw;
-    width: 25vw;
-    margin:1vw 5vw;
+    border-radius: 2rem;
+    width: 25rem;
+    margin:1rem 5rem;
     text-align: center;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -125,9 +121,9 @@ body{
 .btn-tu{
     display:inline-block;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 3vw;
-    width: 25vw;
-    margin:1vw 5vw;
+    border-radius: 2rem;
+    width: 25rem;
+    margin:1rem 5rem;
     text-align: center;
     justify-content: space-between;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -136,10 +132,10 @@ body{
 
 
 .main img{
-    width: 8vw;
-    padding-left: 2vw;
-    padding-bottom: 1vw;
-    padding-top: 1vw;
+    width: 8rem;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
     float: left;
    
 }
@@ -155,6 +151,11 @@ body{
     
 }
 @media all and (max-width : 720px){
+    .home-head{
+        padding:0;
+        justify-content: space-around;
+    
+    }
     .btn-container1{
         display: flex;
         flex-direction: column;
@@ -169,19 +170,18 @@ body{
         align-items: flex-start;
     }
     .btn-kmitl,.btn-kmutnb,.btn-kmutt,.btn-tu{
-        width: 35vw;
-        padding: 0.2rem 1rem;
-        margin: 1rem 1rem;
+        width: 40vw;
+        padding: 0.2vw 1vw;
+        margin: 1vw 1vw;
         
     }
     .main{
-        padding: 1rem 0 0rem ;
-        margin: 0 0rem 0;
+        padding: 1rem 0 1rem ;
+       
         height: auto;
     }
     .main a,.main img{
-        
         font-size: 3vw;
-        width: 10vw;
+        width: 12vw;
     }
 }

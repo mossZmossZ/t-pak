@@ -120,9 +120,9 @@ const KmutnbLocationCreate=()=>{
                                 classname="form-control-file" 
                                 onChange={onChangeFile}
                             />
-                            <img id="blah" src="#" alt="your image" />
                             
                         </div>
+                        
                     </div>
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn btn-primary"></input>
@@ -132,5 +132,6 @@ const KmutnbLocationCreate=()=>{
         </div>
     );
 }
+
 
 export default KmutnbLocationCreate;

@@ -34,7 +34,7 @@ const Selects = () => {
                 <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
             </div>
             <div className="home-head">
-                ค้นหาจาก<Selects/>
+                <p>ค้นหาจาก</p><Selects/>
             </div>
             <div className="main">
                 <div className="btn-container1">

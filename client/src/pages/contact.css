@@ -5,26 +5,27 @@ body{
     margin: 0;
 }
 .header{
-    position: absolute;
     color:  #FFFFFF;;
+    position: relative;
     font-weight: 400;
-    margin: -6vw 34vw 0vw  ;
-    padding: 1.5vw 6vw;
+    margin: 0 28vw  ;
+    padding: 1.5rem 6vw;
     background-color: #AFB4ff;
-    border-radius: 27vw;
-    font-size: 2.5vw;
+    border-radius: 4rem;
+    font-size: 2vw;
     text-align: center;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    z-index:1 ;
+    z-index:2;
     visibility: hidden;
     animation:movedown 0.5s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
 }
 .background{
-    font-size: 2.5vw;
-    padding: 3vw 1vw;
-    margin:6vw 6vw;
+    font-size: 2.5rem;
+    padding: 3rem 1rem;
+    margin:0 1vw;
+    margin-top: -3rem;
     display: block;
     background-color: #DDDFFF;
     border-radius: 3vw;
@@ -38,17 +39,19 @@ body{
 
 
 .facebook{
-    text-align: center;
+    justify-content: space-around;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: 2vw 23vw;
-    padding: 1.5vw 5vw ;
-    font-size: 2vw;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 30rem;
+    padding: 1.5rem 2rem ;
+    font-size: 2rem;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 27vw;
+    border-radius: 3rem;
     visibility: hidden;
-    animation:movedown 0.8s linear 1;
+    animation:movedown 1.2s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -57,21 +60,23 @@ body{
     display: block;
     padding-left: auto;
     padding-right:auto;
-    width: 6vw; 
+    width: 6rem; 
 }
 
 .line{
-    text-align: center;
+    justify-content: space-around;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: 2vw 23vw;
-    padding: 1.5vw 5vw ;
-    font-size: 2.3vw;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 30rem;
+    padding: 1.5rem 2rem ;
+    font-size: 2rem;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 27vw;
+    border-radius: 3rem;
     visibility: hidden;
-    animation:movedown 1s linear 1;
+    animation:movedown 1.2s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -81,18 +86,20 @@ body{
     display: block;
     padding-left: auto;
     padding-right:auto;
-    width: 6vw; 
+    width: 6rem; 
 }
 .call{
-    text-align: center;
+    justify-content: space-around;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin: 2vw 23vw;
-    padding: 1.5vw 2vw ;
-    font-size: 2.3vw;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    width: 30rem;
+    padding: 1.5rem 2rem ;
+    font-size: 2rem;
     background-color: rgba(241, 228, 113, 0.67);
-    border-radius: 27vw;
+    border-radius: 3rem;
     visibility: hidden;
     animation:movedown 1.2s linear 1;
     animation-delay: 0ms;
