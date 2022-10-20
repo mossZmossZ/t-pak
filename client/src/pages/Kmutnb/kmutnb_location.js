@@ -17,7 +17,7 @@ const Kmutnblocation=()=>{
         fetchData()
     },[])
     return(
-        <div>
+        <div className="post-container">
             <h1>หอพักใกล้พระนครเหนือ</h1>
             {!getUser() &&(
                 <div className="interest">
