@@ -22,7 +22,7 @@ import KmutnbLocationCreate from "./pages/Kmutnb/kmutnb_location_create";
 import UserRoute from "./UserRoute";
 import Userprofile from "./pages/Formcomponents/Userprofile";
 import EditKmutnblocation from "./pages/Formcomponents/EditKmutnblocation";
-
+import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
 function App() {
   return(
     <>
@@ -49,6 +49,7 @@ function App() {
           <UserRoute path='/blog/edit/:slug'exact component={EditComponent}/>
           <UserRoute path='/Userprofile'exact component={Userprofile}/>
           <UserRoute path='/kmutnblocation/update/:slug'exact component={EditKmutnblocation}/>
+          <Route path='/kmutnblocation/:slug'exact component={Singlekmutnblocation}/>
         </Switch>
       </div>
     </> 
