@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
-import { getUser,authenticate} from "../../services/authorize"
+import { getUser,authenticate,getToken} from "../../services/authorize"
+import Swal from "sweetalert2";
 
 
 const Userprofile=()=>{
@@ -18,6 +19,42 @@ const Userprofile=()=>{
     useEffect(()=>{
         fetchData()
     },[])
+
+    const confirmDelete=(slug)=>{
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#008000',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+                DeleteForm(slug) 
+            }
+          })
+    }
+
+    const DeleteForm=(slug)=>{
+        //ส่งrequest ไปที่ api เพื่อลบข้อมูล
+        ///kmutnblocation/delete/:slug
+        axios.delete(`${process.env.REACT_APP_API}/kmutnblocation/delete/${slug}`,
+        {
+            headers:{
+                authorization:`Bearer ${getToken()}`
+            }
+        })
+        .then(respone=>{
+            Swal.fire('Deleted!',respone.data.message,'success')
+            fetchData()
+        })
+        .catch(err=>alert(err))
+        
+
+        
+    }
+
     return(
         <div>
             <h1>MY POST</h1>
@@ -29,7 +66,9 @@ const Userprofile=()=>{
                 </div>) 
                     }
             <hr/>
+            
             {kmutnblocations.map((kmutnblocation,index)=>(
+            
             <div className="row" key={index} style={{border:'3px solid grey'}}>
                 <div className="column" key={index} >
                     <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
@@ -41,6 +80,8 @@ const Userprofile=()=>{
                         <Link to={`/kmutnblocation/update/${kmutnblocation.slug}`}>
                             <button>แก้ไขข้อมูล</button>
                         </Link>
+                        &nbsp;
+                        <button className="btn-outline-danger" onClick={()=>confirmDelete(kmutnblocation.slug)}>Delete Form</button>
                     </div>
                 </div>
             </div>
