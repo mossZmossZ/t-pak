@@ -42,5 +42,9 @@
     margin-left: 3vw;
 }
 .info h1{
-   text-align: start;
+    text-align: center;
+    margin:0.5vw 1vw 0;
+    padding: 0 10vw;
+    border-radius: 3vw;
+    background-color: #AFB4ff;
 }
