@@ -3,7 +3,7 @@ import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { getUser,authenticate,getToken} from "../../services/authorize"
-
+import Resizer from "react-image-file-resizer";
 
 const KmutnbLocationCreate=()=>{
     /*const [name,setName] = useState("");
@@ -23,9 +23,38 @@ const KmutnbLocationCreate=()=>{
     const {name,detail,telephone,price} = state
     
     const ID = String(getUser())
-    const onChangeFile = e =>{
+
+    const onChangeFile=e=>{
         setFileName(e.target.files[0]);
-    };
+    }
+       /* var fileInput = false;
+        if (e.target.files[0]) {
+            fileInput = true;
+    }
+    if (fileInput) {
+        try {
+          Resizer.imageFileResizer(
+            e.target.files[0],
+            390,
+            290,
+            "JPEG",
+            100,
+            0,
+            (uri) => {
+              console.log(uri);
+              setFileName(uri);
+            },
+            "base64",
+            200,
+            290
+          );
+        } catch (err) {
+          alert.log(err);
+        }
+      }
+    }
+        //setFileName(e.target.files[0]);
+    */
 
     const inputValue =name=>event=>{
         //console.log(name,"=",event.target.value)
@@ -95,7 +124,7 @@ const KmutnbLocationCreate=()=>{
                     <div className="form-group">
                         <label>รายละเอียด </label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        <textarea classname="form-control" value={detail} onChange={inputValue("detail")}/>
                         </div>
                     </div>
                     <div className="form-group">
@@ -116,14 +145,12 @@ const KmutnbLocationCreate=()=>{
                             <input 
                                 type="file" 
                                 filename="Image"
-                                id="imgInp"
                                 classname="form-control-file" 
                                 onChange={onChangeFile}
                             />
-                            
                         </div>
-                        
                     </div>
+                    <img src={fileName.newImage} alt="" />
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn btn-primary"></input>
                     </div>
