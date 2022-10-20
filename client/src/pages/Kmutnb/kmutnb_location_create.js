@@ -95,11 +95,11 @@ const KmutnbLocationCreate=()=>{
                     </div>
                     <div className="form-group">
                         <label>ราคา</label>
-                        <input type="numberic"  value={price} onChange={inputValue("price")}/>
+                        <input type="number"  value={price} onChange={inputValue("price")}/>
                     </div>
                     <div className="form-group">
-                        <label>ติดต่อ</label>
-                        <input type="text" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
+                        <label>เบอร์โทร ติดต่อ</label>
+                        <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="file">Choose Image</label>

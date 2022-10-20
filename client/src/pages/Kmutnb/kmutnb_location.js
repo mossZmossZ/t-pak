@@ -20,28 +20,30 @@ const Kmutnblocation=()=>{
         <div>
             <h1>หอพักใกล้พระนครเหนือ</h1>
             {!getUser() &&(
-                    <div>
-                            <li className="interest">
-                                <Link to ="/login" className="login">สนใจลงประกาศได้ที่นี่!</Link>
-                            </li>
-                            </div>) 
+                <div className="interest">
+                   <button>
+                        <Link to ="/login" className="login">ลงประกาศได้ที่นี่!</Link>
+                    </button>
+                </div>) 
                     }
             {getUser() &&(
-                            <li>
-                                <Link to ="/kmutnblocation/create" className="login">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
-                            </li>) 
+                <div className="interest">
+                    <button>
+                        <Link to ="/kmutnblocation/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
+                    </button>
+                </div>) 
                     }
             <hr/>
             {kmutnblocations.map((kmutnblocation,index)=>(
-            <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>
-                <div className="column" key={index} id="formcontainer">
+            <div className="row" key={index} style={{border:'3px solid grey'}}>
+                <div className="column" key={index} >
                     <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
-                    <div className="headcontent">
-                        <h2>{kmutnblocation.name}</h2>
-                        <h2>{kmutnblocation.Image}</h2>
+                    <div className="info">
+                        <h1>{kmutnblocation.name}</h1>
+                        <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
+                        <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
+                        <p className="text-muted">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
                     </div>
-                    <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
-                    <p className="text-muted">ราคา : {kmutnblocation.price} , เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
                 </div>
             </div>
                 ))}

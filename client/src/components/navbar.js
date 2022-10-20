@@ -57,7 +57,7 @@ const Navbar=({history})=>{
                             </div>
                             <div className="userprofile">
                                 <IoLogOut />
-                                <button className="logout" onClick={()=>{logoutbutton();}}>LOGOUT</button>
+                                <button className="logout" onClick={()=>{logoutbutton();}}> LOGOUT</button>
                             </div>
                         </div>
                     )}
