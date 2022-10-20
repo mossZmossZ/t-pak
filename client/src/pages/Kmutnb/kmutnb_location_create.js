@@ -160,5 +160,4 @@ const KmutnbLocationCreate=()=>{
     );
 }
 
-
 export default KmutnbLocationCreate;
