@@ -24,7 +24,7 @@ const Navbar=({history})=>{
     const userid = String(getUser()).toUpperCase()
 
     return(
-        <div className = 'navcontainer'>
+        <div className = 'navcontainer' >
             <div>
                 <img src={logo}></img>
                 <div className='nav-toggle'onClick={handleClick}>
@@ -41,11 +41,11 @@ const Navbar=({history})=>{
                     </li>   
                     {!getUser() &&(
                         <div className="login-tab1">
-                            <li>
+                            <li className="ho">
                                 <FaUserAlt id="user-icon"/>
-                                <Link to ="/login" className="login" onClick={closeMobileMenu}>LOGIN</Link>
+                                <Link to ="/login" id="login" onClick={closeMobileMenu}>LOGIN</Link>
                             </li>
-                            <p>|</p>
+                            
                             <li>
                                 <Link to ="/signup" id="signup" onClick={closeMobileMenu}>SIGNUP</Link>
                             </li>
