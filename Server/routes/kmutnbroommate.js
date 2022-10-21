@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 })
 const uploads = multer({storage:storage});
 
-router.post("/kmutnbroommate/create",uploads.single("Image") ,(req,res) => {
+router.post("/kmutnbroomate/create",uploads.single("Image") ,(req,res) => {
     let slug = slugify(req.body.name)
     if(!slug)slug = uuidv4();
     const newkmutnbroommate = new kmutnbroommate({
