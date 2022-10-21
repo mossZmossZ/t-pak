@@ -54,7 +54,6 @@ const KmutnbLocationCreate=(props)=>{
         }
       }
     }
-        //setFileName(e.target.files[0]);
     */
 
     const inputValue =name=>event=>{

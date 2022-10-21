@@ -44,13 +44,13 @@ const LoginComponent=(props)=>{
             <div className="form_container">
                 <form onSubmit={submitForm}>
                     <div className="form-group">
-                        <label>Username </label>
+                        <label>Username :</label>
                         <div className="input">
                             <input type="text" placeholder="Username" classname="form-control" value={ID} onChange={inputValue("ID")}/>
                         </div>
                     </div>
                     <div className="form-group">
-                        <label>Password </label>
+                        <label>Password :</label>
                         <div className="input">
                             <input type="password"  placeholder="Password" classname="form-control" value={password} onChange={inputValue("password")}/>
                         </div>
