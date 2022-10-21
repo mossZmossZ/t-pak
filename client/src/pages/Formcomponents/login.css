@@ -18,11 +18,16 @@
 h1{
     text-align: center;
 }
+.form-group{
+    display: block;
+    justify-content: center;
+}
     
 .form_container{
     text-align: start;
+    display:flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin:-1rem 15rem 0;
     padding: 2rem 1rem;
     background-color:#DDDFFF;
@@ -36,9 +41,8 @@ h1{
 
 }
 label{
-    margin:1rem;
-    display: block;
-    padding-left:7rem ;
+    display: flex;
+    justify-content: start;
     font-size: larger;
     visibility: hidden;
     animation:movedown 0.7s linear 1;
@@ -52,9 +56,8 @@ input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],inpu
     border-radius: 2rem;
     border:0;
     background-color : rgba(241, 228, 113, 0.67); 
-    width: 35rem;
+    width: 100%;
     font-size: large;
-    margin-left:10
   
   }
 input[type="submit"] {
@@ -67,10 +70,6 @@ input[type="submit"] {
    
   
   }
-.input{
-    padding-left:10rem ;
-
-}  
 .input img{
     width: 50vw;
 }

@@ -58,10 +58,11 @@ const LoginComponent=(props)=>{
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn-login"></input>
                     </div>
+                    <div className="sign">
+                        <Link to ="/signup" className="login">ยังไม่มีบัญชีผู้ใช้ สมัครเลย !</Link>
+                    </div>
                 </form>
-                <div className="sign">
-                    <Link to ="/signup" className="login">ยังไม่มีบัญชีผู้ใช้ สมัครเลย !</Link>
-                </div>
+                
             </div>
     </div>
 );
