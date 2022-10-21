@@ -44,10 +44,10 @@ const Kmutnblocation=()=>{
                         <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                         <p className="text-muted3">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
                     </div>
-                    <button> 
-                    <Link to={`/kmutnblocation/${kmutnblocation.slug}`}>
-                        select
-                    </Link>
+                    <button className="select"> 
+                        <Link to={`/kmutnblocation/${kmutnblocation.slug}`}>
+                            select
+                        </Link>
                     </button>
                 </div>
             </div>

@@ -56,7 +56,7 @@ const Userprofile=()=>{
     }
 
     return(
-        <div>
+        <div className="post-container">
             <h1>MY POST</h1>
             {getUser() &&(
                 <div className="interest">
@@ -77,11 +77,15 @@ const Userprofile=()=>{
                         <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
                         <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                         <p className="text-muted">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
-                        <Link to={`/kmutnblocation/update/${kmutnblocation.slug}`}>
-                            <button>แก้ไขข้อมูล</button>
-                        </Link>
-                        &nbsp;
-                        <button className="btn-outline-danger" onClick={()=>confirmDelete(kmutnblocation.slug)}>Delete Form</button>
+                        <div className="but">
+                            <Link to={`/kmutnblocation/update/${kmutnblocation.slug}`}>
+                                <button>แก้ไขข้อมูล</button>
+                            </Link>
+                             &nbsp;
+                             &nbsp;
+                             &nbsp;
+                            <button className="btn-outline-danger" onClick={()=>confirmDelete(kmutnblocation.slug)}>Delete Form</button>
+                        </div>
                     </div>
                 </div>
             </div>

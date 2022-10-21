@@ -37,21 +37,31 @@ const EditKmutnblocation=(props)=>{
         <form onSubmit={submitForm}>
                     <div className="form-group">
                         <label>ชื่อ</label>
-                        <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label>รายละเอียด</label>
-                        <input type="text" classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        <div className="input">
+                            <textarea classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label>ราคา</label>
-                        <input type="text" classname="form-control" value={price} onChange={inputValue("price")}/>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={price} onChange={inputValue("price")}/>
+                        </div>
                     </div>
                     <div className="form-group">
                         <label>เบอร์โทรติดต่อ</label>
-                        <input type="text" classname="form-control" value={telephone} onChange={inputValue("telephone")}/>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={telephone} onChange={inputValue("telephone")}/>
+                        </div>
                     </div>
-                    <input type="submit" value="แก้ไข" className="btn btn-primary"></input>
+                    <div className="submit">
+                        <input type="submit" value="          Submit         " className="btn btn-primary"></input>
+                    </div>
                 </form>
     )
     //กำหนดค่าให้กับ state
@@ -82,13 +92,11 @@ const EditKmutnblocation=(props)=>{
     }
     return(
         <div className="form_container">
-            <div>
-                <h1>แก้ไขบทความ</h1>
-                <h1>Image</h1>
-                <img src={`../../uploads/${state.Image}`} alt="..."/>
-                {showUpdateForm()}
-    
+            <h1>แก้ไขบทความ</h1>
+            <div className="edit">
+                <img className="imagedit" src={`../../uploads/${state.Image}`} alt="..."/>
             </div>
+            {showUpdateForm()}
         </div>
     );
 }

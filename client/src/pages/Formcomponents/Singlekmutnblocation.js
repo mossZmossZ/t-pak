@@ -21,7 +21,7 @@ const Singlekmutnblocation=(props)=>{
         //eslint-disable-next-line
     },[])
     return(
-        <div>
+        <div className="post-container">
             <div className="row" style={{border:'3px solid grey'}}>
                 <div className="column" >
                     <img src={`../uploads/${kmutnblocations.Image}`} alt="..."/>
