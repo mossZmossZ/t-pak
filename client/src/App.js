@@ -23,6 +23,7 @@ import UserRoute from "./UserRoute";
 import Userprofile from "./pages/Formcomponents/Userprofile";
 import EditKmutnblocation from "./pages/Formcomponents/EditKmutnblocation";
 import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
+import KmutnbRoommatecreate from "./pages/Kmutnb/kmutnb_roommate_create";
 function App() {
   return(
     <>
@@ -36,6 +37,7 @@ function App() {
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
           <UserRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
           <Route path='/kmutnbroomate'exact component={KmutnbRoomate}/>
+          <UserRoute path='/kmutnbroommate/create'exact component={KmutnbLocationCreate}/>
           <Route path='/kmitllocation'exact component={KmitlLocation}/>
           <Route path='/kmitlRoomate'exact component={KmitlRoomate}/>
           <Route path='/kmuttlocation'exact component={KmuttLocation}/>
