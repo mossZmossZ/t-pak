@@ -42,8 +42,10 @@ const Navbar=({history})=>{
                     {!getUser() &&(
                         <div className="login-tab1">
                             <div className="userprofile">
-                                <FaUserAlt id="user-icon"/>
-                                <Link to ="/login" id="login" onClick={closeMobileMenu}>LOGIN</Link>
+                                <Link to ="/login" id="login" onClick={closeMobileMenu}>
+                                    <FaUserAlt id="user-icon"/>
+                                    &nbsp;LOGIN
+                                </Link>
                             </div>
                             
                             <div className="userprofile">
@@ -54,12 +56,16 @@ const Navbar=({history})=>{
                     {getUser() &&(
                         <div className="login-tab1">
                             <div className="userprofile">
-                                <FaUserAlt id="user-icon"/>
-                                <Link to ="/Userprofile" className="User" onClick={closeMobileMenu}> : {userid}</Link>
+                                <Link to ="/Userprofile" className="User" onClick={closeMobileMenu}>
+                                    <FaUserAlt id="user-icon"/>
+                                    &nbsp; : {userid}
+                                </Link>
                             </div>
                             <div className="userprofile">
-                                <IoLogOut />
-                                <button className="logout" onClick={()=>{logoutbutton();}}> LOGOUT</button>
+                                <button className="logout" onClick={()=>{logoutbutton();}}>
+                                    <IoLogOut /> 
+                                    &nbsp;LOGOUT
+                                </button>
                             </div>
                         </div>
                     )}

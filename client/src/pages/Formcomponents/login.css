@@ -29,15 +29,13 @@ h1{
     align-items: center;
     justify-content: center;
     margin:-1rem 15rem 0;
-    padding: 2rem 1rem;
+    padding: 2rem;
     background-color:#DDDFFF;
     border-radius: 2rem;
     visibility: hidden;
     animation:movedown 0.5s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-    
-    
 
 }
 label{
