@@ -20,6 +20,7 @@ h1{
 }
     
 .form_container{
+    width: 60rem;
     text-align: start;
     align-items: center;
     justify-content: space-around;
@@ -79,7 +80,7 @@ input[type="submit"] {
     display: block;
     align-items: center;
     text-align: center;
-    padding: 2rem 0 2rem 0;
+    padding:1rem 0;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
