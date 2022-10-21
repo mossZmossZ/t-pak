@@ -62,6 +62,7 @@ input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],inpu
     margin-bottom: 0.5rem;
   }
 input[type="submit"] {
+    color: white;
     font-size: x-large;
     border:none;
     padding: 0.5rem;
