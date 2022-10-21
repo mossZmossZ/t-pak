@@ -22,7 +22,7 @@ const LoginComponent=(props)=>{
         e.preventDefault();
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
-        alert(JSON.stringify({ID,password}))
+        //alert(JSON.stringify({ID,password}))
        axios.post(`${process.env.REACT_APP_API}/login`,{ID,password})
        .then(response=>{
         //login สำเร็จ
