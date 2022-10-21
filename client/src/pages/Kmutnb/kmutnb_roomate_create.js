@@ -80,7 +80,7 @@ const KmutnbRoomatecreate=(props)=>{
         
         
         axios
-            .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,formData)
+            .post(`${process.env.REACT_APP_API}/kmutnbroomate/create`,formData)
             .then((response)=> {
                 Swal.fire(
                     'แจ้งเตือน','สร้างโพสต์สำเร็จ','success')
@@ -179,7 +179,7 @@ const KmutnbRoomatecreate=(props)=>{
                             />
                         </div>
                     </div>
-                    <h1>File name</h1>
+                    
                     <img src={fileName} alt="" />
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn btn-primary"></input>

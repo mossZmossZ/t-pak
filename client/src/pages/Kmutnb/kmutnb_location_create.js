@@ -73,7 +73,7 @@ const KmutnbLocationCreate=(props)=>{
         
         
         axios
-            .post(`${process.env.REACT_APP_API}/kmutnbroomate/create`,formData)
+            .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,formData)
             .then((response)=> {
                 Swal.fire(
                     'แจ้งเตือน','สร้างโพสต์สำเร็จ','success')
