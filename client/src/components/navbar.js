@@ -52,7 +52,7 @@ const Navbar=({history})=>{
                         </div>
                     )}
                     {getUser() &&(
-                        <div className="login-tab">
+                        <div className="login-tab1">
                             <div className="userprofile">
                                 <FaUserAlt id="user-icon"/>
                                 <Link to ="/Userprofile" className="User" onClick={closeMobileMenu}> : {userid}</Link>

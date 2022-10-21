@@ -23,7 +23,9 @@ const Singlekmutnblocation=(props)=>{
     return(
         <div className="post-container">
                 <div className="newcolumn" >
-                    <img src={`../uploads/${kmutnblocations.Image}`} alt="..."/>
+                    <div className="img-border">
+                        <img src={`../uploads/${kmutnblocations.Image}`} alt="..."/>
+                    </div>
                     <div className="info">
                         <h1>{kmutnblocations.name}</h1>
                         <p className="text-muted">ราคา : {kmutnblocations.price} บาท/เดือน </p>

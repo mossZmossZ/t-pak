@@ -41,14 +41,6 @@ nav a{
     
     
 }
-.login-tab{
-    display:flex;
-    border:2px solid #AFB4ff;
-    border-radius: 2rem;
-    justify-content: space-between;
-    font-size: 1.5rem;
-    align-items: center;
-}
 .login-tab1{
     display:flex;
     border:2px solid #AFB4ff;
@@ -56,8 +48,6 @@ nav a{
     justify-content: space-between;
     font-size: 1.5rem;
     align-items: center;
-    gap:1rem;
-    padding: 0 1rem;
     transition:  0.3s ease-out;
 }
 .ho:hover{
@@ -152,17 +142,6 @@ nav a:hover,a:focus {
     }
     .nav-toggle{
         display: block;
-    }
-    .login-tab{
-        display:block;
-        background-color:None;
-        border: none;
-        border-radius: 3vw;
-        justify-content: space-between;
-        font-size: 3vw;
-        align-items: center;
-        padding: 1vw 5vw ;
-        margin:1vw 25vw;
     }
     .userprofile{
         display: block;
