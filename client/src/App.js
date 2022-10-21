@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import {Route, Switch} from "react-router-dom"
 import Signup from './pages/Signup.js';
 import KmutnbLocation from './pages/Kmutnb/kmutnb_location';
-import KmutnbRoomate from './pages/Kmutnb/kmutnb_roomate.js';
+import Kmutnbroomate from './pages/Kmutnb/kmutnb_roomate.js';
 import KmitlLocation from './pages/Kmitl/kmitl_location.js';
 import KmitlRoomate from './pages/Kmitl/kmitl_location.js';
 import KmuttLocation from './pages/Kmutt/kmutt_location.js';
@@ -23,7 +23,7 @@ import UserRoute from "./UserRoute";
 import Userprofile from "./pages/Formcomponents/Userprofile";
 import EditKmutnblocation from "./pages/Formcomponents/EditKmutnblocation";
 import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
-import KmutnbRoommatecreate from "./pages/Kmutnb/kmutnb_roommate_create";
+import KmutnbRoomatecreate from "./pages/Kmutnb/kmutnb_roomate_create";
 function App() {
   return(
     <>
@@ -36,8 +36,8 @@ function App() {
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
           <UserRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
-          <Route path='/kmutnbroomate'exact component={KmutnbRoomate}/>
-          <UserRoute path='/kmutnbroommate/create'exact component={KmutnbLocationCreate}/>
+          <Route path='/kmutnbroomate'exact component={Kmutnbroomate}/>
+          <UserRoute path='/kmutnbroomate/create'exact component={KmutnbRoomatecreate}/>
           <Route path='/kmitllocation'exact component={KmitlLocation}/>
           <Route path='/kmitlRoomate'exact component={KmitlRoomate}/>
           <Route path='/kmuttlocation'exact component={KmuttLocation}/>

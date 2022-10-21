@@ -15,7 +15,7 @@ const Home=()=>{
 const Selects = () => {
     const options = [
         { value: "Location", label: "สถานที่" ,color:"black" },
-        { value: "Roomate", label: "รูมเมท",color:"black" },
+        { value: "roomate", label: "รูมเมท",color:"black" },
         
     ];
     const colorStyles = {
