@@ -94,7 +94,7 @@ const EditKmutnblocation=(props)=>{
     }
     return(
         <div className="form_container">
-            <h1>แก้ไขบทความ</h1>
+            <h1>แก้ไขโพสต์ของคุณ</h1>
             <div className="edit">
                 <img className="imagedit" src={`../../uploads/${state.Image}`} alt="..."/>
             </div>
