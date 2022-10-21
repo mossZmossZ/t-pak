@@ -59,7 +59,6 @@ body{
     margin:0 auto;
     margin-top:-1rem ;
     padding: 2rem;
-    justify-content: space-between;
     visibility: hidden;
     animation:movedown 0.7s linear 1;
     animation-delay: 0ms;

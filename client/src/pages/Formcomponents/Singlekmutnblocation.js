@@ -22,8 +22,7 @@ const Singlekmutnblocation=(props)=>{
     },[])
     return(
         <div className="post-container">
-            <div className="row" style={{border:'3px solid grey'}}>
-                <div className="column" >
+                <div className="newcolumn" >
                     <img src={`../uploads/${kmutnblocations.Image}`} alt="..."/>
                     <div className="info">
                         <h1>{kmutnblocations.name}</h1>
@@ -31,8 +30,7 @@ const Singlekmutnblocation=(props)=>{
                         <p>รายละเอียด : {kmutnblocations.detail}</p>
                         <p className="text-muted3">เบอร์โทรศัพท์: {kmutnblocations.telephone}</p>
                     </div>
-                </div>
-            </div>
+                </div>      
         </div>
     )
 }
