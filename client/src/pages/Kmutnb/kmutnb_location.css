@@ -78,9 +78,11 @@
 .edit{
     display: flex;
     justify-content: center;
+    
 }
 .imagedit{
-    border-radius: 3vw;
+    padding-right:5rem;
+
 }
 @media all and (max-width : 720px){
     .row{

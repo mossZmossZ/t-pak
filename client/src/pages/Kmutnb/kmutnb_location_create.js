@@ -115,9 +115,14 @@ const KmutnbLocationCreate=(props)=>{
         })
     }*/
     return(
-        <div className="form_container">
-            <div>
-                <h1>ประกาศขายหอพัก ใกล้ พระนครเหนือ</h1>
+    <div>
+        <div className="head-container">
+                <div className="head">
+                    <h1>ประกาศขายหอพัก</h1>
+                </div>
+            </div>
+        <div className="container">
+            <div className="form_container">
                 <form onSubmit={changeOnClick} encType="multipart/form-data">
                     <div className="form-group">
                         <label>ชื่อหอพัก</label>
@@ -161,6 +166,7 @@ const KmutnbLocationCreate=(props)=>{
                 </form>
             </div>
         </div>
+    </div>
     );
 }
 

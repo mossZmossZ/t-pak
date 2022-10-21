@@ -49,21 +49,23 @@ const Navbar=({history})=>{
                             </div>
                             
                             <div className="userprofile">
-                                <Link to ="/signup" id="signup" onClick={closeMobileMenu}>SIGNUP</Link>
+                                <Link to ="/signup" id="signup" onClick={closeMobileMenu}>
+                                    &nbsp;SIGNUP
+                                </Link>
                             </div>
                         </div>
                     )}
                     {getUser() &&(
                         <div className="login-tab1">
                             <div className="userprofile">
-                                <Link to ="/Userprofile" className="User" onClick={closeMobileMenu}>
+                                <Link to ="/Userprofile" id="User" onClick={closeMobileMenu}>
                                     <FaUserAlt id="user-icon"/>
                                     &nbsp; : {userid}
                                 </Link>
                             </div>
                             <div className="userprofile">
                                 <button className="logout" onClick={()=>{logoutbutton();}}>
-                                    <IoLogOut /> 
+                                    <IoLogOut id='logout'/> 
                                     &nbsp;LOGOUT
                                 </button>
                             </div>

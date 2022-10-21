@@ -13,6 +13,7 @@ body{
 .navcontainer img{
     padding: 1rem 0vw 0vw 1rem;
     width:9rem;
+    display: flex;
 }
 .navcontainer{
     display: flex;
@@ -38,6 +39,7 @@ nav a{
     height: 100%;
     padding:.25rem;
     align-items: center;
+    transition:  0.3s ease-in;
     
     
 }
@@ -50,10 +52,6 @@ nav a{
     align-items: center;
     transition:  0.3s ease-out;
 }
-.ho:hover{
-    color: #DDDFFF;
-   
-}
 #signup{
     font-size: 1.2rem;
 }
@@ -65,12 +63,10 @@ nav a{
     padding:0vw 1rem;
     cursor: pointer;
 }
-.userprofile:hover{
-    background-color: #DDDFFF;
-   
-}
+
 .userprofile a:hover{
-    color:black
+    color: #AFB4ff;
+   
 }
 
 .logout{
@@ -79,6 +75,10 @@ nav a{
     font-size: 1.2rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     cursor: pointer;
+    transition:  0.3s ease-in;
+}
+.logout:hover{
+    color: #AFB4ff;
 }
 
 nav a:hover,a:focus {
@@ -96,8 +96,59 @@ nav a:hover,a:focus {
 .nav-toggle{
     font-size: 6vw;
 }
+@media all and (max-width : 1085px){
+    #signup{
+        font-size: 0;
+        transition:  0.3s ease-out;
+        text-indent:100%;
+        white-space: nowrap;
+        overflow: hidden;
+        margin: 0 0rem;
+        padding: 0;
+    }
+    #User{
+        font-size: 0;
+        transition:  0.3s ease-out;
+    }
+    #user-icon{
+        font-size: 1.5rem;
+    }
+    .logout{
+        font-size: 0;
+    }
+    #logout{
+        text-indent:100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 1.5rem;
+        margin-left: 2rem;
+    }
 
-@media all and (max-width : 720px){
+}
+@media all and (max-width : 960px){
+    #login{
+        text-indent:100%;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 0;
+        transition:  0.3s ease-out;
+    }
+    #user-icon{
+        font-size: 1.5rem;
+    }
+    .userprofile{ 
+        margin: 0 0rem;
+        padding: 0;
+        
+    }
+    .login-tab1{
+        transition:  0.3s ease-out;
+        border: none;
+        margin: 0;
+    }
+
+}
+@media all and (max-width : 840px){
     .navcontainer{
         flex-direction:column;
         align-items: flex-start;
@@ -172,8 +223,5 @@ nav a:hover,a:focus {
         font-size: 3vw;
     }
     
-
-}
-@media all and (min-width : 1420px){
 
 }

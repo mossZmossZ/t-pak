@@ -37,32 +37,36 @@ const LoginComponent=(props)=>{
         getUser() && props.history.push("/")
     },[])
     return(
-        <div >
-            <div className="head">
-                <h1>Login</h1>
+        <div>
+            <div className="head-container">
+                <div className="head">
+                    <h1>Login</h1>
+                </div>
             </div>
-            <div className="form_container">
-                <form onSubmit={submitForm}>
-                    <div className="form-group">
-                        <label>Username :</label>
-                        <div className="input">
-                            <input type="text" placeholder="Username" classname="form-control" value={ID} onChange={inputValue("ID")}/>
+            <div className="container">
+                <div className="form_container">
+                    <form onSubmit={submitForm}>
+                        <div className="form-group">
+                            <label>Username :</label>
+                            <div className="input">
+                                <input type="text" placeholder="Username" classname="form-control" value={ID} onChange={inputValue("ID")}/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label>Password :</label>
-                        <div className="input">
-                            <input type="password"  placeholder="Password" classname="form-control" value={password} onChange={inputValue("password")}/>
+                        <div className="form-group">
+                            <label>Password :</label>
+                            <div className="input">
+                                <input type="password"  placeholder="Password" classname="form-control" value={password} onChange={inputValue("password")}/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="submit">
-                        <input type="submit" value="          Submit         " className="btn-login"></input>
-                    </div>
-                    <div className="sign">
-                        <Link to ="/signup" className="login">ยังไม่มีบัญชีผู้ใช้ สมัครเลย !</Link>
-                    </div>
-                </form>
+                        <div className="submit">
+                            <input type="submit" value="          Submit         " className="btn-login"></input>
+                        </div>
+                        <div className="sign">
+                            <Link to ="/signup" className="login">ยังไม่มีบัญชีผู้ใช้ สมัครเลย !</Link>
+                        </div>
+                    </form>
                 
+                </div>
             </div>
     </div>
 );

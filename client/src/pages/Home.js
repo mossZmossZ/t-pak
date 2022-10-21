@@ -33,8 +33,10 @@ const Selects = () => {
                 <p>T-pak เป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
                 <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
             </div>
-            <div className="home-head">
-                <p>ค้นหาจาก</p><Selects/>
+            <div className="head-container">
+                <div className="head">
+                    <h1>ค้นหาจาก</h1><Selects/>
+                </div>
             </div>
             <div className="main">
                 <div className="btn-container1">

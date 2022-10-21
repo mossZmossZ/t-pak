@@ -39,26 +39,28 @@ const RegisterComponent=(props)=>{
         getUser() && props.history.push("/")
     },[])
     return(
-        <div className="form_container-signup">
-            <div className="head">
-                <h1>Register</h1>
+        <div>
+            <div className="head-container">
+                <div className="head">
+                    <h1>Register</h1>
+                </div>
             </div>
                 <div className="form_container">
                     <form onSubmit={submitForm}>
                         <div className="form-group-signup">
-                            <label>Username </label>
+                            <label>Username :</label>
                             <div className="input">
                                 <input type="text" placeholder='Username'classname="form-control" value={ID} onChange={inputValue("ID")}/>
                             </div>
                         </div>
                         <div className="form-group-signup">
-                            <label>Password </label>
+                            <label>Password :</label>
                             <div className="input">
                                 <input type="password" placeholder='password'classname="form-control" value={password} onChange={inputValue("password")}/>
                             </div>
                         </div>
                         <div className="form-group-signup">
-                            <label>confirmpassword </label>
+                            <label>Confirmpassword :</label>
                             <div className="input">
                                 <input type="password" placeholder='confirm password'classname="form-control"  value={confirmpassword} onChange={inputValue("confirmpassword")}/>
                             </div>

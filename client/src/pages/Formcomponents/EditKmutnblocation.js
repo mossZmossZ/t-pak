@@ -34,35 +34,37 @@ const EditKmutnblocation=(props)=>{
     },[])
     
     const showUpdateForm=()=>(
-        <form onSubmit={submitForm}>
-                    <div className="form-group">
-                        <label>ชื่อ</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
-                        </div>
+        <div >
+            <form onSubmit={submitForm}>
+                <div className="form-group">
+                    <label>ชื่อ</label>
+                     <div className="input">
+                        <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
                     </div>
-                    <div className="form-group">
-                        <label>รายละเอียด</label>
-                        <div className="input">
-                            <textarea classname="form-control" value={detail} onChange={inputValue("detail")}/>
-                        </div>
+                </div>
+                <div className="form-group">
+                    <label>รายละเอียด</label>
+                    <div className="input">
+                        <textarea classname="form-control" value={detail} onChange={inputValue("detail")}/>
                     </div>
-                    <div className="form-group">
-                        <label>ราคา</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={price} onChange={inputValue("price")}/>
-                        </div>
+                </div>
+                <div className="form-group">
+                    <label>ราคา</label>
+                    <div className="input">
+                        <input type="text" classname="form-control" value={price} onChange={inputValue("price")}/>
                     </div>
-                    <div className="form-group">
-                        <label>เบอร์โทรติดต่อ</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={telephone} onChange={inputValue("telephone")}/>
-                        </div>
+                 </div>
+                <div className="form-group">
+                    <label>เบอร์โทรติดต่อ</label>
+                    <div className="input">
+                        <input type="text" classname="form-control" value={telephone} onChange={inputValue("telephone")}/>
                     </div>
-                    <div className="submit">
-                        <input type="submit" value="          Submit         " className="btn btn-primary"></input>
-                    </div>
+                </div>
+                 <div className="submit">
+                     <input type="submit" value="          Submit         " className="btn btn-primary"></input>
+                </div>
                 </form>
+            </div>
     )
     //กำหนดค่าให้กับ state
     const inputValue =name=>event=>{
@@ -93,12 +95,18 @@ const EditKmutnblocation=(props)=>{
         })
     }
     return(
-        <div className="form_container">
-            <h1>แก้ไขโพสต์ของคุณ</h1>
+        <div>
+             <div className="head-container" id="form-edit">
+                <div className="head">
+                    <h1>แก้ไขโพสต์ของคุณ</h1>
+                </div>
+            </div>
+            <div className="form_container">
             <div className="edit">
                 <img className="imagedit" src={`../../uploads/${state.Image}`} alt="..."/>
             </div>
-            {showUpdateForm()}
+                {showUpdateForm()}
+            </div>
         </div>
     );
 }
