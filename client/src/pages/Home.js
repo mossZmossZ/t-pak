@@ -17,7 +17,7 @@ const Selects = () => {
         { value: "Location", label: "สถานที่" ,color:"black" },
         { value: "roomate", label: "รูมเมท",color:"black" },
         
-    ];
+    ];         
     const colorStyles = {
         control: (styles) => ({ ...styles, backgroundColor: "white" }),
         option: (styles, { data, isDisabled, isFocused, isSelected }) => {
