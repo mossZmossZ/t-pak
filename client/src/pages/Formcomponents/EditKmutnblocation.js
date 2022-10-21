@@ -3,7 +3,7 @@ import"../fonts/Baloo2-Regular.ttf";
 import axios from "axios";
 import Swal from "sweetalert2";
 import React,{ useState,useEffect } from "react";
-import { getToken } from "../../services/authorize";
+import { getToken ,authenticate} from "../../services/authorize";
 
 const EditKmutnblocation=(props)=>{
     const [state,setState] = useState({
@@ -85,6 +85,8 @@ const EditKmutnblocation=(props)=>{
                 'แจ้งเตือน','อัพเดทบทความเรียบร้อย','success')
                 const {title,content,author,slug} = response.data
                 setState({...state,title,content,author,slug})
+                props.history.push("/kmutnblocation")
+                
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text:"ERROR",footer: '<a href="">Why do I have this issue?</a>'})
             //alert(err.response.data.error)

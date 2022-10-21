@@ -4,8 +4,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { getUser,authenticate,getToken} from "../../services/authorize"
 import Resizer from "react-image-file-resizer";
+import {Link,withRouter} from "react-router-dom"
 
-const KmutnbLocationCreate=()=>{
+const KmutnbLocationCreate=(props)=>{
     /*const [name,setName] = useState("");
     const [detail,setDetail] = useState("");
     const [telephone,setTelephone] = useState("");
@@ -62,7 +63,6 @@ const KmutnbLocationCreate=()=>{
     }
     const changeOnClick = (e) => {
         e.preventDefault();
-        
         const formData = new FormData();
         formData.append("ID",ID);
         formData.append("name",name);
@@ -75,9 +75,14 @@ const KmutnbLocationCreate=()=>{
         
         axios
             .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,formData)
-            .then((res)=> alert(res.data))
+            .then((response)=> {
+                Swal.fire(
+                    'แจ้งเตือน','สร้างโพสต์สำเร็จ','success')
+                props.history.push("/kmutnblocation")
+                //alert(response.data))
+            })
             .catch((err)=>{
-                console.log(err)
+                alert(err)
             });
     };
    
