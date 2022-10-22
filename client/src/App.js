@@ -54,8 +54,6 @@ function App() {
           <UserRoute path='/Userprofile'exact component={Userprofile}/>
           <UserRoute path='/location/update/:slug'exact component={Editlocation}/>
           <Route path='/location/:slug'exact component={SingleLocation}/>
-          
-
           <Route path="/" component={Notfoundpage} />
         </Switch>
       </div>
