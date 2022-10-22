@@ -24,6 +24,7 @@ import Editlocation from "./pages/Formcomponents/Editlocation";
 import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
 import KmutnbRoomatecreate from "./pages/Kmutnb/kmutnb_roomate_create";
 import LocationCreate from "./pages/Formcomponents/LocationCreate";
+import Notfoundpage from "./pages/notfoundpage";
 function App() {
   return(
     <>
@@ -52,6 +53,7 @@ function App() {
           <UserRoute path='/Userprofile'exact component={Userprofile}/>
           <UserRoute path='/location/update/:slug'exact component={Editlocation}/>
           <Route path='/kmutnblocation/:slug'exact component={Singlekmutnblocation}/>
+          <Route path="/" component={Notfoundpage} />
         </Switch>
       </div>
     </> 
