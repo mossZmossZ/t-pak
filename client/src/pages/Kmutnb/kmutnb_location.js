@@ -7,7 +7,7 @@ const Kmutnblocation=()=>{
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
         axios
-        .get(`${process.env.REACT_APP_API}/kmutnblocations`)
+        .get(`${process.env.REACT_APP_API}/location/kmutnb`)
         .then(response=>{
             setKmutnblocations(response.data)
         })
@@ -18,7 +18,7 @@ const Kmutnblocation=()=>{
     },[])
     return(
         <div className="post-container">
-            <h1>หอพักใกล้พระนครเหนือ</h1>
+            <h1>หอพักใกล้พระจอมเกล้าพระนครเหนือ</h1>
             {!getUser() &&(
                 <div className="interest">
                    <button>
@@ -29,7 +29,7 @@ const Kmutnblocation=()=>{
             {getUser() &&(
                 <div className="interest">
                     <button>
-                        <Link to ="/kmutnblocation/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
+                        <Link to ="/location/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
                     </button>
                 </div>) 
                     }

@@ -6,35 +6,36 @@ import { getUser,authenticate,getToken} from "../../services/authorize"
 import Resizer from "react-image-file-resizer";
 import {Link,withRouter} from "react-router-dom"
 
-const KmutnbLocationCreate=(props)=>{
+const LocationCreate=(props)=>{
     /*const [name,setName] = useState("");
     const [detail,setDetail] = useState("");
     const [telephone,setTelephone] = useState("");
     const [price,setPrice] = useState("");
     const [fileName,setFileName] = useState("");
-*/
+    */
     const [state,setState] = useState({
+    UNI:"",
     name:"",
     detail:"",
     telephone:"",
     price:"",
-    
+
     })
     const [fileName,setFileName] = useState("");
-    const {name,detail,telephone,price} = state
-    
+    const {UNI,name,detail,telephone,price} = state
+
     const ID = String(getUser())
 
     const onChangeFile=e=>{
         setFileName(e.target.files[0]);
     }
-       /* var fileInput = false;
+    /* var fileInput = false;
         if (e.target.files[0]) {
             fileInput = true;
     }
     if (fileInput) {
         try {
-          Resizer.imageFileResizer(
+        Resizer.imageFileResizer(
             e.target.files[0],
             390,
             290,
@@ -42,17 +43,17 @@ const KmutnbLocationCreate=(props)=>{
             100,
             0,
             (uri) => {
-              console.log(uri);
-              setFileName(uri);
+            console.log(uri);
+            setFileName(uri);
             },
             "base64",
             200,
             290
-          );
+        );
         } catch (err) {
-          alert.log(err);
+        alert.log(err);
         }
-      }
+    }
     }
     */
 
@@ -63,6 +64,7 @@ const KmutnbLocationCreate=(props)=>{
     const changeOnClick = (e) => {
         e.preventDefault();
         const formData = new FormData();
+        formData.append("UNI",UNI)
         formData.append("ID",ID);
         formData.append("name",name);
         formData.append("detail",detail);
@@ -73,18 +75,18 @@ const KmutnbLocationCreate=(props)=>{
         
         
         axios
-            .post(`${process.env.REACT_APP_API}/kmutnblocation/create`,formData)
+            .post(`${process.env.REACT_APP_API}/location/create`,formData)
             .then((response)=> {
                 Swal.fire(
                     'แจ้งเตือน','สร้างโพสต์สำเร็จ','success')
-                props.history.push("/kmutnblocation")
+                props.history.push("/")
                 //alert(response.data))
             })
             .catch((err)=>{
                 alert(err)
             });
     };
-   
+
 
 
     /*const submitForm=(e)=>{
@@ -124,6 +126,16 @@ const KmutnbLocationCreate=(props)=>{
         <div className="container">
             <div className="form_container">
                 <form onSubmit={changeOnClick} encType="multipart/form-data">
+                <div className="form-group">
+                    <p>พระนครเหนือ กรอก : KMUTNB</p>
+                    <p>ลาดกระบัง กรอก : KMITL</p>
+                    <p>บางมด กรอก : KMUTT</p>
+                    <p>มธ กรอก : TU</p>
+                        <label>มหาวิทยาลัย</label>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")}/>
+                        </div>
+                    </div>
                     <div className="form-group">
                         <label>ชื่อหอพัก</label>
                         <div className="input">
@@ -140,7 +152,7 @@ const KmutnbLocationCreate=(props)=>{
                         <label>ราคา</label>
                         <div className="input">
                             <input type="numberic" classname="form-control" value={price} onChange={inputValue("price")}/>
-                       </div>
+                    </div>
                     </div>
                     <div className="form-group">
                         <label>เบอร์โทร ติดต่อ</label>
@@ -169,5 +181,6 @@ const KmutnbLocationCreate=(props)=>{
     </div>
     );
 }
+export default LocationCreate;
 
-export default KmutnbLocationCreate;
+

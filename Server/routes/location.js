@@ -1,6 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const {remove,getlocation,getUserlocation,singlelocaion} = require('../controllers/locationController')
+const {getkmutnblocation,gettulocation,getkmitllocation,getkmuttlocation} = require('../controllers/locationController')
 const locations = require("../models/locations")
 const multer = require("multer")
 const slugify = require("slugify")
@@ -88,7 +89,10 @@ router.get('/locations',getlocation)
 router.post('/locations/user',getUserlocation)
 
 router.get('/location/update/:slug',singlelocaion) 
-
+router.get('/location/kmutnb',getkmutnblocation)
+router.get('/location/TU',gettulocation)
+router.get('/location/kmutt',getkmuttlocation)
+router.get('/location/kmitl',getkmitllocation)
 //router.put('/location/update/:slug',update)
 router.delete('/location/delete/:slug',remove)
 

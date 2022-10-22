@@ -107,4 +107,28 @@ exports.remove=(req,res)=>{
         })
     })
 }
+//หาข้อมูลหอของพระนครเหนือ
+exports.getkmutnblocation=(req,res)=>{
+    locations.find({"UNI":"KMUTNB"}).exec((err,kmutnblocations)=>{
+        res.json(kmutnblocations)
+    })
+}
+//หาข้อมูลหอของลาดกระบัง
+exports.getkmitllocation=(req,res)=>{
+    locations.find({"UNI":"KMITL"}).exec((err,kmitllocations)=>{
+        res.json(kmitllocations)
+    })
+}
+//หาข้อมูลหอของบางมด
+exports.getkmuttlocation=(req,res)=>{
+    locations.find({"UNI":"KMUTT"}).exec((err,kmuttlocations)=>{
+        res.json(kmuttlocations)
+    })
+}
+//หาข้อมูลหอของธรรมศาสตร์
+exports.gettulocation=(req,res)=>{
+    locations.find({"UNI":"TU"}).exec((err,tulocations)=>{
+        res.json(tulocations)
+    })
+}
 

@@ -5,8 +5,9 @@ import Swal from "sweetalert2";
 import React,{ useState,useEffect } from "react";
 import { getToken ,authenticate} from "../../services/authorize";
 
-const EditKmutnblocation=(props)=>{
+const Editlocation=(props)=>{
     const [state,setState] = useState({
+        UNI:"",
         name:"",
         detail:"",
         telephone:"",
@@ -14,16 +15,16 @@ const EditKmutnblocation=(props)=>{
         slug:"",
         Image:""
     })
-    const {name,detail,telephone,price,slug} = state
+    const {UNI,name,detail,telephone,price,slug} = state
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไขโดยใช้ useEffect
     const fetchData=()=>{
         axios
         //props.match.params.slug}`)
-        .get(`${process.env.REACT_APP_API}/kmutnblocation/update/${props.match.params.slug}`)
+        .get(`${process.env.REACT_APP_API}/location/update/${props.match.params.slug}`)
         .then(response=>{
-            const {name,detail,telephone,price,slug,Image} = response.data
-            setState({...state,name,detail,telephone,price,slug,Image})
+            const {UNI,name,detail,telephone,price,slug,Image} = response.data
+            setState({...state,UNI,name,detail,telephone,price,slug,Image})
         })
         .catch(err=>alert(err))
         
@@ -36,6 +37,12 @@ const EditKmutnblocation=(props)=>{
     const showUpdateForm=()=>(
         <div >
             <form onSubmit={submitForm}>
+            <div className="form-group">
+                    <label>มหาวิทยาลัย    (KMUTNB,KMITL,KMUTT,TU)</label>
+                     <div className="input">
+                        <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")}/>
+                    </div>
+                </div>
                 <div className="form-group">
                     <label>ชื่อ</label>
                      <div className="input">
@@ -76,7 +83,7 @@ const EditKmutnblocation=(props)=>{
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
         axios
-        .put(`${process.env.REACT_APP_API}/kmutnblocation/update/${slug}`,{name,detail,telephone,price},
+        .put(`${process.env.REACT_APP_API}/location/update/${slug}`,{UNI,name,detail,telephone,price},
         {
             headers:{
                 authorization:`Bearer ${getToken()}`
@@ -84,10 +91,10 @@ const EditKmutnblocation=(props)=>{
         })
         .then(response=>{
             Swal.fire(
-                'แจ้งเตือน','อัพเดทบทความเรียบร้อย','success')
-                const {title,content,author,slug} = response.data
-                setState({...state,title,content,author,slug})
-                props.history.push("/kmutnblocation")
+                'แจ้งเตือน','อัพเดทเรียบร้อย','success')
+                const {name,detail,telephone,price,slug} = response.data
+                setState({...state,name,detail,telephone,price,slug})
+                props.history.push("/")
                 
         }).catch(err=>{
             Swal.fire({icon: 'error',title: 'Oops...',text:"ERROR",footer: '<a href="">Why do I have this issue?</a>'})
@@ -110,4 +117,4 @@ const EditKmutnblocation=(props)=>{
         </div>
     );
 }
-export default EditKmutnblocation;
+export default Editlocation;

@@ -18,12 +18,12 @@ import SingleComponent from "./pages/Formcomponents/SingleComponents";
 import Formshowadmin from "./pages/Formcomponents/Formshowadmin";
 import EditComponent from "./pages/Formcomponents/EditComponent";
 import LoginComponent from "./pages/Formcomponents/LoginComponent";
-import KmutnbLocationCreate from "./pages/Kmutnb/kmutnb_location_create";
 import UserRoute from "./UserRoute";
 import Userprofile from "./pages/Formcomponents/Userprofile";
-import EditKmutnblocation from "./pages/Formcomponents/EditKmutnblocation";
+import Editlocation from "./pages/Formcomponents/Editlocation";
 import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
 import KmutnbRoomatecreate from "./pages/Kmutnb/kmutnb_roomate_create";
+import LocationCreate from "./pages/Formcomponents/LocationCreate";
 function App() {
   return(
     <>
@@ -35,9 +35,9 @@ function App() {
           <Route path='/login'exact component={LoginComponent}/>
           <Route path='/signup'exact component={Signup}/>
           <Route path='/kmutnblocation'exact component={KmutnbLocation}/>
-          <UserRoute path='/kmutnblocation/create'exact component={KmutnbLocationCreate}/>
           <Route path='/kmutnbroomate'exact component={Kmutnbroomate}/>
           <UserRoute path='/kmutnbroomate/create'exact component={KmutnbRoomatecreate}/>
+          <UserRoute path='/location/create'exact component={LocationCreate}/>
           <Route path='/kmitllocation'exact component={KmitlLocation}/>
           <Route path='/kmitlRoomate'exact component={KmitlRoomate}/>
           <Route path='/kmuttlocation'exact component={KmuttLocation}/>
@@ -50,7 +50,7 @@ function App() {
           <UserRoute path='/Formshowadmin'exact component={Formshowadmin}/>
           <UserRoute path='/blog/edit/:slug'exact component={EditComponent}/>
           <UserRoute path='/Userprofile'exact component={Userprofile}/>
-          <UserRoute path='/kmutnblocation/update/:slug'exact component={EditKmutnblocation}/>
+          <UserRoute path='/location/update/:slug'exact component={Editlocation}/>
           <Route path='/kmutnblocation/:slug'exact component={Singlekmutnblocation}/>
         </Switch>
       </div>

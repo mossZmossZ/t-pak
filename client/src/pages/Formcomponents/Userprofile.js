@@ -10,7 +10,7 @@ const Userprofile=()=>{
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
         axios
-        .post(`${process.env.REACT_APP_API}/kmutnblocations/user`,{userid})
+        .post(`${process.env.REACT_APP_API}/locations/user`,{userid})
         .then(response=>{
             setKmutnblocations(response.data)
         })
@@ -39,7 +39,7 @@ const Userprofile=()=>{
     const DeleteForm=(slug)=>{
         //ส่งrequest ไปที่ api เพื่อลบข้อมูล
         ///kmutnblocation/delete/:slug
-        axios.delete(`${process.env.REACT_APP_API}/kmutnblocation/delete/${slug}`,
+        axios.delete(`${process.env.REACT_APP_API}/location/delete/${slug}`,
         {
             headers:{
                 authorization:`Bearer ${getToken()}`
@@ -78,7 +78,7 @@ const Userprofile=()=>{
                         <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                         <p className="text-muted">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
                         <div className="but">
-                            <Link to={`/kmutnblocation/update/${kmutnblocation.slug}`}>
+                            <Link to={`/location/update/${kmutnblocation.slug}`}>
                                 <button>แก้ไขข้อมูล</button>
                             </Link>
                              &nbsp;
