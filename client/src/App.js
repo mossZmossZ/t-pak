@@ -22,6 +22,7 @@ import UserRoute from "./UserRoute";
 import Userprofile from "./pages/Formcomponents/Userprofile";
 import Editlocation from "./pages/Formcomponents/Editlocation";
 import Singlekmutnblocation from "./pages/Formcomponents/Singlekmutnblocation";
+import SingleLocation from "./pages/Formcomponents/SingleLocation";
 import KmutnbRoomatecreate from "./pages/Kmutnb/kmutnb_roomate_create";
 import LocationCreate from "./pages/Formcomponents/LocationCreate";
 import Notfoundpage from "./pages/notfoundpage";
@@ -52,7 +53,9 @@ function App() {
           <UserRoute path='/blog/edit/:slug'exact component={EditComponent}/>
           <UserRoute path='/Userprofile'exact component={Userprofile}/>
           <UserRoute path='/location/update/:slug'exact component={Editlocation}/>
-          <Route path='/kmutnblocation/:slug'exact component={Singlekmutnblocation}/>
+          <Route path='/location/:slug'exact component={SingleLocation}/>
+          
+
           <Route path="/" component={Notfoundpage} />
         </Switch>
       </div>
