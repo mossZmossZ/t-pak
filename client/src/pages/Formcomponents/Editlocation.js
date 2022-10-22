@@ -56,7 +56,7 @@ const Editlocation=(props)=>{
                     </div>
                 </div>
                 <div className="form-group">
-                    <label>ราคา</label>
+                    <label>ราคา ต่อเดือน</label>
                     <div className="input">
                         <input type="text" classname="form-control" value={price} onChange={inputValue("price")}/>
                     </div>

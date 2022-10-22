@@ -74,6 +74,7 @@ const Userprofile=()=>{
                     <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
                     <div className="info">
                         <h1>{kmutnblocation.name}</h1>
+                        <p className="text-muted">มหาวิทยาลัย : {kmutnblocation.UNI}</p>
                         <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
                         <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                         <p className="text-muted">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
