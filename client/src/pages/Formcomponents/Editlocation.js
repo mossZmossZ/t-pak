@@ -8,7 +8,6 @@ import Select from "react-select";
 
 const Editlocation=(props)=>{
     const [state,setState] = useState({
-        UNI:"",
         name:"",
         detail:"",
         telephone:"",
@@ -16,8 +15,8 @@ const Editlocation=(props)=>{
         slug:"",
         Image:""
     })
-    const {UNI,name,detail,telephone,price,slug} = state
-    const [userChoice, setUserChoice] = useState("Location")
+    const {name,detail,telephone,price,slug} = state
+    const [UNI,setUNI] = useState("เลือกมหาวิทยาลัย")
     const selectOptions = [
         { value: 'KMUTNB', label: 'KMUTNB' },
         { value: 'KMITL', label: 'KMITL' },
@@ -38,7 +37,8 @@ const Editlocation=(props)=>{
         .get(`${process.env.REACT_APP_API}/location/update/${props.match.params.slug}`)
         .then(response=>{
             const {UNI,name,detail,telephone,price,slug,Image} = response.data
-            setState({...state,UNI,name,detail,telephone,price,slug,Image})
+            setState({...state,name,detail,telephone,price,slug,Image})
+            setUNI(UNI)
         })
         .catch(err=>alert(err))
         
@@ -54,8 +54,9 @@ const Editlocation=(props)=>{
             <div className="form-group">
                     <label>มหาวิทยาลัย </label>
                      <div className="input">
-                     <Select className="dropdown" isSearchable={false} defaultValue={{label:{UNI},value:{UNI}}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
+                     <Select className="dropdown" isSearchable={false} defaultValue={{label:UNI,value:String(UNI)}} options={selectOptions} onChange={(choice) => setUNI(choice.value)} styles={colorStyles}/>
                     </div>
+                    
                 </div>
                 <div className="form-group">
                     <label>ชื่อ</label>
@@ -91,11 +92,14 @@ const Editlocation=(props)=>{
     const inputValue =name=>event=>{
         //console.log(name,"=",event.target.value)
         setState({...state,[name]:event.target.value});
+
     }
     const submitForm=(e)=>{
         e.preventDefault();
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
+        console.log(UNI)
+        console.log(name)
         axios
         .put(`${process.env.REACT_APP_API}/location/update/${slug}`,{UNI,name,detail,telephone,price},
         {
@@ -106,8 +110,9 @@ const Editlocation=(props)=>{
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','อัพเดทเรียบร้อย','success')
-                const {name,detail,telephone,price,slug} = response.data
+                const {detail,telephone,price,slug} = response.data
                 setState({...state,name,detail,telephone,price,slug})
+                setUNI(UNI)
                 props.history.push("/")
                 
         }).catch(err=>{
