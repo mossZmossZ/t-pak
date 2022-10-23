@@ -63,7 +63,7 @@ router.put("/kmutnbroommate/update/:slug",(req,res) => {
 })
 
 //การเรียกใช้งาน
-router.get('/kmutnbroommate',getAllkmutnbroommate)
+/*router.get('/kmutnbroommate',getAllkmutnbroommate)
 router.post('/kmutnbroommate/user',getUserkmutnbroommate)
 
 router.get('/kmutnbroommate/update/:slug',singleKmutnbroomamte) 
@@ -71,4 +71,4 @@ router.get('/kmutnbroommate/update/:slug',singleKmutnbroomamte)
 //router.put('/kmutnblocation/update/:slug',update)
 router.delete('/kmutnbroommate/delete/:slug',remove)
 
-module.exports = router
+module.exports = router*/

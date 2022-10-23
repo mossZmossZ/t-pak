@@ -9,23 +9,16 @@ import {useState} from "react"
 
 
 const Home=()=>{
-    const [state,setState] = useState('location')
-
-    
-const Selects = () => {
-    const options = [
+    const [userChoice, setUserChoice] = useState("Location")
+    const selectOptions = [
         { value: "Location", label: "สถานที่" ,color:"black" },
         { value: "roomate", label: "รูมเมท",color:"black" },
-        
     ];         
     const colorStyles = {
         control: (styles) => ({ ...styles, backgroundColor: "white" }),
         option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-          return { ...styles, color: data.color };
-        },
-    };
-    
-    return<Select className="dropdown" isSearchable={false} defaultValue={{label:'สถานที่',value:'Location'}} options={options} onChange={(Selects) => setState(Selects.value)} styles={colorStyles}/>
+        return { ...styles, color: data.color };
+        }
     };
     return (
          <div className="Home_container">
@@ -35,20 +28,20 @@ const Selects = () => {
             </div>
             <div className="head-container">
                 <div className="head">
-                    <h1>ค้นหาจาก</h1><Selects/>
+                    <h1>ค้นหาจาก</h1><Select className="dropdown" isSearchable={false}  defaultValue={{label:'สถานที่',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
                 </div>
             </div>
             <div className="main">
                 <div className="btn-container1">
                     <div className="btn-kmutnb">
-                        <Link to ={`/kmutnb${state}`}>  
+                        <Link to ={`/kmutnb${userChoice}`}>  
                             <img src={kmutnb} className="kmutnb" alt=""></img>
                             <p>KMUTNB</p>
                             <p>พระจอมเกล้าพระนครเหนือ</p>
                         </Link>
                     </div>
                     <div className="btn-kmitl">
-                        <Link to ={`/kmitl${state}`}>
+                        <Link to ={`/kmitl${userChoice}`}>
                             <img src={kmitl} className="kmitl" alt=""></img>
                             <p>KMITL</p>
                             <p>พระจอมเกล้าลาดกระบัง</p>
@@ -57,14 +50,14 @@ const Selects = () => {
                 </div>
                 <div className="btn-container2">
                     <div className="btn-kmutt">
-                        <Link to ={`/kmutt${state}`}>
+                        <Link to ={`/kmutt${userChoice}`}>
                             <img src={kmutt} className="kmutt" alt=""></img>
                             <p>KMUTT</p>
                             <p>พระจอมเกล้าธนบุรี</p>
                         </Link>
                     </div>
                     <div className="btn-tu">
-                        <Link to ={`/tu${state}`}>
+                        <Link to ={`/tu${userChoice}`}>
                             <img src={Tu} className="tu" alt=""></img>
                             <p>TU</p>
                             <p>ธรรมศาสตร์(ศูนย์รังสิต)</p>

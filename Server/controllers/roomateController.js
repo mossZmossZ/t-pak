@@ -2,7 +2,7 @@ const slugify = require("slugify")
 const roomateDatabase = require('../models/roomate')
 const {v4:uuidv4} = require('uuid');
 const { json } = require("express");
-
+/*
 //ดึงข้อมูลรูมเมทออกมาทั้งหมด
 exports.getAllroomate=(req,res)=>{
     roomateDatabase.find({}).exec((err,roomate)=>{
@@ -36,4 +36,4 @@ exports.remove=(req,res)=>{
             massage:"ลบข้อมูลเรียบร้อย"
         })
     })
-}
+}*/

@@ -8,7 +8,7 @@ const kmutnblocationRoute = require('./routes/kmutnblocation')
 const userRoute = require('./routes/User')
 const kmutnbroommateRoute = require('./routes/kmutnbroommate')
 const locationRoute = require('./routes/location')
-const roomateRoute = require('./routes/roomate')
+//const roomateRoute = require('./routes/roomate')
 const app = express()
 
 //connect cloud database
@@ -38,9 +38,8 @@ app.use((req,res,next)=>{
 app.use('/api',blogRoute)
 app.use('/api',kmutnblocationRoute)
 app.use('/api',userRoute)
-app.use('/api',kmutnbroommateRoute)
 app.use('/api',locationRoute)
-app.use('/api',roomateRoute)
+//app.use('/api',roomateRoute)
 
 const port = process.env.PORT || 8080
 //app.listen(port,()=>console.log("Start server in port"))

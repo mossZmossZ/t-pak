@@ -1,6 +1,7 @@
 .container{
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 .head-container{
     position: relative;
@@ -30,16 +31,13 @@
     justify-content: center;
     width: 100%;
     margin-top: -2.5rem;
-    padding: 4rem 17rem;
+    padding: 4rem 15rem;
     background-color:#DDDFFF;
     border-radius: 2rem;
     visibility: hidden;
     animation:movedown 0.5s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
-}
-.form-group{
-    width: 100%;
 }
 label{
     display: flex;

@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import { getUser,authenticate,getToken} from "../../services/authorize"
 import Resizer from "react-image-file-resizer";
 import {Link,withRouter} from "react-router-dom"
+import Select from "react-select";
 
 const LocationCreate=(props)=>{
     /*const [name,setName] = useState("");
@@ -29,6 +30,13 @@ const LocationCreate=(props)=>{
     const onChangeFile=e=>{
         setFileName(e.target.files[0]);
     }
+    const selectOptions = [
+        { value: 'KMUTNB', label: 'KMUTNB' },
+        { value: 'KMITL', label: 'KMITL' },
+        { value: 'KMUTT', label: 'KMUTT' },
+        { value: 'TU', label: 'TU' }
+    ]
+      const [userChoice, setUserChoice] = useState("")
     /* var fileInput = false;
         if (e.target.files[0]) {
             fileInput = true;
@@ -64,7 +72,7 @@ const LocationCreate=(props)=>{
     const changeOnClick = (e) => {
         e.preventDefault();
         const formData = new FormData();
-        formData.append("UNI",UNI)
+        formData.append("UNI",userChoice)
         formData.append("ID",ID);
         formData.append("name",name);
         formData.append("detail",detail);
@@ -127,13 +135,9 @@ const LocationCreate=(props)=>{
             <div className="form_container">
                 <form onSubmit={changeOnClick} encType="multipart/form-data">
                 <div className="form-group">
-                    <p>พระนครเหนือ กรอก : KMUTNB</p>
-                    <p>ลาดกระบัง กรอก : KMITL</p>
-                    <p>บางมด กรอก : KMUTT</p>
-                    <p>มธ กรอก : TU</p>
                         <label>มหาวิทยาลัย</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")}/>
+                            <Select isClearable={false} className='react-select'options={selectOptions}  onChange={(choice) => setUserChoice(choice.value)}/>
                         </div>
                     </div>
                     <div className="form-group">

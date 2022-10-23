@@ -4,6 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import React,{ useState,useEffect } from "react";
 import { getToken ,authenticate} from "../../services/authorize";
+import Select from "react-select";
 
 const Editlocation=(props)=>{
     const [state,setState] = useState({
@@ -16,6 +17,19 @@ const Editlocation=(props)=>{
         Image:""
     })
     const {UNI,name,detail,telephone,price,slug} = state
+    const [userChoice, setUserChoice] = useState("Location")
+    const selectOptions = [
+        { value: 'KMUTNB', label: 'KMUTNB' },
+        { value: 'KMITL', label: 'KMITL' },
+        { value: 'KMUTT', label: 'KMUTT' },
+        { value: 'TU', label: 'TU' }
+    ]
+    const colorStyles = {
+        control: (styles) => ({ ...styles, backgroundColor: "white" }),
+        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+        return { ...styles, color: data.color };
+        }
+    };
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไขโดยใช้ useEffect
     const fetchData=()=>{
@@ -38,9 +52,9 @@ const Editlocation=(props)=>{
         <div >
             <form onSubmit={submitForm}>
             <div className="form-group">
-                    <label>มหาวิทยาลัย    (KMUTNB,KMITL,KMUTT,TU)</label>
+                    <label>มหาวิทยาลัย </label>
                      <div className="input">
-                        <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")}/>
+                     <Select className="dropdown" isSearchable={false} defaultValue={{label:{UNI},value:{UNI}}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
                     </div>
                 </div>
                 <div className="form-group">
