@@ -1,5 +1,5 @@
 const slugify = require("slugify")
-const roomateDatabase = require('../models/roomate')
+const roomateDatabase = require('../models/roomateDatabase')
 const {v4:uuidv4} = require('uuid');
 const { json } = require("express");
 /*

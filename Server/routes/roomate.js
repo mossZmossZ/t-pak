@@ -1,10 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const getAllroomate = require('../controllers/roomateController')
-const getUserroomate = require('../controllers/roomateController')
-const singleroomate = require('../controllers/roomateController')
-const remove = require('../controllers/roomateController')
-const roomateDatabase = require("../models/roomate")
+const roomateDatabase = require("../models/roomateDatabase")
 const multer = require("multer")
 const slugify = require("slugify")
 const {v4:uuidv4} = require('uuid');
@@ -66,14 +62,41 @@ router.put("/roomate/update/:slug",(req,res) => {
     })
     .catch(err => res.status(400).json(err))
 })
+router.get("/roomate",(req,res)=>{
+    roomateDatabase.find({})
+    .then(
+        res.json(roomate)
+    )
+})
 
 //การเรียกใช้งาน
-//router.get('/roomate',getAllroomate)
-//router.post('/roomate/user',getUserroomate)
+router.post("/roomate/user",(req,res)=>{
+    const userid=req.body.userid
+    console.log({userid})
+    roomateDatabase.find({"ID":userid})
+    .then(
+        resp =>{
+            return res.json(resp)
+        }
+    )
+})
 
-//router.get('/roomate/update/:slug',singleroomate) 
+router.get('/roomate/update/:slug',(req,res)=>{
+    const {slug} = req.params
+    roomateDatabase.findOne({slug}).exec((err,roomate)=>{
+        res.json(roomate)
+    })
+}) 
 
 //router.put('/kmutnblocation/update/:slug',update)
-router.delete('/roomate/delete/:slug',remove)
+router.delete('/roomate/delete/:slug',(req,res)=>{
+    const {slug} = req.params
+    roomateDatabase.findOneAndRemove({slug}).exec((err,blog)=>{
+        if(err) console.log(err)
+        res.json({
+            massage:"ลบข้อมูลเรียบร้อย"
+        })
+    })
+})
 
 module.exports = router
