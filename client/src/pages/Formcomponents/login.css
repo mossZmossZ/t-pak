@@ -2,8 +2,11 @@
     display: flex;
     justify-content: center;
     margin: 0;
+    position: relative;
+    z-index: 0;
 }
 .head-container{
+    margin-top: 1rem;
     position: relative;
     display:flex;
     justify-content: center;
@@ -54,7 +57,7 @@ input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],inpu
     display: flex;
     border-radius: 2rem;
     border:0;
-    background-color : rgba(241, 228, 113, 0.67); 
+    background-color : rgb(255, 246, 167); 
     width: 100%;
     font-size: large;
     margin-bottom: 0.5rem;
@@ -97,4 +100,7 @@ input,.sign{
     animation:movedown 0.9s linear 1;
     animation-delay: 0ms;
     animation-fill-mode: forwards;
+}
+.react-select{
+    margin-bottom: 1rem;
 }

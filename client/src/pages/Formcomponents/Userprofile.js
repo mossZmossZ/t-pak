@@ -58,13 +58,6 @@ const Userprofile=()=>{
     return(
         <div className="post-container">
             <h1>MY POST</h1>
-            {getUser() &&(
-                <div className="interest">
-                    <button>
-                        <Link to ="/kmutnblocation/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
-                    </button>
-                </div>) 
-                    }
             <hr/>
             
             {kmutnblocations.map((kmutnblocation,index)=>(
