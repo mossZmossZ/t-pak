@@ -54,8 +54,9 @@ router.post("/kmutnblocation/create",uploads.single("Image") ,(req,res) => {
         slug:slug,
         Image:req.file.originalname
     });
-
+    //validate / ตรวจสอบความถูกต้องของช้อมูล
     newkmutnblocations
+    
     .save()
     .then(()=> res.json("Create Succuess"))
     .catch(err=>{

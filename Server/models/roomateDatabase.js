@@ -6,6 +6,10 @@ const roomateSchema = mongoose.Schema({
         require:true,
         unique:false
     },
+    UNI:{
+        type:String,
+        requie:true,
+    },
     already:{
         type:String,
         required:true

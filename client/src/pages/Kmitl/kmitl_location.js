@@ -45,7 +45,7 @@ const Kmitllocation=()=>{
                         <p className="text-muted3">เบอร์โทรศัพท์: {kmitllocation.telephone}</p>
                     </div>
                     <button className="select"> 
-                        <Link to={`/kmutnblocation/${kmitllocation.slug}`}>
+                        <Link to={`/location/${kmitllocation.slug}`}>
                             select
                         </Link>
                     </button>

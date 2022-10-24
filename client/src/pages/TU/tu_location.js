@@ -46,7 +46,7 @@ const Tulocation=()=>{
                         <p className="text-muted3">เบอร์โทรศัพท์: {tulocation.telephone}</p>
                     </div>
                     <button className="select"> 
-                        <Link to={`/kmutnblocation/${tulocation.slug}`}>
+                        <Link to={`/location/${tulocation.slug}`}>
                             select
                         </Link>
                     </button>

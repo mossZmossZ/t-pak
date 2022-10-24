@@ -48,21 +48,21 @@ const RegisterComponent=(props)=>{
                 <div className="form_container">
                     <form onSubmit={submitForm}>
                         <div className="form-group-signup">
-                            <label>username :</label>
+                            <label>USERNAME :</label>
                             <div className="input">
-                                <input type="text" placeholder='username'classname="form-control" value={ID} onChange={inputValue("ID")}/>
+                                <input type="text" placeholder='USERNAME'classname="form-control" value={ID} onChange={inputValue("ID")}/>
                             </div>
                         </div>
                         <div className="form-group-signup">
-                            <label>password :</label>
+                            <label>PASSWORD :</label>
                             <div className="input">
-                                <input type="password" placeholder='password'classname="form-control" value={password} onChange={inputValue("password")}/>
+                                <input type="PASSWORD" placeholder='PASSWORD'classname="form-control" value={password} onChange={inputValue("password")}/>
                             </div>
                         </div>
                         <div className="form-group-signup">
-                            <label>confirm  password :</label>
+                            <label>CONFIRM PASSWORD :</label>
                             <div className="input">
-                                <input type="password" placeholder='confirm password'classname="form-control"  value={confirmpassword} onChange={inputValue("confirmpassword")}/>
+                                <input type="password" placeholder='CONFIRM PASSWORD'classname="form-control"  value={confirmpassword} onChange={inputValue("confirmpassword")}/>
                             </div>
                         </div>
                         <div className="submit">

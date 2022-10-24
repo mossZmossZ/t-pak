@@ -45,8 +45,8 @@ const Navbar=({history})=>{
                             <RiArrowDropDownLine id="arrowicon"/>
                         </button>
                         <div class="dropdown-content">
-                            <Link to='/location/create'>ประกาศขายหอพัก</Link>
-                            <Link to="#">ประกาศหาRoomate</Link>
+                            <Link to='/location/create'>ประกาศขาย หอพัก</Link>
+                            <Link to="/roomate/create">ประกาศหา Roomate</Link>
                         </div>
                     </div>   
                     {!getUser() &&(

@@ -47,15 +47,15 @@ const LoginComponent=(props)=>{
                 <div className="form_container">
                     <form onSubmit={submitForm}>
                         <div className="form-group">
-                            <label>Username :</label>
+                            <label>USERNAME :</label>
                             <div className="input">
-                                <input type="text" placeholder="Username" classname="form-control" value={ID} onChange={inputValue("ID")}/>
+                                <input type="text" placeholder="USERNAME" classname="form-control" value={ID} onChange={inputValue("ID")}/>
                             </div>
                         </div>
                         <div className="form-group">
-                            <label>Password :</label>
+                            <label>PASSWORD :</label>
                             <div className="input">
-                                <input type="password"  placeholder="Password" classname="form-control" value={password} onChange={inputValue("password")}/>
+                                <input type="password"  placeholder="PASSWORD" classname="form-control" value={password} onChange={inputValue("password")}/>
                             </div>
                         </div>
                         <div className="submit">

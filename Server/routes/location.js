@@ -56,7 +56,6 @@ router.post("/location/create",uploads.single("Image") ,(req,res) => {
         slug:slug,
         Image:req.file.originalname
     });
-
     newlocations
     .save()
     .then(()=> res.json("Create Succuess"))

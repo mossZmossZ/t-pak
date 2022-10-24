@@ -1,10 +1,17 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const roomateDatabase = require("../models/roomateDatabase")
+const roomates = require("../models/roomateDatabase")
 const multer = require("multer")
 const slugify = require("slugify")
 const {v4:uuidv4} = require('uuid');
-
+const {getAllroomate} = require('../controllers/roomateController')
+const {getUserroomate} = require('../controllers/roomateController')
+const {singleroomate} = require('../controllers/roomateController')
+const {remove} = require('../controllers/roomateController')
+const {getkmutnbRoomate} = require('../controllers/roomateController')
+const {getkmitlRoomate} = require('../controllers/roomateController')
+const {getkmuttRoomate} = require('../controllers/roomateController')
+const {gettuRoomate} = require('../controllers/roomateController')
 const storage = multer.diskStorage({
     destination: (req,file,callback) =>{
         callback(null,"../client/public/uploads");
@@ -18,8 +25,9 @@ const uploads = multer({storage:storage});
 router.post("/roomate/create",uploads.single("Image") ,(req,res) => {
     let slug = slugify(req.body.name)
     if(!slug)slug = uuidv4();
-    const newroomate = new roomate({
+    const newroomates = new roomates({
         ID:req.body.ID,
+        UNI:req.body.UNI,
         already:req.body.already,
         name:req.body.name,
         gender:req.body.gender,
@@ -32,7 +40,7 @@ router.post("/roomate/create",uploads.single("Image") ,(req,res) => {
         Image:req.file.originalname
     });
 
-    newroomate
+    newroomates
     .save()
     .then(()=> res.json("Create Succuess"))
     .catch(err=>{
@@ -40,11 +48,13 @@ router.post("/roomate/create",uploads.single("Image") ,(req,res) => {
         res.status(400).json(err)
     })
 })
+
 router.put("/roomate/update/:slug",(req,res) => {
     const {slug} = req.params
-    roomateDatabase.findOne({slug})
+    roomates.findOne({slug})
     .then(article => {
         article.id = req.body.userid
+        article.UNI = req.body.UNI
         article.already = req.body.already
         article.name = req.body.name
         article.gender = req.body.gender
@@ -62,11 +72,11 @@ router.put("/roomate/update/:slug",(req,res) => {
     })
     .catch(err => res.status(400).json(err))
 })
+/*
 router.get("/roomate",(req,res)=>{
-    roomateDatabase.find({})
-    .then(
+    roomateDatabases.find({}).exec((err,roomate)=>{
         res.json(roomate)
-    )
+    })
 })
 
 //การเรียกใช้งาน
@@ -97,6 +107,16 @@ router.delete('/roomate/delete/:slug',(req,res)=>{
             massage:"ลบข้อมูลเรียบร้อย"
         })
     })
-})
+})*/
+
+router.get("/roomate",getAllroomate)
+router.post("/roomate/user",getUserroomate)
+router.get('/roomate/update/:slug',singleroomate)
+router.delete('/roomate/delete/:slug',remove)
+
+router.get("/roomate/kmutnb",getkmutnbRoomate)
+router.get("/roomate/kmitl",getkmitlRoomate)
+router.get("/roomate/kmutt",getkmuttRoomate)
+router.get("/roomate/tu",gettuRoomate)
 
 module.exports = router
