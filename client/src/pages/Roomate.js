@@ -18,7 +18,7 @@ const Kmutnbroomate=(props)=>{
     },[])
     return(
         <div className="post-container">
-            <h1>รูมเมทใกล้{place}</h1>
+            <h1>รูมเมท {place}</h1>
             <hr/>
             {Roomates.map((Roomate,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>
@@ -26,6 +26,7 @@ const Kmutnbroomate=(props)=>{
                     <img src={`./uploads/${Roomate.Image}`} alt="..."/>
                     <div className="info">
                         <p>ชื่อ : {Roomate.name}</p>
+                        <p>มหาวิทยาลัย : {Roomate.UNI}</p>
                         <p>เพศ : {Roomate.gender}</p>
                         <p>ชั้นปี : {Roomate.year}</p>
                         <p className="text-muted">ราคาต่อคน : {Roomate.price} บาท/คน </p>
