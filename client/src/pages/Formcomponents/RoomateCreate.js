@@ -156,19 +156,19 @@ const RoomateCreate=(props)=>{
                         <p>ไม่มีกรอก : NO</p>
                         <p>มีแล้วกรอก : YES</p>
                         <div className="input">
-                            <input type="text" classname="form-control" value={already} onChange={inputValue("already")}/>
+                            <input type="text" classname="form-control" value={already} onChange={inputValue("already")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>ชื่อผู้ใช้</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>มหาวิทยาลัย</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")}/>
+                            <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")} required/>
                         </div>
                     </div>
                     <div className="form-group">
@@ -176,37 +176,37 @@ const RoomateCreate=(props)=>{
                         <p>หญิงกรอก : FEMALE</p>
                         <p>ชายกรอก : MALE</p>
                         <div className="input">
-                            <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")}/>
+                            <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>อายุ</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={age} onChange={inputValue("age")}/>
+                            <input type="text" classname="form-control" value={age} onChange={inputValue("age")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>ชั้นปี</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={year} onChange={inputValue("year")}/>
+                            <input type="text" classname="form-control" value={year} onChange={inputValue("year")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>รายละเอียด </label>
                         <div className="input">
-                        <textarea classname="form-control" value={detail} onChange={inputValue("detail")}/>
+                        <textarea classname="form-control" value={detail} onChange={inputValue("detail")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>ราคา ต่อเดือน</label>
                         <div className="input">
-                            <input type="numberic" classname="form-control" value={price} onChange={inputValue("price")}/>
+                            <input type="numberic" classname="form-control" value={price} onChange={inputValue("price")} required/>
                     </div>
                     </div>
                     <div className="form-group">
                         <label>เบอร์โทร ติดต่อ</label>
                         <div className="input">
-                            <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")}/>
+                            <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")} required/>
                         </div>
                     </div>
                     <div className="form-group">
@@ -217,6 +217,8 @@ const RoomateCreate=(props)=>{
                                 filename="Image"
                                 classname="form-control-file" 
                                 onChange={onChangeFile}
+                                required
+                                accept="image/*"
                             />
                         </div>
                     </div>

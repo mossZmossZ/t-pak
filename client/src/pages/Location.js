@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
-import { getUser } from "../../services/authorize";
-import './kmutnb_location.css'
-const Kmutnblocation=()=>{
+import './Location_and_Roomate.css'
+const Kmutnblocation=(props)=>{
+    const place = props.location.state.userChoice2
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
         axios
-        .get(`${process.env.REACT_APP_API}/location/kmutnb`)
+        .get(`${process.env.REACT_APP_API}/location/${place}`)
         .then(response=>{
             setKmutnblocations(response.data)
         })
@@ -16,23 +16,15 @@ const Kmutnblocation=()=>{
     useEffect(()=>{
         fetchData()
     },[])
+    
+        
     return(
         <div className="post-container">
-            <h1>หอพักใกล้พระจอมเกล้าพระนครเหนือ</h1>
-            {!getUser() &&(
-                <div className="interest">
-                   <button>
-                        <Link to ="/login" className="login">ลงประกาศได้ที่นี่!</Link>
-                    </button>
-                </div>) 
-                    }
-            {getUser() &&(
-                <div className="interest">
-                    <button>
-                        <Link to ="/location/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
-                    </button>
-                </div>) 
-                    }
+            <h1>หอพักใกล้{place}</h1>
+           <Link to ='/home2'>
+            go back
+           </Link>
+
             <hr/>
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>

@@ -1,13 +1,13 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
-import { getUser } from "../../services/authorize";
-import './kmutnb_location.css'
-const Kmutnbroomate=()=>{
+
+const Kmutnbroomate=(props)=>{
+    const place = props.location.state.userChoice2
     const [Roomates,setRoomates] = useState([])
     const fetchData=()=>{
         axios
-        .get(`${process.env.REACT_APP_API}/roomate/kmutnb`)
+        .get(`${process.env.REACT_APP_API}/roomate/${place}`)
         .then(response=>{
             setRoomates(response.data)
         })
@@ -19,20 +19,6 @@ const Kmutnbroomate=()=>{
     return(
         <div className="post-container">
             <h1>รูมเมทใกล้พระจอมเกล้าพระนครเหนือ</h1>
-            {!getUser() &&(
-                <div className="interest">
-                   <button>
-                        <Link to ="/login" className="login">ลงประกาศได้ที่นี่!</Link>
-                    </button>
-                </div>) 
-                    }
-            {getUser() &&(
-                <div className="interest">
-                    <button>
-                        <Link to ="/roomate/create" className="here">ลงประกาศประกาศฟรีได้ที่นี่!</Link>
-                    </button>
-                </div>) 
-                    }
             <hr/>
             {Roomates.map((Roomate,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>

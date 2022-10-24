@@ -8,11 +8,11 @@ import Select from "react-select";
 import {useState} from "react"
 
 
-const Home=()=>{
+const Home=(props)=>{
     const [userChoice, setUserChoice] = useState("Location")
     const selectOptions = [
         { value: "Location", label: "สถานที่" ,color:"black" },
-        { value: "roomate", label: "รูมเมท",color:"black" },
+        { value: "Roomate", label: "รูมเมท",color:"black" },
     ];         
     const colorStyles = {
         control: (styles) => ({ ...styles, backgroundColor: "white" }),
@@ -28,20 +28,25 @@ const Home=()=>{
             </div>
             <div className="head-container">
                 <div className="head">
-                    <h1>ค้นหาจาก</h1><Select className="dropdown" isSearchable={false}  defaultValue={{label:'สถานที่',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
+                    <h1>ค้นหาจาก</h1>
+                    <Select className="dropdown" isSearchable={false}  defaultValue={{label:'สถานที่',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
                 </div>
             </div>
             <div className="main">
                 <div className="btn-container1">
                     <div className="btn-kmutnb">
-                        <Link to ={`/kmutnb${userChoice}`}>  
+                        <Link to={{
+                            pathname: `/${userChoice}`,
+                            state: {userChoice,userChoice2:'kmutnb'} }}>
                             <img src={kmutnb} className="kmutnb" alt=""></img>
                             <p>KMUTNB</p>
                             <p>พระจอมเกล้าพระนครเหนือ</p>
                         </Link>
                     </div>
                     <div className="btn-kmitl">
-                        <Link to ={`/kmitl${userChoice}`}>
+                        <Link to={{
+                            pathname: `/${userChoice}`,
+                            state: {userChoice,userChoice2:'kmitl'} }}>
                             <img src={kmitl} className="kmitl" alt=""></img>
                             <p>KMITL</p>
                             <p>พระจอมเกล้าลาดกระบัง</p>
@@ -50,14 +55,18 @@ const Home=()=>{
                 </div>
                 <div className="btn-container2">
                     <div className="btn-kmutt">
-                        <Link to ={`/kmutt${userChoice}`}>
+                        <Link to={{
+                            pathname: `/${userChoice}`,
+                            state: {userChoice,userChoice2:'kmutt'} }}>
                             <img src={kmutt} className="kmutt" alt=""></img>
                             <p>KMUTT</p>
                             <p>พระจอมเกล้าธนบุรี</p>
                         </Link>
                     </div>
                     <div className="btn-tu">
-                        <Link to ={`/tu${userChoice}`}>
+                        <Link to={{
+                            pathname: `/${userChoice}`,
+                            state: {userChoice,userChoice2:'tu'} }}>
                             <img src={Tu} className="tu" alt=""></img>
                             <p>TU</p>
                             <p>ธรรมศาสตร์(ศูนย์รังสิต)</p>
