@@ -18,7 +18,7 @@ const Kmutnbroomate=(props)=>{
     },[])
     return(
         <div className="post-container">
-            <h1>รูมเมทใกล้พระจอมเกล้าพระนครเหนือ</h1>
+            <h1>รูมเมทใกล้{place}</h1>
             <hr/>
             {Roomates.map((Roomate,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>

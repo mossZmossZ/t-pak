@@ -10,12 +10,6 @@ const Userprofile=()=>{
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
     const fetchData=()=>{
-        axios
-        .post(`${process.env.REACT_APP_API}/locations/user`,{userid})
-        .then(response=>{
-            setKmutnblocations(response.data)
-        })
-        .catch(err=>alert(err));
         axios.all([
             axios
             .post(`${process.env.REACT_APP_API}/locations/user`, {userid})
