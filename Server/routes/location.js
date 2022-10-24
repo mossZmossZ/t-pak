@@ -84,7 +84,7 @@ router.put("/location/update/:slug",(req,res) => {
 })
 
 //การเรียกใช้งาน
-router.get('/locations',getlocation)
+router.get('/location',getlocation)
 router.post('/locations/user',getUserlocation)
 
 router.get('/location/update/:slug',singlelocaion) 
