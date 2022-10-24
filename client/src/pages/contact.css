@@ -42,6 +42,7 @@ body{
 
 
 .facebook{
+    color:  #6050a8;
     justify-content: space-around;
     display: flex;
     align-items: center;
@@ -67,6 +68,7 @@ body{
 }
 
 .line{
+    color:  #6050a8;
     justify-content: space-around;
     display: flex;
     align-items: center;
@@ -92,6 +94,7 @@ body{
     width: 6rem; 
 }
 .call{
+    color:  #6050a8;
     justify-content: space-around;
     display: flex;
     align-items: center;
