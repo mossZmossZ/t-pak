@@ -104,3 +104,6 @@ input,.sign{
 .react-select{
     margin-bottom: 1rem;
 }
+#ifYes{
+    display: none;
+}

@@ -4,8 +4,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { getUser,authenticate,getToken} from "../../services/authorize"
 import Resizer from "react-image-file-resizer";
-import {Link,withRouter} from "react-router-dom"
 import Select from "react-select";
+import logo from "../../pictures/logo.png"
+import logo2 from "../../pictures/logo2.png"
 
 const RoomateCreate=(props)=>{
     /*const [name,setName] = useState("");
@@ -15,33 +16,54 @@ const RoomateCreate=(props)=>{
     const [fileName,setFileName] = useState("");
     */
     const [state,setState] = useState({
-    already:"",
-    UNI:"",
     name:"",
-    gender:"",
     age:"",
     year:"",
     detail:"",
     telephone:"",
     price:""
     })
+    function yesnoCheck(yes) {
+        if (yes.value == "YES") {
+            document.getElementById("ifYes").style.display = "block";
+        } 
+        else {
+            document.getElementById("ifYes").style.display = "none";
+            if(genderChoice=="male"){
+                fileName={logo2}
+            }
+            else {
+                fileName={logo}
+            }
+
+        }
+    }
     const [fileName,setFileName] = useState("");
-    const {already,UNI,name,gender,age,year,detail,telephone,price} = state
+    const {name,age,year,detail,telephone,price} = state
 
     const ID = String(getUser())
 
     const onChangeFile=e=>{
         setFileName(e.target.files[0]);
     }
-    /*
-    //select ของคอม
-    const selectOptions = [
+    const genderOptions = [
+        { value: 'MALE', label: 'ชาย' },
+        { value: 'FEMALE', label: 'หญิง' },
+    ]
+    const uniOptions = [
         { value: 'KMUTNB', label: 'KMUTNB' },
         { value: 'KMITL', label: 'KMITL' },
         { value: 'KMUTT', label: 'KMUTT' },
         { value: 'TU', label: 'TU' }
+    ] 
+    const Yes_No_Options = [
+        { value: 'YES', label: 'มีหอพักอยู่แล้ว' },
+        { value: 'NO', label: 'ยังไม่มีหอพัก' },
     ]
-      const [userChoice, setUserChoice] = useState("")
+    const [genderChoice, setGenderChoice] = useState("")
+    const [userChoice, setUserChoice] = useState("")
+    const [alreadyChoice, setAlreadyChoice] = useState("")
+    const [nameChoice, setNameChoice] = useState("")
     //Resize Image moss
     /* var fileInput = false;
         if (e.target.files[0]) {
@@ -80,10 +102,10 @@ const RoomateCreate=(props)=>{
         const formData = new FormData();
         //formData.append("UNI",userChoice)
         formData.append("ID",ID);
-        formData.append("UNI",UNI)
-        formData.append("already",already);
-        formData.append("name",name);
-        formData.append("gender",gender);
+        formData.append("UNI",userChoice)
+        formData.append("already",alreadyChoice);
+        formData.append("name",nameChoice);
+        formData.append("gender",genderChoice);
         formData.append("age",age);
         formData.append("year",year);
         formData.append("detail",detail);
@@ -152,32 +174,24 @@ const RoomateCreate=(props)=>{
             <div className="form_container">
                 <form onSubmit={changeOnClick} encType="multipart/form-data">
                     <div className="form-group">
-                        <label>มีหอพักแล้วหรือยัง</label>
-                        <p>ไม่มีกรอก : NO</p>
-                        <p>มีแล้วกรอก : YES</p>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={already} onChange={inputValue("already")} required/>
+                        <label>มีหอพักแล้ว หรือยัง</label>
+                        <Select isClearable={false} className='react-select'options={Yes_No_Options}  onChange={choice => {setAlreadyChoice(choice.value);yesnoCheck(choice)}}/>
+                        <div id="ifYes">
+                            <div className="form-group">
+                            <label>ชื่อหอพัก</label>
+                            <div className="input">
+                                <input type="text" classname="form-control" value={setNameChoice} onChange={inputValue("name")}/>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label>ชื่อผู้ใช้</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={name} onChange={inputValue("name")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>มหาวิทยาลัย</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={UNI} onChange={inputValue("UNI")} required/>
-                        </div>
+                        <Select isClearable={false} className='react-select'options={uniOptions}  onChange={(choice) => setUserChoice(choice.value)} required/>
                     </div>
                     <div className="form-group">
                         <label>เพศ</label>
-                        <p>หญิงกรอก : FEMALE</p>
-                        <p>ชายกรอก : MALE</p>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")} required/>
-                        </div>
+                        <Select isClearable={false} className='react-select'options={genderOptions}  onChange={(choice) => setGenderChoice(choice.value)} required/>
                     </div>
                     <div className="form-group">
                         <label>อายุ</label>
