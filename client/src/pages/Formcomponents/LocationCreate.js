@@ -172,6 +172,7 @@ const LocationCreate=(props)=>{
                                 filename="Image"
                                 classname="form-control-file" 
                                 onChange={onChangeFile}
+                                accept="image/*"
                             />
                         </div>
                     </div>

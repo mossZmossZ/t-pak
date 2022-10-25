@@ -21,10 +21,6 @@ const Kmutnblocation=(props)=>{
     return(
         <div className="post-container">
             <h1>หอพักใกล้{place}</h1>
-           <Link to ='/home2'>
-            go back
-           </Link>
-
             <hr/>
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>
