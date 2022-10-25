@@ -21,20 +21,20 @@ const SingleRoomate=(props)=>{
     },[])
     return(
         <div className="post-container">
-                <div className="newcolumn" >
+            <div className="newcolumn" >
                     <div className="img-border">
                         <img src={`../uploads/${roomates.Image}`} alt="..."/>
                     </div>
-                    <div className="info">
-                        <p>ชื่อ : {roomates.name}</p>
-                        <p>มหาวิทยาลัย : {roomates.UNI}</p>
-                        <p>เพศ : {roomates.gender}</p>
-                        <p>ชั้นปี : {roomates.year}</p>
-                        <p className="text-muted">ราคาต่อคน : {roomates.price} บาท/คน </p>
-                        <p>รายละเอียด : {roomates.detail.substring(0,180)}</p>
-                        <p className="text-muted3">เบอร์โทรศัพท์: {roomates.telephone}</p>
-                    </div>
-                </div>      
+                <div className="info">
+                    <h1>{roomates.name}</h1>
+                    <p className="text-muted">มหาวิทยาลัย: {roomates.UNI}</p>
+                    <p>เพศ : {roomates.gender}</p>
+                    <p>ชั้นปี : {roomates.year}</p>
+                    <p className="text-muted">ราคา : {roomates.price} บาท/เดือน </p>
+                    <p>รายละเอียด : {roomates.detail}</p>
+                    <p className="text-muted3">เบอร์โทรศัพท์: {roomates.telephone}</p>
+                </div>
+            </div>
         </div>
     )
 
