@@ -34,7 +34,7 @@ const Kmutnbroomate=(props)=>{
                         <p className="text-muted3">เบอร์โทรศัพท์: {Roomate.telephone}</p>
                     </div>
                     <button className="select"> 
-                        <Link to={`/location/${Roomate.slug}`}>
+                        <Link to={`/roomate/${Roomate.slug}`}>
                             select
                         </Link>
                     </button>
