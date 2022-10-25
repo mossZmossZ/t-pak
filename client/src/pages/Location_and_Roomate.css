@@ -6,28 +6,7 @@
     margin:0
 
 }
-
-.interest{
-    text-align: end;
-    padding:0 3rem;
-}
-.interest button{
-    font-size: 1rem;
-    border: none;
-    border-radius: 2rem;
-    background-color: rgba(241, 228, 113, 0.67);
-    padding: 1rem;
-    cursor: pointer;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.interest button a{
-    color: black;
-}
-.interest button:hover{
-    background-color: #AFB4ff;
-}
 .row{
-    height: 300px;
     width: 1000px;
     border-radius: 2rem;
     margin-bottom: 3rem;
@@ -40,7 +19,7 @@
 .column img{
     border-radius: 2rem;
     width: 390px;
-    height:290px
+    height: 330px ;
 
 
 }
@@ -75,6 +54,11 @@
     font-size: 1rem;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+}
+#delete-button{
+    background-color: red;
+    color: white;
+    border:2px solid black;
 }
 .edit{
     display: flex;

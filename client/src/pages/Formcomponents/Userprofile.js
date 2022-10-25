@@ -122,7 +122,7 @@ const Userprofile=()=>{
                              &nbsp;
                              &nbsp;
                              &nbsp;
-                            <button className="btn-outline-danger" onClick={()=>confirmDeleteLocation(kmutnblocation.slug)}>Delete Form</button>
+                            <button id ='delete-button' onClick={()=>confirmDeleteLocation(kmutnblocation.slug)}>&nbsp;Delete&nbsp;</button>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@ const Userprofile=()=>{
                              &nbsp;
                              &nbsp;
                              &nbsp;
-                            <button className="btn-outline-danger" onClick={()=>confirmDeleteRoomate(roomate.slug)}>Delete Form</button>
+                             <button id ='delete-button' onClick={()=>confirmDeleteRoomate(roomate.slug)}>&nbsp;Delete&nbsp;</button>
                         </div>
                     </div>
                 </div>

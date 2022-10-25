@@ -16,30 +16,43 @@ const RoomateCreate=(props)=>{
     const [fileName,setFileName] = useState("");
     */
     const [state,setState] = useState({
-    name:"",
     age:"",
     year:"",
     detail:"",
     telephone:"",
     price:""
     })
+    const [fileName,setFileName] = useState("");
+    const [nameChoice,setNameChoice] = useState("");
+    {console.log(fileName)}
+    
+    const handleChange = event => {
+        setNameChoice(event.target.value);
+    }
+    
+    const {age,year,detail,telephone,price} = state
     function yesnoCheck(yes) {
         if (yes.value == "YES") {
             document.getElementById("ifYes").style.display = "block";
         } 
         else {
             document.getElementById("ifYes").style.display = "none";
-            if(genderChoice=="male"){
-                fileName={logo2}
+            setNameChoice('none')
+            if(genderChoice=="MALE"){
+                console.log('male')
+               
             }
             else {
-                fileName={logo}
+                console.log('female')
+               
+
             }
+
+         
 
         }
     }
-    const [fileName,setFileName] = useState("");
-    const {name,age,year,detail,telephone,price} = state
+    
 
     const ID = String(getUser())
 
@@ -63,7 +76,6 @@ const RoomateCreate=(props)=>{
     const [genderChoice, setGenderChoice] = useState("")
     const [userChoice, setUserChoice] = useState("")
     const [alreadyChoice, setAlreadyChoice] = useState("")
-    const [nameChoice, setNameChoice] = useState("")
     //Resize Image moss
     /* var fileInput = false;
         if (e.target.files[0]) {
@@ -176,14 +188,27 @@ const RoomateCreate=(props)=>{
                     <div className="form-group">
                         <label>มีหอพักแล้ว หรือยัง</label>
                         <Select isClearable={false} className='react-select'options={Yes_No_Options}  onChange={choice => {setAlreadyChoice(choice.value);yesnoCheck(choice)}}/>
-                        <div id="ifYes">
-                            <div className="form-group">
+                    </div>
+                    {JSON.stringify(nameChoice)}
+                    <div id="ifYes">
+                        <div className="form-group">
                             <label>ชื่อหอพัก</label>
                             <div className="input">
-                                <input type="text" classname="form-control" value={setNameChoice} onChange={inputValue("name")}/>
+                                <input type="text" classname="form-control"  onChange={handleChange} value={nameChoice} />
+                             </div>
                         </div>
-                    </div>
+                        <div className="form-group">
+                            <label htmlFor="file">Choose Image</label>
+                            <div className="input">
+                                <input 
+                                    type="file" 
+                                    filename="Image"
+                                    classname="form-control-file" 
+                                    onChange={onChangeFile}
+                                />
+                            </div>
                         </div>
+                        <img src={fileName.newImage} alt="" /> 
                     </div>
                     <div className="form-group">
                         <label>มหาวิทยาลัย</label>
@@ -223,20 +248,6 @@ const RoomateCreate=(props)=>{
                             <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")} required/>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="file">Choose Image</label>
-                        <div className="input">
-                            <input 
-                                type="file" 
-                                filename="Image"
-                                classname="form-control-file" 
-                                onChange={onChangeFile}
-                                required
-                                accept="image/*"
-                            />
-                        </div>
-                    </div>
-                    <img src={fileName.newImage} alt="" />
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn btn-primary"></input>
                     </div>
