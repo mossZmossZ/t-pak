@@ -3,7 +3,7 @@ import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
 import './Location_and_Roomate.css'
 const Kmutnblocation=(props)=>{
-    const place = props.location.state.userChoice2
+    const place = props.location.state.userChoice2.toUpperCase()
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
         axios
@@ -20,7 +20,7 @@ const Kmutnblocation=(props)=>{
         
     return(
         <div className="post-container">
-            <h1>หอพักใกล้{place}</h1>
+            <h1>หอพักใกล้ {place}</h1>
             <hr/>
             {kmutnblocations.map((kmutnblocation,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>

@@ -2,9 +2,22 @@ import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
 
+
 const Kmutnbroomate=(props)=>{
-    const place = props.location.state.userChoice2
+    
+    function genderCheck() {
+        if (Roomates.already=='YES') {
+            document.getElementById("ifYes").style.display = "block";
+            
+        } 
+        else {
+            document.getElementById("ifYes").style.display = "none";
+            
+        }
+    }
+    const place = props.location.state.userChoice2.toUpperCase()
     const [Roomates,setRoomates] = useState([])
+    
     const fetchData=()=>{
         axios
         .get(`${process.env.REACT_APP_API}/roomate/${place}`)

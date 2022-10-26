@@ -26,30 +26,21 @@ const RoomateCreate=(props)=>{
     const [nameChoice,setNameChoice] = useState("");
     {console.log(fileName)}
     
+    
     const handleChange = event => {
         setNameChoice(event.target.value);
     }
     
     const {age,year,detail,telephone,price} = state
+
     function yesnoCheck(yes) {
         if (yes.value == "YES") {
             document.getElementById("ifYes").style.display = "block";
+            setNameChoice('')
         } 
         else {
             document.getElementById("ifYes").style.display = "none";
             setNameChoice('none')
-            if(genderChoice=="MALE"){
-                console.log('male')
-               
-            }
-            else {
-                console.log('female')
-               
-
-            }
-
-         
-
         }
     }
     
@@ -189,7 +180,6 @@ const RoomateCreate=(props)=>{
                         <label>มีหอพักแล้ว หรือยัง</label>
                         <Select isClearable={false} className='react-select'options={Yes_No_Options}  onChange={choice => {setAlreadyChoice(choice.value);yesnoCheck(choice)}}/>
                     </div>
-                    {JSON.stringify(nameChoice)}
                     <div id="ifYes">
                         <div className="form-group">
                             <label>ชื่อหอพัก</label>

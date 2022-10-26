@@ -52,7 +52,7 @@ label{
     animation-fill-mode: forwards;
     
 }
-input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],input[type="tel"]{
+input[type="text"],input[type="password"] ,textarea ,input[type="number"],input[type="tel"]{
     padding: 1rem 4rem;
     display: flex;
     border-radius: 2rem;
@@ -62,6 +62,11 @@ input[type="text"],input[type="password"] ,textarea ,input[type="numberic"],inpu
     font-size: large;
     margin-bottom: 0.5rem;
   }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 input[type="submit"] {
     color: white;
     font-size: x-large;
