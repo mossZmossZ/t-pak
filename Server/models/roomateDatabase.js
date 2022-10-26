@@ -23,11 +23,11 @@ const roomateSchema = mongoose.Schema({
         required:true
     },
     age:{
-        type:String,
+        type:Number,
         required:true
     },
     year:{
-        type:String,
+        type:Number,
         required:true
     },
     detail:{
@@ -39,7 +39,7 @@ const roomateSchema = mongoose.Schema({
         required:true
     },
     price:{
-        type:String,
+        type:Number,
         required:true
     },
     slug:{
