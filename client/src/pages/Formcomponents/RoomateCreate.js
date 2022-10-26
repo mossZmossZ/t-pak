@@ -229,7 +229,7 @@ const RoomateCreate=(props)=>{
                     <div className="form-group">
                         <label>ราคา ต่อเดือน</label>
                         <div className="input">
-                            <input type="numberic" classname="form-control" value={price} onChange={inputValue("price")} required/>
+                            <input type="number" classname="form-control" value={price} onChange={inputValue("price")} required/>
                     </div>
                     </div>
                     <div className="form-group">
