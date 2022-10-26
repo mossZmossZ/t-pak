@@ -9,8 +9,10 @@ import Select from "react-select";
 
 const EditRoomate=(props)=>{
     const [state,setState] = useState({
+        already:"",
         name:"",
         gender:"",
+        age:"",
         year:"",
         detail:"",
         telephone:"",
@@ -18,7 +20,7 @@ const EditRoomate=(props)=>{
         slug:"",
         Image:""
     })
-    const {name,gender,year,detail,telephone,price,slug} = state
+    const {already,name,gender,age,year,detail,telephone,price,slug} = state
     const [UNI,setUNI] = useState("เลือกมหาวิทยาลัย")
     const selectOptions = [
         { value: 'KMUTNB', label: 'KMUTNB' },
@@ -38,8 +40,8 @@ const EditRoomate=(props)=>{
         //props.match.params.slug}`)
         .get(`${process.env.REACT_APP_API}/roomate/update/${props.match.params.slug}`)
         .then(response=>{
-            const {name,gender,year,detail,telephone,price,slug,Image} = response.data
-            setState({...state,name,gender,year,detail,telephone,price,slug,Image})
+            const {UNI,already,name,gender,age,year,detail,telephone,price,slug,Image} = response.data
+            setState({...state,already,name,gender,age,year,detail,telephone,price,slug,Image})
             setUNI(UNI)
         })
         .catch(err=>alert(err))
@@ -111,19 +113,13 @@ const EditRoomate=(props)=>{
         //console.table({title,content,author})
         //console.log("API URL = ",process.env.REACT_APP_API)
         console.log(UNI)
-        console.log(name)
         axios
-        .put(`${process.env.REACT_APP_API}/roomate/update/${slug}`,{name,gender,year,detail,telephone,price},
-        {
-            headers:{
-                authorization:`Bearer ${getToken()}`
-            }
-        })
+        .put(`${process.env.REACT_APP_API}/roomate/update/${slug}`,{UNI,already,name,gender,age,year,detail,telephone,price})
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','อัพเดทเรียบร้อย','success')
-                const {name,gender,year,detail,telephone,price,slug} = response.data
-                setState({...state,name,gender,year,detail,telephone,price,slug})
+                const {already,name,gender,age,year,detail,telephone,price,slug} = response.data
+                setState({...state,already,name,gender,age,year,detail,telephone,price,slug})
                 setUNI(UNI)
                 props.history.push("/")
                 
