@@ -28,6 +28,7 @@ const Kmutnblocation=(props)=>{
                     <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
                     <div className="info">
                         <h1>{kmutnblocation.name}</h1>
+                        <p>ประเภทหอพัก :{kmutnblocation.type}</p>
                         <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
                         <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
                         <p className="text-muted3">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>

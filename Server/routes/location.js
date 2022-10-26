@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const {remove,getlocation,getUserlocation,singlelocaion} = require('../controllers/locationController')
 const {getkmutnblocation,gettulocation,getkmitllocation,getkmuttlocation} = require('../controllers/locationController')
+const {getkmutnblocation3000to5000} = require('../controllers/locationController')
 const locations = require("../models/locations")
 const multer = require("multer")
 const slugify = require("slugify")
@@ -49,6 +50,7 @@ router.post("/location/create",uploads.single("Image") ,(req,res) => {
     const newlocations = new locations({
         ID:req.body.ID,
         UNI:req.body.UNI,
+        type:req.body.type,
         name:req.body.name,
         detail:req.body.detail,
         telephone:req.body.telephone,
@@ -69,6 +71,7 @@ router.put("/location/update/:slug",(req,res) => {
     locations.findOne({slug})
     .then(article => {
         article.id = req.body.userid
+        article.type = req.body.type
         article.name = req.body.name
         article.UNI = req.body.UNI
         article.detail = req.body.detail
@@ -92,6 +95,7 @@ router.get('/location/kmutnb',getkmutnblocation)
 router.get('/location/TU',gettulocation)
 router.get('/location/kmutt',getkmuttlocation)
 router.get('/location/kmitl',getkmitllocation)
+router.get('/location/kmutnb/3000to5000',getkmutnblocation3000to5000)
 //router.put('/location/update/:slug',update)
 router.delete('/location/delete/:slug',remove)
 

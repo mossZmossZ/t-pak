@@ -16,6 +16,7 @@ const LocationCreate=(props)=>{
     */
     const [state,setState] = useState({
     UNI:"",
+    type:"",
     name:"",
     detail:"",
     telephone:"",
@@ -23,7 +24,7 @@ const LocationCreate=(props)=>{
 
     })
     const [fileName,setFileName] = useState("");
-    const {UNI,name,detail,telephone,price} = state
+    const {UNI,name,type,detail,telephone,price} = state
 
     const ID = String(getUser())
 
@@ -75,6 +76,7 @@ const LocationCreate=(props)=>{
         formData.append("UNI",userChoice)
         formData.append("ID",ID);
         formData.append("name",name);
+        formData.append("type",type);
         formData.append("detail",detail);
         formData.append("telephone",telephone);
         formData.append("price",price);
@@ -144,6 +146,12 @@ const LocationCreate=(props)=>{
                         <label>ชื่อหอพัก</label>
                         <div className="input">
                             <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
+                        </div>
+                    </div>
+                    <div className="form-group">
+                        <label>ประเภทหอพัก</label>
+                        <div className="input">
+                            <input type="text" classname="form-control" value={type} onChange={inputValue("type")}/>
                         </div>
                     </div>
                     <div className="form-group">

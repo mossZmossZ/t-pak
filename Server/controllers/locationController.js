@@ -131,4 +131,13 @@ exports.gettulocation=(req,res)=>{
         res.json(tulocations)
     })
 }
+exports.getkmutnblocation3000to5000=(req,res)=>{
+    locations.find(
+        {"UNI":"KMUTNB",
+        "price" : { $gt :3000, $lt :5001}})
+        
+        .exec((err,kmutnblocations)=>{
+            res.json(kmutnblocations)
+        })
+    }
 
