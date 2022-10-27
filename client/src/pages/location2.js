@@ -32,7 +32,7 @@ const Kmutnblocation=(props)=>{
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
-    const [genderSelect, setGenderSelect] = useState("MALE")
+    const [agenderSelect, setGenderSelect] = useState("MALE")
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
     const gender = "MALE"
@@ -146,6 +146,7 @@ const Kmutnblocation=(props)=>{
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
@@ -179,6 +180,7 @@ const Kmutnblocation=(props)=>{
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((Roomate,index)=>(
