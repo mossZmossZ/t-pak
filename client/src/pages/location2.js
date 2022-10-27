@@ -38,7 +38,7 @@ const Kmutnblocation=(props)=>{
     if (modeSelect=='location'){
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>{uniSelect.toUpperCase()} Location2</h1>
                 <div className="select-container">
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/></div>
@@ -68,7 +68,7 @@ const Kmutnblocation=(props)=>{
     else{
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>{uniSelect.toUpperCase()} Location2</h1>
                 <div className="select-container">
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
