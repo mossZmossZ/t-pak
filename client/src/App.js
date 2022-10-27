@@ -51,7 +51,7 @@ function App() {
           <Route path='/roomate/:slug' exact component={SingleRoomate}/>
           <Route path='/roomate/update/:slug' exact component={EditRoomate}/>
           <Route path="/" component={Notfoundpage}/>
-          <Route path="/location2" component={Location2}/>
+          <Route path="/location2" exact component={Location2}/>
           
         </Switch>
       </div>
