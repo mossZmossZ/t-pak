@@ -141,37 +141,33 @@ exports.getkmutnblocation3000to5000=(req,res)=>{
         })
     }
 exports.getUNIlocation=(req,res)=>{
-    const UNI=req.body.UNI
-    const type=req.body.type
-    const start=req.body.start
-    const end = req.body.end
+    const UNI=req.body.uniSelect
+    const gender=req.body.gender
+    const priceSelect=req.body.priceSelect
     console.log({UNI})
-    console.log({type})
-    console.log({start})
-    console.log({end})
+    console.log({gender})
+    console.log({priceSelect})
     locations.find(
         //{"UNI":{$nin : UNI},
         {"UNI": {$regex:UNI},
-        "type" : {$regex:type},
-        "price":{ $gt :start, $lt :end}
+        "gender" : {$regex:gender},
+        "price":{$gt :priceSelect}
         })
         .exec((err,kmutnblocations)=>{
             res.json(kmutnblocations)
         })
 }
 exports.getUNIpriceALllocation=(req,res)=>{
-    const UNI=req.body.UNI
-    const type=req.body.type
+    const UNI=req.body.uniSelect
+    const gender=req.body.gender
     const start=req.body.start
     const end = req.body.end
     console.log({UNI})
-    console.log({type})
-    console.log({start})
-    console.log({end})
+    console.log({gender})
     locations.find(
         //{"UNI":{$nin : UNI},
         {"UNI": {$regex:UNI},
-        "type" : {$regex:type},
+        "gender" : {$regex:gender},
         })
         .exec((err,kmutnblocations)=>{
             res.json(kmutnblocations)

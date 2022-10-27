@@ -4,11 +4,12 @@ import {useState} from "react"
 
 
 const Home=(props)=>{
-    const [userChoice, setUserChoice] = useState("Location")
+    const [userChoice, setUserChoice] = useState("ALL")
     const [userChoice2, setUserChoice2] = useState("")
     const selectOptions = [
         { value: "location", label: "หอพัก"  },
         { value: "roomate", label: "รูมเมท" },
+        { value: 'ALL', label: 'ทั้งหมด' },
     ];
     const uniOptions = [
         { value: 'kmutnb', label: 'KMUTNB' },
@@ -27,7 +28,7 @@ const Home=(props)=>{
             <div className="head-container">
                 <div className="head">
                     <h1>ค้นหาจาก</h1>
-                    <Select className="dropdown" isSearchable={false}  defaultValue={{label:'หอพัก',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} />
+                    <Select className="dropdown" isSearchable={false}  defaultValue={{label:'หอพัก',value:'location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} />
                 </div>
             </div>
             <div className="main">

@@ -11,7 +11,7 @@ const {remove} = require('../controllers/roomateController')
 const {getkmutnbRoomate} = require('../controllers/roomateController')
 const {getkmitlRoomate} = require('../controllers/roomateController')
 const {getkmuttRoomate} = require('../controllers/roomateController')
-const {gettuRoomate} = require('../controllers/roomateController')
+const {gettuRoomate,getUNIroomate} = require('../controllers/roomateController')
 const storage = multer.diskStorage({
     destination: (req,file,callback) =>{
         callback(null,"../client/public/uploads");
@@ -114,6 +114,7 @@ router.get("/roomate",getAllroomate)
 router.post("/roomate/user",getUserroomate)
 router.get('/roomate/update/:slug',singleroomate)
 router.delete('/roomate/delete/:slug',remove)
+router.post('/roomate/UNI',getUNIroomate)
 
 router.get("/roomate/kmutnb",getkmutnbRoomate)
 router.get("/roomate/kmitl",getkmitlRoomate)

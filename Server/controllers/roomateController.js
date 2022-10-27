@@ -61,3 +61,20 @@ exports.gettuRoomate=(req,res)=>{
         res.json(tuRoomate)
     })
 }
+exports.getUNIroomate=(req,res)=>{
+    const UNI=req.body.uniSelect
+    const gender=req.body.gender
+    const priceSelect=req.body.priceSelect
+    console.log({UNI})
+    console.log({gender})
+    console.log({priceSelect})
+    roomates.find(
+        //{"UNI":{$nin : UNI},
+        {"UNI": {$regex:UNI},
+        "gender" : {$regex:gender},
+        "price":{$gt :priceSelect}
+        })
+        .exec((err,kmutnblocations)=>{
+            res.json(kmutnblocations)
+        })
+}
