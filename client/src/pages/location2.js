@@ -21,25 +21,12 @@ const Kmutnblocation=(props)=>{
     const [modeSelect,setModeSelect]= useState(mode)
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
-    if (modeSelect=='location'){
-    
         axios
-        .get(`${process.env.REACT_APP_API}/location/${uniSelect}`)
+        .get(`${process.env.REACT_APP_API}/${modeSelect}/${uniSelect}`)
         .then(response=>{
             setKmutnblocations(response.data)
         })
         .catch(err=>alert(err));
-    
-    
-    }
-    else{
-            axios
-            .get(`${process.env.REACT_APP_API}/roomate/${uniSelect}`)
-            .then(response=>{
-                setKmutnblocations(response.data)
-            })
-            .catch(err=>alert(err));
-    }
     }
     useEffect(()=>{
         fetchData()
@@ -47,10 +34,11 @@ const Kmutnblocation=(props)=>{
     useEffect(()=>{
         fetchData()
     },[modeSelect])
+    
     if (modeSelect=='location'){
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>{uniSelect.toUpperCase()} Location2</h1>
                 <div className="select-container">
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/></div>
@@ -80,7 +68,7 @@ const Kmutnblocation=(props)=>{
     else{
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>{uniSelect.toUpperCase()} Location2</h1>
                 <div className="select-container">
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>

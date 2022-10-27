@@ -23,6 +23,7 @@ import Roomate from './pages/Roomate';
 import SingleRoomate from "./pages/Formcomponents/SingleRoomate";
 import EditRoomate from "./pages/Formcomponents/EditRoomate";
 import Home3 from './pages/home3';
+import Location2 from './pages/location2';
 function App() {
   return(
     <>
@@ -50,6 +51,7 @@ function App() {
           <Route path='/roomate/:slug' exact component={SingleRoomate}/>
           <Route path='/roomate/update/:slug' exact component={EditRoomate}/>
           <Route path="/" component={Notfoundpage}/>
+          <Route path="/location2" component={Location2}/>
           
         </Switch>
       </div>

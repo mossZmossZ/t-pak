@@ -1,8 +1,3 @@
-import kmutnb from "../pictures/LOGO-KMUTNB.png"
-import kmitl from "../pictures/kmitl-logo.png"
-import kmutt from "../pictures/Kmutt-logo.png"
-import Tu from "../pictures/TU_logo.png"
-import './home.css'
 import {Link} from "react-router-dom" 
 import Select from "react-select";
 import {useState} from "react"
@@ -22,12 +17,7 @@ const Home=(props)=>{
         { value: 'tu', label: 'TU' },
         { value: '', label: 'ทั้งหมด' }
     ];          
-    const colorStyles = {
-        control: (styles) => ({ ...styles, backgroundColor: "white" }),
-        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-        return { ...styles, color: data.color };
-        }
-    };
+
     return (
          <div className="Home_container">
             <div className="slogan">
@@ -41,7 +31,7 @@ const Home=(props)=>{
                 </div>
             </div>
             <div className="main">
-                <Select  isSearchable={false} options={uniOptions} onChange={(choice) => setUserChoice2(choice.value)}/>
+                <Select  isSearchable={false} options={uniOptions}  onChange={(choice) => setUserChoice2(choice.value)}/>
               
             </div>
             <div className="Sub-but">
