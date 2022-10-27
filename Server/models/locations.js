@@ -18,6 +18,10 @@ const locationSchema = mongoose.Schema({
         type:String,
         required:true
     },
+    gender:{
+        type:String,
+        required:true
+    },
     detail:{
         type:String,
         required:true

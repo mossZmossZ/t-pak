@@ -10,13 +10,14 @@ const Editlocation=(props)=>{
     const [state,setState] = useState({
         name:"",
         type:"",
+        gender:"",
         detail:"",
         telephone:"",
         price:"",
         slug:"",
         Image:""
     })
-    const {name,type,detail,telephone,price,slug} = state
+    const {name,type,gender,detail,telephone,price,slug} = state
     const [UNI,setUNI] = useState("เลือกมหาวิทยาลัย")
     const selectOptions = [
         { value: 'KMUTNB', label: 'KMUTNB' },
@@ -37,8 +38,8 @@ const Editlocation=(props)=>{
         //props.match.params.slug}`)
         .get(`${process.env.REACT_APP_API}/location/update/${props.match.params.slug}`)
         .then(response=>{
-            const {UNI,name,type,detail,telephone,price,slug,Image} = response.data
-            setState({...state,name,type,detail,telephone,price,slug,Image})
+            const {UNI,name,type,gender,detail,telephone,price,slug,Image} = response.data
+            setState({...state,name,type,gender,detail,telephone,price,slug,Image})
             setUNI(UNI)
         })
         .catch(err=>alert(err))
@@ -66,9 +67,15 @@ const Editlocation=(props)=>{
                     </div>
                 </div>
                 <div className="form-group">
-                    <label>ประเภทหอพัก</label>
+                    <label>รูปแบบ</label>
                      <div className="input">
                         <input type="text" classname="form-control" value={type} onChange={inputValue("type")}/>
+                    </div>
+                </div>
+                <div className="form-group">
+                    <label>ประเภท</label>
+                     <div className="input">
+                        <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")}/>
                     </div>
                 </div>
                 <div className="form-group">
@@ -108,7 +115,7 @@ const Editlocation=(props)=>{
         console.log(UNI)
         console.log(name)
         axios
-        .put(`${process.env.REACT_APP_API}/location/update/${slug}`,{UNI,name,type,detail,telephone,price},
+        .put(`${process.env.REACT_APP_API}/location/update/${slug}`,{UNI,name,type,gender,detail,telephone,price},
         {
             headers:{
                 authorization:`Bearer ${getToken()}`
@@ -117,8 +124,8 @@ const Editlocation=(props)=>{
         .then(response=>{
             Swal.fire(
                 'แจ้งเตือน','อัพเดทเรียบร้อย','success')
-                const {name,type,detail,telephone,price,slug} = response.data
-                setState({...state,name,type,detail,telephone,price,slug})
+                const {name,type,gender,detail,telephone,price,slug} = response.data
+                setState({...state,name,type,gender,detail,telephone,price,slug})
                 setUNI(UNI)
                 props.history.push("/")
                 

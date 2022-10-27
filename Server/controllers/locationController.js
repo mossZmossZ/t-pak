@@ -140,4 +140,41 @@ exports.getkmutnblocation3000to5000=(req,res)=>{
             res.json(kmutnblocations)
         })
     }
-
+exports.getUNIlocation=(req,res)=>{
+    const UNI=req.body.UNI
+    const type=req.body.type
+    const start=req.body.start
+    const end = req.body.end
+    console.log({UNI})
+    console.log({type})
+    console.log({start})
+    console.log({end})
+    locations.find(
+        //{"UNI":{$nin : UNI},
+        {"UNI": {$regex:UNI},
+        "type" : {$regex:type},
+        "price":{ $gt :start, $lt :end}
+        })
+        .exec((err,kmutnblocations)=>{
+            res.json(kmutnblocations)
+        })
+}
+exports.getUNIpriceALllocation=(req,res)=>{
+    const UNI=req.body.UNI
+    const type=req.body.type
+    const start=req.body.start
+    const end = req.body.end
+    console.log({UNI})
+    console.log({type})
+    console.log({start})
+    console.log({end})
+    locations.find(
+        //{"UNI":{$nin : UNI},
+        {"UNI": {$regex:UNI},
+        "type" : {$regex:type},
+        })
+        .exec((err,kmutnblocations)=>{
+            res.json(kmutnblocations)
+        })
+}
+ 

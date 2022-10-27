@@ -30,7 +30,8 @@ const SingleLocation=(props)=>{
                     <div className="info">
                         <h1>{locations.name}</h1>
                         <p className="text-muted">มหาวิทยาลัย: {locations.UNI}</p>
-                        <p>ประเภทหอพัก : {locations.type}</p>
+                        <p>รูปแบบ : {locations.type}</p>
+                        <p>ประเภท :{locations.gender}</p>
                         <p className="text-muted">ราคา : {locations.price} บาท/เดือน </p>
                         <p>รายละเอียด : {locations.detail}</p>
                         <p className="text-muted3">เบอร์โทรศัพท์: {locations.telephone}</p>
