@@ -18,9 +18,9 @@ const Kmutnblocation=(props)=>{
         { value: "roomate", label: "รูมเมท" },
     ];
     const priceOptions = [
-        { valuea: "0",valueb:'4000', label: "0-4000" },
-        { valuea: "4001",valueb:'8000', label: "4000-8000" },
-        { valuea: "8001",valueb:'100000', label: "8000+" },
+        { value:0, label: '0 - 4000' },
+        { value:4001, label: '4000 - 8000' },
+        { value:8002, label: '8000 + ' },
     ];           
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
@@ -40,6 +40,9 @@ const Kmutnblocation=(props)=>{
     useEffect(()=>{
         fetchData()
     },[modeSelect])
+    console.log(priceSelect)
+    console.log(priceSelect+4000)
+    
     
     if (modeSelect=='location'){
         return(
@@ -48,7 +51,7 @@ const Kmutnblocation=(props)=>{
                 <div className="select-container">
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
-                    <Select   defaultValue={{label:`ช่วงราคา...`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ช่วงราคา..`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
