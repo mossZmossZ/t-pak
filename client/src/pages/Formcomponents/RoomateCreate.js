@@ -187,18 +187,7 @@ const RoomateCreate=(props)=>{
                                 <input type="text" classname="form-control"  onChange={handleChange} value={nameChoice} />
                              </div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="file">Choose Image</label>
-                            <div className="input">
-                                <input 
-                                    type="file" 
-                                    filename="Image"
-                                    classname="form-control-file" 
-                                    onChange={onChangeFile}
-                                />
-                            </div>
-                        </div>
-                        <img src={fileName.newImage} alt="" /> 
+                    
                     </div>
                     <div className="form-group">
                         <label>มหาวิทยาลัย</label>
@@ -238,6 +227,18 @@ const RoomateCreate=(props)=>{
                             <input type="tel" pattern="[0-9]{10}" value={telephone} onChange={inputValue("telephone")} required/>
                         </div>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="file">Choose Image</label>
+                        <div className="input">
+                            <input 
+                                type="file" 
+                                filename="Image"
+                                classname="form-control-file" 
+                                onChange={onChangeFile}
+                            />
+                        </div>
+                    </div>
+                        <img src={fileName.newImage} alt="" /> 
                     <div className="submit">
                         <input type="submit" value="          Submit         " className="btn btn-primary"></input>
                     </div>

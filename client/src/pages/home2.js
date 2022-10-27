@@ -53,7 +53,7 @@ const Home=(props)=>{
             {locations.map((location,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>
                 <div className="column" key={index} >
-                    <img src={`./uploads/${location.Image}`} alt="..."/>
+                <img src={`./uploads/${location.Image}`} alt="..."/>
                     <div className="info">
                         <h1>{location.name}</h1>
                         <p>ประเภทหอพัก :{location.type}</p>

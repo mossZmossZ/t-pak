@@ -5,9 +5,9 @@ import logo from '../pictures/logo.png'
 import logo2 from '../pictures/logo2.png'
 
 
-const Kmutnbroomate=(props)=>{
+const Roomate=(props)=>{
     const [Roomates,setRoomates] = useState([])
-    console.log(Roomates.already)
+    
     const [imageChoice,setImageChoice] = useState([])
 
     const place = props.location.state.userChoice2.toUpperCase()
@@ -21,10 +21,15 @@ const Kmutnbroomate=(props)=>{
         })
         .catch(err=>alert(err));
         
+        
+        
+        
     }
     useEffect(()=>{
         fetchData()
     },[])
+    const a =Roomates
+    console.log(a)
     return(
         <div className="post-container">
             <h1>รูมเมท {place}</h1>
@@ -32,7 +37,7 @@ const Kmutnbroomate=(props)=>{
             {Roomates.map((Roomate,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>
                 <div className="column" key={index} >
-                    <img src={imageChoice} alt="..."/>
+                    <img src={`./uploads/${Roomate.Image}`} alt="..."/>
                     <div className="info">
                         <p>ชื่อ : {Roomate.name}</p>
                         <p>มหาวิทยาลัย : {Roomate.UNI}</p>
@@ -53,7 +58,7 @@ const Kmutnbroomate=(props)=>{
         </div>
 )
 }
-export default Kmutnbroomate;
+export default Roomate;
 /*
 <Link to={'/'}>
                                 <h2>{kmutnblocation.Name}</h2>

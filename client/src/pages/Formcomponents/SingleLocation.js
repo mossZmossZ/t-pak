@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
-import Kmutnblocation from "../Location";
 
 
 const SingleLocation=(props)=>{
@@ -21,6 +20,7 @@ const SingleLocation=(props)=>{
         fetchData()
         //eslint-disable-next-line
     },[])
+    console.log(locations)
     return(
         <div className="post-container">
                 <div className="newcolumn" >
