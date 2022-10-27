@@ -22,23 +22,30 @@ const Kmutnblocation=(props)=>{
         { value: "0", label: "ทั้งหมด" },
         { value: "4001", label: "4000 ขึ้นไป" },
         { value: "8002", label: "8000 ขึ้นไป" },
-    ];           
+    ];
+    const gendertypeOptions = [
+        { value: 'หอพักชาย', label: 'หอพักชาย' },
+        { value: 'หอพักหญิง', label: 'หอพักหญิง' },
+        { value: 'หอพักรวม', label: 'หอพักรวม' },
+        
+    ]           
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
+    const [genderSelect, setGenderSelect] = useState("MALE")
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
-    const gender = "MALE"
+    
     const fetchData=()=>{
     if (modeSelect=='ALL'){
         axios.all([
             axios
-            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
+            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
             .then(response=>{
                 setKmutnblocations(response.data)
             })
             .catch(err=>alert(err)), 
-            axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+            axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
             .then(response=>{
                 setRoomates(response.data)
             })
@@ -48,7 +55,7 @@ const Kmutnblocation=(props)=>{
     if (modeSelect=='location'){
         
         axios
-        .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+        .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
         .then(response=>{
             setKmutnblocations(response.data)
             console.log(kmutnblocations)
@@ -59,9 +66,9 @@ const Kmutnblocation=(props)=>{
     }
     else{
             axios
-            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
             .then(response=>{
-                setKmutnblocations(response.data)
+                setRoomates(response.data)
             })
             .catch(err=>alert(err));
     }
@@ -83,6 +90,7 @@ const Kmutnblocation=(props)=>{
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
