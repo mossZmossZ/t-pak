@@ -21,12 +21,25 @@ const Kmutnblocation=(props)=>{
     const [modeSelect,setModeSelect]= useState(mode)
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
+    if (modeSelect=='location'){
+    
         axios
-        .get(`${process.env.REACT_APP_API}/${modeSelect}/${uniSelect}`)
+        .get(`${process.env.REACT_APP_API}/location/${uniSelect}`)
         .then(response=>{
             setKmutnblocations(response.data)
         })
         .catch(err=>alert(err));
+    
+    
+    }
+    else{
+            axios
+            .get(`${process.env.REACT_APP_API}/roomate/${uniSelect}`)
+            .then(response=>{
+                setKmutnblocations(response.data)
+            })
+            .catch(err=>alert(err));
+    }
     }
     useEffect(()=>{
         fetchData()
@@ -34,7 +47,6 @@ const Kmutnblocation=(props)=>{
     useEffect(()=>{
         fetchData()
     },[modeSelect])
-    
     if (modeSelect=='location'){
         return(
             <div className="post-container">
