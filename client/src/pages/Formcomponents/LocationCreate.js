@@ -38,7 +38,31 @@ const LocationCreate=(props)=>{
         { value: 'KMUTT', label: 'KMUTT' },
         { value: 'TU', label: 'TU' }
     ]
-      const [userChoice, setUserChoice] = useState("")
+    const typeOptions = [
+        { value: 'คอนโด', label: 'คอนโด' },
+        { value: 'หอพัก', label: 'หอพัก' },
+        { value: 'บ้านเช่า', label: 'บ้านเช่า' },
+        { value: 'อื่นๆ', label: 'อื่นๆ' }
+    ]
+    const gendertypeOptions = [
+        { value: 'หอพักชาย', label: 'หอพักชาย' },
+        { value: 'หอพักหญิง', label: 'หอพักหญิง' },
+        { value: 'หอพักรวม', label: 'หอพักรวม' },
+        
+    ]
+    const [userChoice, setUserChoice] = useState("")
+    const [typeChoice, setTypeChoice] = useState("")
+    const [genderTypeChoice, setGenderTypeChoice] = useState("")
+    function yesnoCheck(yes) {
+        if (yes.value == "หอพัก") {
+            document.getElementById("ifYes").style.display = "block";
+            setGenderTypeChoice('')
+        } 
+        else {
+            document.getElementById("ifYes").style.display = "none";
+            setGenderTypeChoice('รวม')
+        }
+    }
     /* var fileInput = false;
         if (e.target.files[0]) {
             fileInput = true;
@@ -77,7 +101,7 @@ const LocationCreate=(props)=>{
         formData.append("UNI",userChoice)
         formData.append("ID",ID);
         formData.append("name",name);
-        formData.append("type",type);
+        formData.append("type",typeChoice);
         formData.append("gender",gender)
         formData.append("detail",detail);
         formData.append("telephone",telephone);
@@ -153,15 +177,20 @@ const LocationCreate=(props)=>{
                     <div className="form-group">
                         <label>รูปแบบ</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={type} onChange={inputValue("type")}/>
+                        <Select isClearable={false} className='react-select'options={typeOptions}  onChange={(choice) => {setTypeChoice(choice.value);yesnoCheck(choice)}}/>
                         </div>
                     </div>
-                    <div className="form-group">
-                        <label>ประเภท</label>
-                        <div className="input">
-                            <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")}/>
+                    <div id="ifYes">
+                        <div className="form-group">
+                            <label>ประเภท</label>
+                            <div className="input">
+                                <Select isClearable={false} className='react-select'options={gendertypeOptions}  onChange={(choice) => setGenderTypeChoice(choice.value)}/>
+
+                            </div>
                         </div>
+                    
                     </div>
+                 
                     <div className="form-group">
                         <label>รายละเอียด </label>
                         <div className="input">
