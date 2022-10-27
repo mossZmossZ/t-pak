@@ -22,6 +22,7 @@ import location from './pages/Location';
 import Roomate from './pages/Roomate';
 import SingleRoomate from "./pages/Formcomponents/SingleRoomate";
 import EditRoomate from "./pages/Formcomponents/EditRoomate";
+import Home3 from './pages/home3';
 function App() {
   return(
     <>
@@ -30,6 +31,7 @@ function App() {
         <Switch>
           <Route path='/'exact component={Home}/>
           <Route path='/home2'exact component={Home2}/>
+          <Route path='/home3'exact component={Home3}/>
           <Route path='/Location'exact component={location}/>
           <Route path='/Roomate'exact component={Roomate}/>
           <Route path='/contact'exact component={Contact}/>

@@ -28,8 +28,32 @@ const Roomate=(props)=>{
     useEffect(()=>{
         fetchData()
     },[])
-    const a =Roomates
-    console.log(a)
+
+    /*for (let i = 0; i < Roomates.length; i++){
+        console.log(i)
+        if(Roomates[i].already=='NO'){
+            
+            console.log('no')
+            if(Roomates[i].gender=="MALE"){
+                return(setImageChoice(logo));
+                
+                
+            }
+            else{
+                return(setImageChoice(logo2));
+           
+        }
+        else{
+            setImageChoice(logo).then()
+            //return(setImageChoice(`./uploads/${Roomates[i].Image}`));
+            console.log(Roomates[i].already)
+            break;
+            
+        }
+        break;
+    }*/
+    console.log(imageChoice)
+   
     return(
         <div className="post-container">
             <h1>รูมเมท {place}</h1>
