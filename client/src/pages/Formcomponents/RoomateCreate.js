@@ -211,13 +211,13 @@ const RoomateCreate=(props)=>{
                     <div className="form-group">
                         <label>อายุ</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={age} onChange={inputValue("age")} required/>
+                            <input type="number" classname="form-control" value={age} onChange={inputValue("age")} required/>
                         </div>
                     </div>
                     <div className="form-group">
                         <label>ชั้นปี</label>
                         <div className="input">
-                            <input type="text" classname="form-control" value={year} onChange={inputValue("year")} required/>
+                            <input type="number" classname="form-control" value={year} onChange={inputValue("year")} required/>
                         </div>
                     </div>
                     <div className="form-group">

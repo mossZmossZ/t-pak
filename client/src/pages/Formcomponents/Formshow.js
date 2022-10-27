@@ -1,40 +1,77 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
-import "./Formshow.css"
 
-const Formshow=()=>{
-    const [blogs,setBlogs] = useState([])
 
-    const fetchData=()=>{
-        axios
-        .get(`${process.env.REACT_APP_API}/blogs`)
-        .then(response=>{
-            setBlogs(response.data)
-        })
-        .catch(err=>alert(err));
-    }
-    useEffect(()=>{
-        fetchData()
-    },[])
-    return(
-        <div>
-            <h1>Form show</h1>
-            <hr></hr>
-            {blogs.map((blog,index)=>(
-                <div className="row" key={index} style={{borderBottom:'1px solid silver'}}>
-                    <div className="col pt-3 pb-2" key={index} id="formcontainer">
-                        <div className="headcontent">
-                            <Link to={`/blog/${blog.slug}`}>
-                                <h2>{blog.title}</h2>
-                            </Link>
-                        </div>
-                        <p>เนื้อหา : {blog.content.substring(0,180)}</p>
-                        <p className="text-muted">ผู้เขียน : {blog.author} , เผยแพร่ : {new Date(blog.createdAt).toLocaleString()}</p>
+
+
+    const array = [
+        { key: '1', type: 'planet', value: 'Tatooine' },
+        { key: '2', type: 'planet', value: 'Alderaan' },
+        { key: '3', type: 'starship', value: 'Death Star' },
+        { key: '4', type: 'starship', value: 'CR90 corvette' },
+        { key: '5', type: 'starship', value: 'Star Destroyer' },
+        { key: '6', type: 'person', value: 'Luke Skywalker' },
+        { key: '7', type: 'person', value: 'Darth Vader' },
+        { key: '8', type: 'person', value: 'Leia Organa' },
+    ];
+    
+    const Formshow= props => {
+        const [inputValue, setInputValue] = useState('');
+        const [inputType, setInputType] = useState('');
+        const [filteredArray, setFilteredArray] = useState(array);
+    
+        const inputValueHandler = e => {
+            setInputValue(e.target.value);
+        };
+    
+        const inputTypeHandler = e => {
+            setInputType(e.target.value);
+        };
+    
+        useEffect(() => {
+            setFilteredArray((_) => {
+                const newArray = array.filter(item => item.value.includes(inputValue)).filter(item => item.type.includes(inputType));
+                return newArray;
+            });
+        }, [inputValue, inputType]);
+    
+        // Prepare array to be rendered
+        const listItems = filteredArray.map((item) =>
+            <>
+                <tr>
+                    <td style={{ border: '1px solid lightgray', padding: '0 1rem' }}>{item.type}</td>
+                    <td style={{ border: '1px solid lightgray', padding: '0 1rem' }} > {item.value}</td>
+                </tr >
+            </>
+        );
+    
+        return (
+            <>
+                <hr />
+                <h2>useEffect use case</h2>
+                <h3>Running on state change: live filtering</h3>
+                <form style={{ maxWidth: '23rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <div>
+                        <label htmlFor="input-type">Filter by <b>type</b></label><br />
+                        <input type="text" id="input-type" autoComplete="off" onChange={inputTypeHandler} style={{ height: '1.5rem', width: '10rem', marginTop: '1rem' }} />
                     </div>
-                </div>
-            ))}
-        </div>
-    )
-}
+                    <div>
+                        <label htmlFor="input-value">Filter by <b>value</b></label><br />
+                        <input type="text" id="input-value" autoComplete="off" onChange={inputValueHandler} style={{ height: '1.5rem', width: '10rem', marginTop: '1rem' }} />
+                    </div>
+                </form>
+                <br />
+                <table style={{ width: '20rem', border: '1px solid gray', padding: '0 1rem' }}>
+                    <tr>
+                        <th>Type</th>
+                        <th>Value</th>
+                    </tr>
+                    {listItems}
+                </table>
+            </>
+        );
+    };
+    
+
 export default Formshow;

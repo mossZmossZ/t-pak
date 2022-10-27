@@ -1,22 +1,17 @@
 import axios from "axios";
 import { useState,useEffect} from "react";
 import {Link} from 'react-router-dom';
+import logo from '../pictures/logo.png'
+import logo2 from '../pictures/logo2.png'
 
 
 const Kmutnbroomate=(props)=>{
-    
-    function genderCheck() {
-        if (Roomates.already=='YES') {
-            document.getElementById("ifYes").style.display = "block";
-            
-        } 
-        else {
-            document.getElementById("ifYes").style.display = "none";
-            
-        }
-    }
-    const place = props.location.state.userChoice2.toUpperCase()
     const [Roomates,setRoomates] = useState([])
+    console.log(Roomates.already)
+    const [imageChoice,setImageChoice] = useState([])
+
+    const place = props.location.state.userChoice2.toUpperCase()
+    
     
     const fetchData=()=>{
         axios
@@ -25,6 +20,7 @@ const Kmutnbroomate=(props)=>{
             setRoomates(response.data)
         })
         .catch(err=>alert(err));
+        
     }
     useEffect(()=>{
         fetchData()
@@ -36,7 +32,7 @@ const Kmutnbroomate=(props)=>{
             {Roomates.map((Roomate,index)=>(
             <div className="row" key={index} style={{border:'3px solid grey'}}>
                 <div className="column" key={index} >
-                    <img src={`./uploads/${Roomate.Image}`} alt="..."/>
+                    <img src={imageChoice} alt="..."/>
                     <div className="info">
                         <p>ชื่อ : {Roomate.name}</p>
                         <p>มหาวิทยาลัย : {Roomate.UNI}</p>

@@ -1,16 +1,17 @@
 import './home.css'
 import {Link} from "react-router-dom" 
 import Select from "react-select";
-import {useState} from "react"
+import {useState,useEffect} from "react"
+import axios from "axios";
 
 
 const Home=(props)=>{
-
-    const [userChoice, setUserChoice] = useState("Location")
+    const [locations,setLocations] = useState([])
+    const [userChoice, setUserChoice] = useState("location")
     const [userChoice2, setUserChoice2] = useState("")
     const selectOptions = [
-        { value: "Location", label: "สถานที่" ,color:"black" },
-        { value: "Roomate", label: "รูมเมท",color:"black" },
+        { value: "location", label: "สถานที่" ,color:"black" },
+        { value: "roomate", label: "รูมเมท",color:"black" },
     ];  
     const placeOptions = [
         { value: 'kmutnb', label: 'KMUTNB' },
@@ -24,26 +25,48 @@ const Home=(props)=>{
         return { ...styles, color: data.color };
         }
     };
+    const fetchData=()=>{
+        axios
+        .get(`${process.env.REACT_APP_API}/${userChoice}/${userChoice2}`)
+        .then(response=>{
+            setLocations(response.data)
+        })
+        .catch(err=>alert(err));
+    }
+    useEffect(()=>{
+        fetchData()
+    },[userChoice2])
     return (
         <div className="Home_container">
-            {console.log({userChoice})}
-            {console.log({userChoice2})}
-            <div className="slogan">
-                <p>T-pak เป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
-                <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
-            </div>
+            {console.log({locations})}
             <div className="headcontainer">
-                <h1>ค้นหาจาก</h1>  
-                <Select className="dropdown" isSearchable={false}  defaultValue={{label:'สถานที่',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
-                <Select className="dropdown" isSearchable={false} options={placeOptions} onChange={(choice2) => setUserChoice2(choice2.value)} styles={colorStyles}/>
-                <Link to={{
-                    pathname: `/${userChoice}`,
-                    state: {userChoice,userChoice2} }}>
-                    <button>
-                        submit
-                    </button>
-                </Link>
+                <Select className="dropdown2" isSearchable={false}  defaultValue={{label:'สถานที่',value:'Location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} styles={colorStyles}/>
+                <Select className="dropdown2" isSearchable={false} options={placeOptions} onChange={(choice2) => setUserChoice2(choice2.value)} styles={colorStyles}/>
+                
             </div>
+            <div className="post-container">
+            <h1>หอพักใกล้ {userChoice2}</h1>
+            <hr/>
+            {locations.map((location,index)=>(
+            <div className="row" key={index} style={{border:'3px solid grey'}}>
+                <div className="column" key={index} >
+                    <img src={`./uploads/${location.Image}`} alt="..."/>
+                    <div className="info">
+                        <h1>{location.name}</h1>
+                        <p>ประเภทหอพัก :{location.type}</p>
+                        <p className="text-muted">ราคา : {location.price} บาท/เดือน </p>
+                        <p>รายละเอียด : {location.detail.substring(0,180)}</p>
+                        <p className="text-muted3">เบอร์โทรศัพท์: {location.telephone}</p>
+                    </div>
+                    <button className="select"> 
+                        <Link to={`/location/${location.slug}`}>
+                            select
+                        </Link>
+                    </button>
+                </div>
+            </div>
+                ))}
+        </div>
         </div>
     )
 }
