@@ -35,44 +35,43 @@ const Kmutnblocation=(props)=>{
     const [genderSelect, setGenderSelect] = useState("MALE")
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
-    
+    const gender = "MALE"
     const fetchData=()=>{
-    if (modeSelect=='ALL'){
-        axios.all([
+        if (modeSelect=='ALL'){
+            axios.all([
+                axios
+                .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
+                .then(response=>{
+                    setKmutnblocations(response.data)
+                })
+                .catch(err=>alert(err)), 
+                axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+                .then(response=>{
+                    setRoomates(response.data)
+                })
+                .catch(err=>alert(err)), 
+            ])
+        }
+        if (modeSelect=='location'){
+            
             axios
-            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
+            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
                 setKmutnblocations(response.data)
             })
-            .catch(err=>alert(err)), 
-            axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
-            .then(response=>{
-                setRoomates(response.data)
-            })
-            .catch(err=>alert(err)), 
-          ])
-    }
-    if (modeSelect=='location'){
-        
-        axios
-        .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
-        .then(response=>{
-            setKmutnblocations(response.data)
-            console.log(kmutnblocations)
-        })
-        .catch(err=>alert(err));
-    
-    
     }
     else{
             axios
-            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
+            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
                 setRoomates(response.data)
             })
             .catch(err=>alert(err));
+        
+        
+        }
     }
-    }
+    //console.log(uniSelect)
     useEffect(()=>{
         fetchData()
     },[uniSelect])
