@@ -36,7 +36,7 @@ const Home=(props)=>{
             </div>
             <div className="Sub-but">
                 <Link to={{
-                        pathname: '/location',
+                        pathname: '/location2',
                         state: {userChoice,userChoice2}}}>
                     Submit
                 </Link>

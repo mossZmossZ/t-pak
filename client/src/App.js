@@ -50,8 +50,9 @@ function App() {
           <Route path='/location/:slug'exact component={SingleLocation}/>
           <Route path='/roomate/:slug' exact component={SingleRoomate}/>
           <Route path='/roomate/update/:slug' exact component={EditRoomate}/>
-          <Route path="/" component={Notfoundpage}/>
           <Route path="/location2" exact component={Location2}/>
+          <Route path="/" component={Notfoundpage}/>
+          
           
         </Switch>
       </div>

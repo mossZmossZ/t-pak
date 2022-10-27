@@ -16,9 +16,15 @@ const Kmutnblocation=(props)=>{
     const modeOptions = [
         { value: "location", label: "หอพัก" },
         { value: "roomate", label: "รูมเมท" },
-    ];         
+    ];
+    const priceOptions = [
+        { value: "", label: "0-4000" },
+        { value: "", label: "4000-8000" },
+        { value: "", label: "8000+" },
+    ];           
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
+    const [priceSelect,setPriceSelect]= useState('')
     const [kmutnblocations,setKmutnblocations] = useState([])
     const fetchData=()=>{
         axios
@@ -41,7 +47,9 @@ const Kmutnblocation=(props)=>{
                 <h1>{uniSelect.toUpperCase()} Location2</h1>
                 <div className="select-container">
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
-                    <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/></div>
+                    <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ช่วงราคา...`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
+                </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
                 <div className="row" key={index} style={{border:'3px solid grey'}}>
@@ -72,6 +80,7 @@ const Kmutnblocation=(props)=>{
                 <div className="select-container">
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ช่วงราคา...`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((Roomate,index)=>(
