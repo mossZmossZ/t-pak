@@ -18,9 +18,9 @@ const Kmutnblocation=(props)=>{
         { value: "roomate", label: "รูมเมท" },
     ];
     const priceOptions = [
-        { value: "", label: "0-4000" },
-        { value: "", label: "4000-8000" },
-        { value: "", label: "8000+" },
+        { valuea: "0",valueb:'4000', label: "0-4000" },
+        { valuea: "4001",valueb:'8000', label: "4000-8000" },
+        { valuea: "8001",valueb:'100000', label: "8000+" },
     ];           
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
