@@ -35,6 +35,9 @@ const Home=(props)=>{
     }
     useEffect(()=>{
         fetchData()
+    },[userChoice])
+    useEffect(()=>{
+        fetchData()
     },[userChoice2])
     return (
         <div className="Home_container">
