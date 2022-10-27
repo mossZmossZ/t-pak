@@ -25,12 +25,30 @@ const Editlocation=(props)=>{
         { value: 'KMUTT', label: 'KMUTT' },
         { value: 'TU', label: 'TU' }
     ]
-    const colorStyles = {
-        control: (styles) => ({ ...styles, backgroundColor: "white" }),
-        option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-        return { ...styles, color: data.color };
+    const typeOptions = [
+        { value: 'คอนโด', label: 'คอนโด' },
+        { value: 'หอพัก', label: 'หอพัก' },
+        { value: 'บ้านเช่า', label: 'บ้านเช่า' },
+        { value: 'อื่นๆ', label: 'อื่นๆ' }
+    ]
+    const gendertypeOptions = [
+        { value: 'หอพักชาย', label: 'หอพักชาย' },
+        { value: 'หอพักหญิง', label: 'หอพักหญิง' },
+        { value: 'หอพักรวม', label: 'หอพักรวม' },
+        
+    ]
+    const [typeChoice, setTypeChoice] = useState("เลือกรูปแบบ")
+    const [genderTypeChoice, setGenderTypeChoice] = useState("เลือกประเภท")
+    function yesnoCheck(yes) {
+        if (yes.value == "หอพัก") {
+            document.getElementById("ifYes").style.display = "block";
+            setGenderTypeChoice('')
+        } 
+        else {
+            document.getElementById("ifYes").style.display = "none";
+            setGenderTypeChoice('รวม')
         }
-    };
+    }
 
     //ดึงข้อมูลบทความที่ต้องการแก้ไขโดยใช้ useEffect
     const fetchData=()=>{
@@ -41,6 +59,8 @@ const Editlocation=(props)=>{
             const {UNI,name,type,gender,detail,telephone,price,slug,Image} = response.data
             setState({...state,name,type,gender,detail,telephone,price,slug,Image})
             setUNI(UNI)
+            setTypeChoice(type)
+            setGenderTypeChoice(gender)
         })
         .catch(err=>alert(err))
         
@@ -56,12 +76,12 @@ const Editlocation=(props)=>{
             <div className="form-group">
                     <label>มหาวิทยาลัย </label>
                      <div className="input">
-                     <Select className="dropdown" isSearchable={false} defaultValue={{label:UNI,value:String(UNI)}} options={selectOptions} onChange={(choice) => setUNI(choice.value)} styles={colorStyles}/>
+                     <Select className="dropdown" isSearchable={false} defaultValue={{label:UNI,value:String(UNI)}} options={selectOptions} onChange={(choice) => setUNI(choice.value)} />
                     </div>
                     
                 </div>
                 <div className="form-group">
-                    <label>ชื่อ</label>
+                    <label>ชื่อหอพัก</label>
                      <div className="input">
                         <input type="text" classname="form-control" value={name} onChange={inputValue("name")}/>
                     </div>
@@ -69,14 +89,18 @@ const Editlocation=(props)=>{
                 <div className="form-group">
                     <label>รูปแบบ</label>
                      <div className="input">
-                        <input type="text" classname="form-control" value={type} onChange={inputValue("type")}/>
+                        <Select isClearable={false} className='react-select'options={typeOptions} defaultValue={{label:typeChoice,value:String(typeChoice)}} onChange={(choice) => {setTypeChoice(choice.value);yesnoCheck(choice)}}/>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label>ประเภท</label>
-                     <div className="input">
-                        <input type="text" classname="form-control" value={gender} onChange={inputValue("gender")}/>
+                <div id="ifYes">
+                    <div className="form-group">
+                        <label>ประเภท</label>
+                        <div className="input">
+                            <Select isClearable={false} className='react-select'options={gendertypeOptions}defaultValue={{label:genderTypeChoice,value:String(genderTypeChoice)}}  onChange={(choice) => setGenderTypeChoice(choice.value)}/>
+
+                        </div>
                     </div>
+                    
                 </div>
                 <div className="form-group">
                     <label>รายละเอียด</label>
@@ -127,6 +151,9 @@ const Editlocation=(props)=>{
                 const {name,type,gender,detail,telephone,price,slug} = response.data
                 setState({...state,name,type,gender,detail,telephone,price,slug})
                 setUNI(UNI)
+                setGenderTypeChoice(genderTypeChoice)
+                setTypeChoice(typeChoice)
+                
                 props.history.push("/")
                 
         }).catch(err=>{

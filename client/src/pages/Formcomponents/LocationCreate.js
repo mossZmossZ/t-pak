@@ -60,7 +60,7 @@ const LocationCreate=(props)=>{
         } 
         else {
             document.getElementById("ifYes").style.display = "none";
-            setGenderTypeChoice('รวม')
+            setGenderTypeChoice('หอพักรวม')
         }
     }
     /* var fileInput = false;
@@ -102,7 +102,7 @@ const LocationCreate=(props)=>{
         formData.append("ID",ID);
         formData.append("name",name);
         formData.append("type",typeChoice);
-        formData.append("gender",gender)
+        formData.append("gender",genderTypeChoice)
         formData.append("detail",detail);
         formData.append("telephone",telephone);
         formData.append("price",price);
