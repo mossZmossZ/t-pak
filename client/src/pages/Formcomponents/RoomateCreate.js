@@ -51,8 +51,9 @@ const RoomateCreate=(props)=>{
         setFileName(e.target.files[0]);
     }
     const genderOptions = [
-        { value: 'MALE', label: 'ชาย' },
-        { value: 'FEMALE', label: 'หญิง' },
+        { value: 'หอพักชาย', label: 'หอพักชาย' },
+        { value: 'หอพักหญิง', label: 'หอพักหญิง' },
+        { value: 'หอพักรวม', label: 'หอพักรวม' }
     ]
     const uniOptions = [
         { value: 'KMUTNB', label: 'KMUTNB' },
