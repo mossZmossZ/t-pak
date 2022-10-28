@@ -103,7 +103,7 @@ exports.remove=(req,res)=>{
     locations.findOneAndRemove({slug}).exec((err,location)=>{
         if(err) console.log(err)
         res.json({
-            massage:"ลบบทความเรียบร้อย"
+            massage:"ลบข้อมูลเรียบร้อย"
         })
     })
 }

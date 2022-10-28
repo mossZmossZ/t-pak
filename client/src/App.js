@@ -23,7 +23,7 @@ import Roomate from './pages/Roomate';
 import SingleRoomate from "./pages/Formcomponents/SingleRoomate";
 import EditRoomate from "./pages/Formcomponents/EditRoomate";
 import Home3 from './pages/home3';
-import Location2 from './pages/Location2'
+import Location2 from './pages/location2'
 function App() {
   return(
     <>
