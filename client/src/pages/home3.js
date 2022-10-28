@@ -46,8 +46,8 @@ const Home=(props)=>{
           ...base,
           background: "#AFB4ff",
           borderRadius: "1rem",
-          width:'12rem'
-        }),
+          width:'12rem'}),
+        
       };
                   
 
@@ -69,7 +69,7 @@ const Home=(props)=>{
                         <Select  options={uniOptions}   isSearchable={false} defaultValue={{label:'เลือกมหาลัย...',value:''}} styles={customStyles} onChange={(choice) => setUserChoice2(choice.value)}/>
                     </div>
                     <div className="select-container">
-                        <Select className="dropdown3"  defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceFilter(choice.value)} styles={customStyles2}/>
+                        <Select className="dropdown3"   defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceFilter(choice.value)} styles={customStyles2}/>
                         <Select  className="dropdown3"   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderFilter(choice.value)} styles={customStyles2}/>
                     </div>
                 </div>
