@@ -32,20 +32,21 @@ const Kmutnblocation=(props)=>{
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
-    const [agenderSelect, setGenderSelect] = useState("MALE")
+    const [agenderSelect, setGenderSelect] = useState('MALE')
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
-    const gender = "MALE"
+    const genderSelect=''
+    
     const fetchData=()=>{
         if (modeSelect=='ALL'){
             axios.all([
                 axios
-                .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
+                .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
                 .then(response=>{
                     setKmutnblocations(response.data)
                 })
                 .catch(err=>alert(err)), 
-                axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+                axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
                 .then(response=>{
                     setRoomates(response.data)
                 })
@@ -55,14 +56,14 @@ const Kmutnblocation=(props)=>{
         if (modeSelect=='location'){
             
             axios
-            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
+            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
             .then(response=>{
                 setKmutnblocations(response.data)
             })
     }
-    else{
+        else{
             axios
-            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
+            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
             .then(response=>{
                 setRoomates(response.data)
             })
@@ -81,6 +82,9 @@ const Kmutnblocation=(props)=>{
     useEffect(()=>{
         fetchData()
     },[priceSelect])
+    useEffect(()=>{
+        fetchData()
+    },[genderSelect])
     if (modeSelect=='ALL'){
         return(
             <div className="post-container">

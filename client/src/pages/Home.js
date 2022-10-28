@@ -36,7 +36,7 @@ const Home=(props)=>{
                 <div className="btn-container1">
                     <div className="btn-kmutnb">
                         <Link to={{
-                            pathname: '/location',
+                            pathname: '/location2',
                             state: {userChoice,userChoice2:'kmutnb'} }}>
                             <img src={kmutnb} className="kmutnb" alt=""></img>
                             <p>KMUTNB</p>
@@ -45,7 +45,7 @@ const Home=(props)=>{
                     </div>
                     <div className="btn-kmitl">
                         <Link to={{
-                            pathname: '/location',
+                            pathname: '/location2',
                             state: {userChoice,userChoice2:'kmitl'} }}>
                             <img src={kmitl} className="kmitl" alt=""></img>
                             <p>KMITL</p>
@@ -56,7 +56,7 @@ const Home=(props)=>{
                 <div className="btn-container2">
                     <div className="btn-kmutt">
                         <Link to={{
-                            pathname: '/location',
+                            pathname: '/location2',
                             state: {userChoice,userChoice2:'kmutt'} }}>
                             <img src={kmutt} className="kmutt" alt=""></img>
                             <p>KMUTT</p>
@@ -65,7 +65,7 @@ const Home=(props)=>{
                     </div>
                     <div className="btn-tu">
                         <Link to={{
-                            pathname: '/location',
+                            pathname: '/location2',
                             state: {userChoice,userChoice2:'tu'} }}>
                             <img src={Tu} className="tu" alt=""></img>
                             <p>TU</p>

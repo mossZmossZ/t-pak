@@ -20,18 +20,18 @@ const Home=(props)=>{
     ];          
 
     return (
-         <div className="Home_container">
+         <div className="new-Home_container">
             <div className="slogan">
                 <p>T-pak เป็นได้มากกว่าที่พัก ในเว็ปนี้ .</p>
                 <p>หา หอพัก , คอนโด, และ รูมเมท !</p>
             </div>
-            <div className="head-container">
-                <div className="head">
+            <div className="new-head-container">
+                <div className="newhead">
                     <h1>ค้นหาจาก</h1>
                     <Select className="dropdown" isSearchable={false}  defaultValue={{label:'หอพัก',value:'location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} />
                 </div>
             </div>
-            <div className="main">
+            <div className="new-main">
                 <Select  isSearchable={false} options={uniOptions}  onChange={(choice) => setUserChoice2(choice.value)}/>
               
             </div>

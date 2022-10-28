@@ -1,0 +1,11 @@
+.new-head-container{
+    display: flex;
+    align-items: center;
+    color: #AFB4ff;
+}
+.newhead{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AFB4ff;
+}

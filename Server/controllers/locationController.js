@@ -142,7 +142,7 @@ exports.getkmutnblocation3000to5000=(req,res)=>{
     }
 exports.getUNIlocation=(req,res)=>{
     const UNI=req.body.uniSelect
-    const gender=req.body.gender
+    const genderSelect=req.body.genderSelect
     const priceSelect=req.body.priceSelect
     console.log({UNI})
     console.log({gender})
@@ -150,7 +150,7 @@ exports.getUNIlocation=(req,res)=>{
     locations.find(
         //{"UNI":{$nin : UNI},
         {"UNI": {$regex:UNI},
-        "gender" : {$regex:gender},
+        "gender" : {$regex:genderSelect},
         "price":{$gt :priceSelect}
         })
         .exec((err,kmutnblocations)=>{
