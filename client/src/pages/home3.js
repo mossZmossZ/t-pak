@@ -46,7 +46,19 @@ const Home=(props)=>{
           ...base,
           background: "#AFB4ff",
           borderRadius: "1rem",
-          width:'12rem'}),
+          width:'12rem',
+          boxShadow: state.isFocused ? null : null,
+          border: null,
+        }),
+        singleValue: (provided,state) => ({
+            ...provided,
+            color: 'white' ,
+         
+        }),
+        dropdownIndicator: base => ({
+            ...base,
+            color: "white" // Custom colour
+          })
         
       };
                   
@@ -61,7 +73,7 @@ const Home=(props)=>{
                 <div className="new-head-container">
                     <div className="newhead">
                         <h1>ค้นหาจาก</h1>
-                        <Select className="dropdown2" isSearchable={false}  defaultValue={{label:'เลือกรูปแบบ...',value:''}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)}  />
+                        <Select className="dropdown2"  isSearchable={false}  defaultValue={{label:'เลือกรูปแบบ...',value:''}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)}  />
                     </div>
                 </div>
                 <div className="new-main">
