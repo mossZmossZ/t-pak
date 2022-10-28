@@ -11,15 +11,15 @@ const Kmutnblocation=(props)=>{
         { value: 'KMITL', label: 'KMITL' },
         { value: 'KMUTT', label: 'KMUTT' },
         { value: 'TU', label: 'TU' },
-        { value: '', label: 'ทั้งหมด' }
+        { value: '', label: 'มหาลัยทั้งหมด' }
     ]; 
     const modeOptions = [
         { value: "location", label: "หอพัก" },
         { value: "roomate", label: "รูมเมท" },
-        { value: 'ALL', label: 'ทั้งหมด' }
+        { value: '', label: 'รูปแบบทั้งหมด' }
     ];
     const priceOptions = [
-        { value: "0", label: "ทั้งหมด" },
+        { value: "0", label: "ราคาทั้งหมด" },
         { value: "4001", label: "4000 ขึ้นไป" },
         { value: "8002", label: "8000 ขึ้นไป" },
     ];
@@ -27,18 +27,19 @@ const Kmutnblocation=(props)=>{
         { value: 'หอพักชาย', label: 'หอพักชาย' },
         { value: 'หอพักหญิง', label: 'หอพักหญิง' },
         { value: 'หอพักรวม', label: 'หอพักรวม' },
+        { value: '', label: 'หอพักทั้งหมด' },
         
     ]           
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
-    const [gender, setGender] = useState('MALE')
+    const [gender, setGender] = useState('')
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
-
+    
     
     const fetchData=()=>{
-        if (modeSelect=='ALL'){
+        if (modeSelect==''){
             axios.all([
                 axios
                 .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
@@ -85,7 +86,7 @@ const Kmutnblocation=(props)=>{
     useEffect(()=>{
         fetchData()
     },[gender])
-    if (modeSelect=='ALL'){
+    if (modeSelect==''){
         return(
             <div className="post-container">
                 <h1>ค้นหาจากสถานที่  {uniSelect.toUpperCase()}</h1>
@@ -117,7 +118,7 @@ const Kmutnblocation=(props)=>{
                 </div>
                 ))}
                 <hr/>
-                <h1>ค้นหาจากรูมเมท {uniSelect.toUpperCase()}</h1>
+                <h1>ค้นหาจากรูมเมท  {uniSelect.toUpperCase()}</h1>
                 {roomates.map((Roomate,index)=>(
                 <div className="row" key={index} style={{border:'3px solid grey'}}>
                     <div className="column" key={index} >
@@ -145,7 +146,7 @@ const Kmutnblocation=(props)=>{
     if (modeSelect=='location'){
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>ค้นหาจากสถานที่  {uniSelect.toUpperCase()}</h1>
                 <div className="select-container">
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
@@ -179,7 +180,7 @@ const Kmutnblocation=(props)=>{
     else{
         return(
             <div className="post-container">
-                <h1>{uniSelect.toUpperCase()}</h1>
+                <h1>ค้นหาจากรูมเมท  {uniSelect.toUpperCase()}</h1>
                 <div className="select-container">
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>

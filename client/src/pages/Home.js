@@ -9,10 +9,10 @@ import {useState} from "react"
 
 
 const Home=(props)=>{
-    const [userChoice, setUserChoice] = useState("Location")
+    const [userChoice, setUserChoice] = useState("location")
     const selectOptions = [
-        { value: "Location", label: "หอพัก" ,color:"black" },
-        { value: "Roomate", label: "รูมเมท",color:"black" },
+        { value: "location", label: "หอพัก" ,color:"black" },
+        { value: "roomate", label: "รูมเมท",color:"black" },
     ];         
     const colorStyles = {
         control: (styles) => ({ ...styles, backgroundColor: "white" }),

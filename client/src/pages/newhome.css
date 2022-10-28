@@ -1,11 +1,48 @@
 .new-head-container{
+    justify-content: center;
     display: flex;
-    align-items: center;
-    color: #AFB4ff;
+    position: relative;
+    background-color:#AFB4ff;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    margin: 0 15rem;
+    z-index: 1;
 }
 .newhead{
+    display:flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    color: white;   
+    gap: 2rem;
+    
+    
+}
+.dropdown2{
+    color: #000;
+    font-size: 1.2rem;
+}
+.new-main{
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #AFB4ff;
+    padding: 3rem;
+    background-color: #DDDFFF;
+    border-radius: 2rem;
+    margin:0 10rem;
+    margin-top: -2rem;
+    
+}
+.Sub-but{
+    border-radius: 2rem;
+    background-color: #BF95FF;
+    padding: 1rem ;
+    margin:0 18rem;
+    margin-top:-2rem;
+    position: relative;
+}
+.Sub-but a {
+    text-decoration: none;
+    padding: 0;
+    margin:0;
+    font-size: 1.2rem;
+    color: white;
 }

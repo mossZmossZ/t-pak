@@ -1,15 +1,16 @@
 import {Link} from "react-router-dom" 
 import Select from "react-select";
 import {useState} from "react"
+import'./newhome.css'
 
 
 const Home=(props)=>{
-    const [userChoice, setUserChoice] = useState("ALL")
+    const [userChoice, setUserChoice] = useState("")
     const [userChoice2, setUserChoice2] = useState("")
     const selectOptions = [
         { value: "location", label: "หอพัก"  },
         { value: "roomate", label: "รูมเมท" },
-        { value: 'ALL', label: 'ทั้งหมด' },
+        { value: '', label: 'ทั้งหมด' },
     ];
     const uniOptions = [
         { value: 'kmutnb', label: 'KMUTNB' },
@@ -17,7 +18,15 @@ const Home=(props)=>{
         { value: 'kmutt', label: 'KMUTT' },
         { value: 'tu', label: 'TU' },
         { value: '', label: 'ทั้งหมด' }
-    ];          
+    ];
+    const customStyles = {
+        control: (base, state) => ({
+          ...base,
+          background: "rgb(255, 246, 167)",
+          borderRadius: "1rem",
+          width:'20rem'
+        }),
+      };            
 
     return (
          <div className="new-Home_container">
@@ -28,12 +37,11 @@ const Home=(props)=>{
             <div className="new-head-container">
                 <div className="newhead">
                     <h1>ค้นหาจาก</h1>
-                    <Select className="dropdown" isSearchable={false}  defaultValue={{label:'หอพัก',value:'location'}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)} />
+                    <Select className="dropdown2" isSearchable={false}  defaultValue={{label:'เลือกรูปแบบ...',value:''}} options={selectOptions} onChange={(choice) => setUserChoice(choice.value)}  />
                 </div>
             </div>
             <div className="new-main">
-                <Select  isSearchable={false} options={uniOptions}  onChange={(choice) => setUserChoice2(choice.value)}/>
-              
+                <Select   options={uniOptions}   isSearchable={false} defaultValue={{label:'เลือกมหาลัย...',value:''}} styles={customStyles} onChange={(choice) => setUserChoice2(choice.value)}/>
             </div>
             <div className="Sub-but">
                 <Link to={{

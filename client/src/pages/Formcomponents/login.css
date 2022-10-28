@@ -27,7 +27,8 @@
     animation-fill-mode: forwards;
 }
 .head h1{
-    margin:0.5rem 0;
+    margin:1.3rem;
+    font-size: 1.3rem;
 }
 .form_container{
     display:flex;
@@ -45,7 +46,7 @@
 label{
     display: flex;
     justify-content: start;
-    font-size: larger;
+    font-size: 0.9rem;
     visibility: hidden;
     animation:movedown 0.7s linear 1;
     animation-delay: 0ms;
@@ -59,7 +60,7 @@ input[type="text"],input[type="password"] ,textarea ,input[type="number"],input[
     border:0;
     background-color : rgb(255, 246, 167); 
     width: 100%;
-    font-size: large;
+    font-size: 0.8rem;
     margin-bottom: 0.5rem;
   }
 input::-webkit-outer-spin-button,
@@ -69,7 +70,7 @@ input::-webkit-inner-spin-button {
 }
 input[type="submit"] {
     color: white;
-    font-size: x-large;
+    font-size: 1.2rem;
     border:none;
     padding: 0.5rem;
     background-color : #BF95FF;; 
