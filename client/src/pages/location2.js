@@ -32,21 +32,21 @@ const Kmutnblocation=(props)=>{
     const [uniSelect,setUniSelect]= useState(place)
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
-    const [agenderSelect, setGenderSelect] = useState('MALE')
+    const [gender, setGender] = useState('MALE')
     const [kmutnblocations,setKmutnblocations] = useState([])
     const [roomates,setRoomates] = useState([])
-    const genderSelect=''
+
     
     const fetchData=()=>{
         if (modeSelect=='ALL'){
             axios.all([
                 axios
-                .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
+                .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
                 .then(response=>{
                     setKmutnblocations(response.data)
                 })
                 .catch(err=>alert(err)), 
-                axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
+                axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
                 .then(response=>{
                     setRoomates(response.data)
                 })
@@ -56,14 +56,14 @@ const Kmutnblocation=(props)=>{
         if (modeSelect=='location'){
             
             axios
-            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,genderSelect,priceSelect})
+            .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
                 setKmutnblocations(response.data)
             })
     }
         else{
             axios
-            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,genderSelect,priceSelect})
+            .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
                 setRoomates(response.data)
             })
@@ -84,7 +84,7 @@ const Kmutnblocation=(props)=>{
     },[priceSelect])
     useEffect(()=>{
         fetchData()
-    },[genderSelect])
+    },[gender])
     if (modeSelect=='ALL'){
         return(
             <div className="post-container">
@@ -93,7 +93,7 @@ const Kmutnblocation=(props)=>{
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
-                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
@@ -150,7 +150,7 @@ const Kmutnblocation=(props)=>{
                     <Select  defaultValue={{label:'เลือกมหาลัย..'}}isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select   defaultValue={{label:`รูปแบบ...`}} isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`,value:"0"}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
-                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((kmutnblocation,index)=>(
@@ -184,7 +184,7 @@ const Kmutnblocation=(props)=>{
                     <Select   defaultValue={{label:'เลือกมหาลัย..',value:'Location'}} isSearchable={false} options={uniOptions} onChange={(choice) => setUniSelect(choice.value)}/>
                     <Select  defaultValue={{label:`รูปแบบ...`}}  isSearchable={false} options={modeOptions} onChange={(choice) => setModeSelect(choice.value)}/>
                     <Select   defaultValue={{label:`ช่วงราคา...`}} isSearchable={false} options={priceOptions} onChange={(choice) =>setPriceSelect(choice.value)}/>
-                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGenderSelect(choice.value)}/>
+                    <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
                 {kmutnblocations.map((Roomate,index)=>(

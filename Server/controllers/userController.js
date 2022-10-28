@@ -6,8 +6,6 @@ exports.register=(req,res)=>{
     const ID = req.body.ID
     const password = req.body.password
     const confirmpassword = req.body.confirmpassword
-    console.log({ID,password,confirmpassword})
-
     switch(true){
         case !ID:
             return res.status(400).json({error:"กรุณากรอก ID"})
@@ -23,9 +21,7 @@ exports.register=(req,res)=>{
             break;
     }
     userData.create({ID,password,confirmpassword},(err,userdata)=>{
-        if(err){
-            res.status(400).json({error:"มีชื่อ username ซ้ำกัน"})
-        }
+        if(err){res.status(400).json({error:"มีชื่อ username ซ้ำกัน"})}
         res.json(userdata)
     })
 }

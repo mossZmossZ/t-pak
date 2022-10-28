@@ -39,7 +39,6 @@ router.post("/roomate/create",uploads.single("Image") ,(req,res) => {
         slug:slug,
         Image:req.file.originalname
     });
-
     newroomates
     .save()
     .then(()=> res.json("Create Succuess"))
