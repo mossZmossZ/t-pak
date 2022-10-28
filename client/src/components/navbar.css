@@ -171,7 +171,7 @@ nav a:hover,a:focus {
         transition:  0.3s ease-out;
     }
     #user-icon{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .logout{
         font-size: 0;
@@ -194,7 +194,7 @@ nav a:hover,a:focus {
         transition:  0.3s ease-out;
     }
     #user-icon{
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     .userprofile{ 
         margin: 0 0rem;
