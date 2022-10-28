@@ -22,7 +22,7 @@
     font-size: 1.2rem;
 }
 .new-main{
-    display: flex;
+    display: block;
     justify-content: center;
     padding: 3rem;
     background-color: #DDDFFF;
@@ -30,6 +30,11 @@
     margin:0 10rem;
     margin-top: -2rem;
     
+}
+.uniselector{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 .Sub-but{
     border-radius: 2rem;
