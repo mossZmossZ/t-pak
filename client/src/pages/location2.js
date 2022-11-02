@@ -62,7 +62,7 @@ const Kmutnblocation=(props)=>{
                 setKmutnblocations(response.data)
             })
     }
-        else{
+        else if(modeSelect=='roomate') {
             axios
             .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
@@ -143,7 +143,7 @@ const Kmutnblocation=(props)=>{
             </div>
         )
     }
-    if (modeSelect=='location'){
+    else if (modeSelect=='location'){
         return(
             <div className="post-container">
                 <h1>ค้นหาจากสถานที่  {uniSelect.toUpperCase()}</h1>
@@ -188,7 +188,7 @@ const Kmutnblocation=(props)=>{
                     <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
-                {kmutnblocations.map((Roomate,index)=>(
+                {roomates.map((Roomate,index)=>(
                 <div className="row" key={index} style={{border:'3px solid grey'}}>
                     <div className="column" key={index} >
                         <img src={`./uploads/${Roomate.Image}`} alt="..."/>
