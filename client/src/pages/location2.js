@@ -62,7 +62,7 @@ const Kmutnblocation=(props)=>{
                 setlocations(response.data)
             })
     }
-        else{
+        else if(modeSelect=='roomate') {
             axios
             .post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
@@ -143,7 +143,7 @@ const Kmutnblocation=(props)=>{
             </div>
         )
     }
-    if (modeSelect=='location'){
+    else if (modeSelect=='location'){
         return(
             <div className="post-container">
                 <h1>ค้นหาจากสถานที่  {uniSelect.toUpperCase()}</h1>

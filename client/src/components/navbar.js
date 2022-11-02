@@ -25,7 +25,7 @@ const Navbar=({history})=>{
 
     return(
         <div className = 'navcontainer' >
-            <div>
+            <div id='logo-container'>
                 <img src={logo}></img>
                 <div className='nav-toggle'onClick={handleClick}>
                     {click ? (<HiX className="hamburger"/>):(<HiMenu className="hamburger"/>)}
