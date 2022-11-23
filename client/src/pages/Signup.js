@@ -27,7 +27,8 @@ const RegisterComponent=(props)=>{
        axios.post(`${process.env.REACT_APP_API}/register`,{ID,password,confirmpassword})
        .then(response=>{
         //login สำเร็จ
-            authenticate(response,()=>window.location.reload(false),props.history.push("/"))
+          authenticate(response,()=>window.location.reload(false),props.history.push("/"))
+            
         //console.log(response.data)
         setState({...state,ID:"",password:"",confirmpassword:""})
        }).catch(err=>{
