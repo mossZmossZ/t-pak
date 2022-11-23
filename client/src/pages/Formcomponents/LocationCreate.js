@@ -119,7 +119,7 @@ const LocationCreate=(props)=>{
                 //alert(response.data))
             })
             .catch((err)=>{
-                Swal.fire({icon: 'error',title: 'Oops...',text: "กรุณากรอกข้อมูลให้ครบถ้วน",footer: '<a href="">Why do I have this issue?</a>'})
+                Swal.fire({icon: 'error',title: 'Oops...',text: "กรุณากรอกข้อมูลให้ครบถ้วน"})
             });
     };
 

@@ -157,7 +157,7 @@ const Editlocation=(props)=>{
                 props.history.push("/")
                 
         }).catch(err=>{
-            Swal.fire({icon: 'error',title: 'Oops...',text:"ERROR",footer: '<a href="">Why do I have this issue?</a>'})
+            Swal.fire({icon: 'error',title: 'Oops...',text:"กรุณากรอกข้อมูลให้ครบถ้วน"})
             //alert(err.response.data.error)
         })
     }
