@@ -73,8 +73,8 @@ exports.getUNIroomate=(req,res)=>{
         {"UNI": {$regex:UNI},
         "gender" : {$regex:gender},
         "price":{$gt :priceSelect}
-        })
-        .exec((err,kmutnblocations)=>{
-            res.json(kmutnblocations)
+        }).sort({updatedAt: -1})
+        .exec((err,roomates)=>{
+            res.json(roomates)
         })
 }

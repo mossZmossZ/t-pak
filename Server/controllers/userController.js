@@ -17,7 +17,7 @@ exports.register=(req,res)=>{
             return res.status(400).json({error:"กรุณากรอก password"}) 
             break;
         case password != confirmpassword:
-            return res.status(400).json({error:"Password is not match!"})
+            return res.status(400).json({error:"Password ไม่ตรงกัน !"})
             break;
     }
     userData.create({ID,password,confirmpassword},(err,userdata)=>{

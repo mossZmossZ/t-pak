@@ -59,6 +59,18 @@ router.post("/location/create",uploads.single("Image") ,(req,res) => {
         slug:slug,
         Image:req.file.originalname
     });
+    switch(true){
+        case !newlocations.ID:
+            return res.status(400).json({error:"กรุณากรอก ID"})
+            break;
+        case !newlocations.UNI:
+            return res.status(400).json({error:"กรุณากรอก เลือกประเภท"}) 
+            break;
+        case !newlocations.type:
+            return res.status(400).json({error:"กรุณากรอก ระบุรูปแบบ"}) 
+            break;
+        
+    }
     newlocations
     .save()
     .then(()=> res.json("Create Succuess"))

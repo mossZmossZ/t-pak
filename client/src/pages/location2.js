@@ -34,7 +34,7 @@ const Kmutnblocation=(props)=>{
     const [modeSelect,setModeSelect]= useState(mode)
     const [priceSelect,setPriceSelect]= useState('0')
     const [gender, setGender] = useState('')
-    const [kmutnblocations,setKmutnblocations] = useState([])
+    const [locations,setlocations] = useState([])
     const [roomates,setRoomates] = useState([])
     
     
@@ -44,7 +44,7 @@ const Kmutnblocation=(props)=>{
                 axios
                 .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
                 .then(response=>{
-                    setKmutnblocations(response.data)
+                    setlocations(response.data)
                 })
                 .catch(err=>alert(err)), 
                 axios.post(`${process.env.REACT_APP_API}/roomate/UNI`,{uniSelect,gender,priceSelect})
@@ -59,7 +59,7 @@ const Kmutnblocation=(props)=>{
             axios
             .post(`${process.env.REACT_APP_API}/location/UNI`,{uniSelect,gender,priceSelect})
             .then(response=>{
-                setKmutnblocations(response.data)
+                setlocations(response.data)
             })
     }
         else if(modeSelect=='roomate') {
@@ -97,20 +97,20 @@ const Kmutnblocation=(props)=>{
                     <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
-                {kmutnblocations.map((kmutnblocation,index)=>(
+                {locations.map((location,index)=>(
                 <div className="row" key={index} style={{border:'3px solid grey'}}>
                     <div className="column" key={index} >
-                        <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
+                        <img src={`./uploads/${location.Image}`} alt="..."/>
                         <div className="info">
-                            <h1>{kmutnblocation.name}</h1>
-                            <p>รูปแบบ :{kmutnblocation.type}</p>
-                            <p>ประเภท : {kmutnblocation.gender}</p>
-                            <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
-                            <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
-                            <p className="text-muted3">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
+                            <h1>{location.name}</h1>
+                            <p>รูปแบบ :{location.type}</p>
+                            <p>ประเภท : {location.gender}</p>
+                            <p className="text-muted">ราคา : {location.price} บาท/เดือน </p>
+                            <p>รายละเอียด : {location.detail.substring(0,180)}</p>
+                            <p className="text-muted3">เบอร์โทรศัพท์: {location.telephone}</p>
                         </div>
                         <button className="select"> 
-                            <Link to={`/location/${kmutnblocation.slug}`}>
+                            <Link to={`/location/${location.slug}`}>
                                 select
                             </Link>
                         </button>
@@ -154,20 +154,20 @@ const Kmutnblocation=(props)=>{
                     <Select   defaultValue={{label:`ปรเภท...`}} isSearchable={false} options={gendertypeOptions} onChange={(choice) =>setGender(choice.value)}/>
                 </div>
                 <hr/>
-                {kmutnblocations.map((kmutnblocation,index)=>(
+                {locations.map((location,index)=>(
                 <div className="row" key={index} style={{border:'3px solid grey'}}>
                     <div className="column" key={index} >
-                        <img src={`./uploads/${kmutnblocation.Image}`} alt="..."/>
+                        <img src={`./uploads/${location.Image}`} alt="..."/>
                         <div className="info">
-                            <h1>{kmutnblocation.name}</h1>
-                            <p>รูปแบบ :{kmutnblocation.type}</p>
-                            <p>ประเภท : {kmutnblocation.gender}</p>
-                            <p className="text-muted">ราคา : {kmutnblocation.price} บาท/เดือน </p>
-                            <p>รายละเอียด : {kmutnblocation.detail.substring(0,180)}</p>
-                            <p className="text-muted3">เบอร์โทรศัพท์: {kmutnblocation.telephone}</p>
+                            <h1>{location.name}</h1>
+                            <p>รูปแบบ :{location.type}</p>
+                            <p>ประเภท : {location.gender}</p>
+                            <p className="text-muted">ราคา : {location.price} บาท/เดือน </p>
+                            <p>รายละเอียด : {location.detail.substring(0,180)}</p>
+                            <p className="text-muted3">เบอร์โทรศัพท์: {location.telephone}</p>
                         </div>
                         <button className="select"> 
-                            <Link to={`/location/${kmutnblocation.slug}`}>
+                            <Link to={`/location/${location.slug}`}>
                                 select
                             </Link>
                         </button>

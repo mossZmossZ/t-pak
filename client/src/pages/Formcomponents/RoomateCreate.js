@@ -125,15 +125,14 @@ const RoomateCreate=(props)=>{
                 console.log(formData)
                 Swal.fire(
                     'แจ้งเตือน','สร้างโพสต์สำเร็จ','success')
-                //props.history.push("/")
+                props.history.push("/")
                 //alert(response.data))
             })
             .catch((err)=>{
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: err,
-                    footer: '<a href="">Why do I have this issue?</a>'
+                    text: "กรุณากรอกข้อมูลให้ครบถ้วน"
                   })
             });
     };
