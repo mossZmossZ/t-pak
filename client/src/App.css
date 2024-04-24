@@ -11,4 +11,7 @@
     font-family: 'opunregular';
     /*font-family: 'Baloo Bhai 2', cursive;*/
 }
+.container {
+    justify-content: flex-start;
+}
 
